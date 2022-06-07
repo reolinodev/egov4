@@ -3,9 +3,7 @@ package egovframework.admin.user.web;
 import egovframework.admin.user.service.UserAdminService;
 import egovframework.admin.user.service.domain.UserEntity;
 import egovframework.common.domain.Header;
-import egovframework.common.domain.ValidationGroups;
 import egovframework.common.support.ResponseUtils;
-import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import java.util.HashMap;
@@ -15,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,7 +22,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@Api(value = "user admin rest controller Api")
 @RequestMapping("/api/admin/user")
 @RequiredArgsConstructor
 public class UserAdminControllerAPI {
@@ -65,7 +61,8 @@ public class UserAdminControllerAPI {
                 +"cell_phone : 휴대폰, 필수값, 휴대폰번호형식 제한\n"
                 +"user_pw : 비밀번호, 필수값, 8~20자, 비밀번호형식(영문 대,소문자와 숫자, 특수기호가 적어도 1개 이상씩 포함된 8자 ~ 20자) \n"
         )
-        @Validated(ValidationGroups.UserCreateGroup.class) @RequestBody UserEntity userEntity, HttpServletRequest httpServletRequest) throws Exception {
+//        @Validated(ValidationGroups.UserCreateGroup.class)
+        @RequestBody UserEntity userEntity, HttpServletRequest httpServletRequest) throws Exception {
         Map <String,Object> responseMap = new HashMap<>();
 
         int result = userAdminService.inputUser(userEntity);
@@ -93,7 +90,8 @@ public class UserAdminControllerAPI {
             value = "login_id : 아이디, 필수값, 50자 \n"
                 +"user_pw : 비밀번호, 필수값, 8~20자, 비밀번호형식(영문 대,소문자와 숫자, 특수기호가 적어도 1개 이상씩 포함된 8자 ~ 20자) \n"
         )
-        @Validated(ValidationGroups.UserUpdateGroup.class) @RequestBody UserEntity userEntity, HttpServletRequest httpServletRequest) throws Exception {
+//        @Validated(ValidationGroups.UserUpdateGroup.class)
+        @RequestBody UserEntity userEntity, HttpServletRequest httpServletRequest) throws Exception {
 
         Map <String,Object> responseMap = new HashMap<>();
         String loginId = userEntity.getLogin_id();
@@ -136,7 +134,7 @@ public class UserAdminControllerAPI {
         List<UserEntity> list = userAdminService.getUserList(userEntity);
         int listCount = userAdminService.getUserCount(userEntity);
 
-        String message = listCount+"건이 조회되었습니다.";
+        String message = listCount+" item has been viewed.";
         String code = "ok";
         Header header = ResponseUtils.setHeader(message, code, httpServletRequest);
 
@@ -153,8 +151,10 @@ public class UserAdminControllerAPI {
     public ResponseEntity <Map<String,Object>> getUserInfo(@PathVariable Integer user_id, HttpServletRequest httpServletRequest) {
         Map <String,Object> responseMap = new HashMap<>();
         UserEntity data = userAdminService.getUserInfo(user_id);
+        int count = 0;
+        if (!"".equals(data.login_id)) count= 1;
 
-        String message = "1건이 조회되었습니다.";
+        String message = count+" item has been viewed.";
         String code = "ok";
         Header header = ResponseUtils.setHeader(message, code, httpServletRequest);
 

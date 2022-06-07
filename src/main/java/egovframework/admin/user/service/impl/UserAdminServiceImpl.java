@@ -25,7 +25,7 @@ public class UserAdminServiceImpl extends EgovAbstractServiceImpl implements Use
      * 사용자 등록
      */
     public int inputUser(UserEntity userEntity) throws Exception {
-        int result = 0;
+        int result = 1;
 
         userEntity.setUser_pw(EgovFileScrty.encryptPassword(userEntity.user_pw));
         userAdminDAO.save(userEntity);
