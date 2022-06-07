@@ -10,7 +10,6 @@ import org.springframework.stereotype.Repository;
 @Repository("LoginDAO")
 public class LoginDAO extends EgovAbstractMapper {
 
-    @SuppressWarnings("unchecked")
     public int countByLoginId(LoginVO loginVO) throws Exception {
 	    return (Integer)selectOne("LoginDAO.countByLoginId", loginVO);
     }

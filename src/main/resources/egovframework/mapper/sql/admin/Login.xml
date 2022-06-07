@@ -7,7 +7,7 @@
 		SELECT  COUNT(*)
 		FROM 	USER_TB
 		WHERE 	LOGIN_ID = #{login_id}
-		  AND 	USE_YN = 'Y'
+		AND 	USE_YN = 'Y'
 	</select>
 
 </mapper>
