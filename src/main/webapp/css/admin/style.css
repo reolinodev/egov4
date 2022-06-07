@@ -1,0 +1,19 @@
+#msg {
+    color : red;
+}
+
+#container {
+    padding: 10px;
+    overflow-x:hidden;
+}
+
+.card-body iframe{
+    border: 0;
+    width: 100%;
+    overflow-x:hidden;
+    overflow-y:hidden;
+    overflow:auto;
+    width:100%;
+    min-height:800px;
+    padding: 10px ;
+}
