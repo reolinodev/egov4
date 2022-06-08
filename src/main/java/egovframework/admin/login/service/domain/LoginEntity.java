@@ -1,17 +1,16 @@
-package egovframework.admin.login.service;
+package egovframework.admin.login.service.domain;
 
-import egovframework.let.cop.com.service.TemplateInf;
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.Serializable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.apache.commons.lang3.builder.ToStringBuilder;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class LoginVO extends TemplateInf implements Serializable {
+@ApiModel(description = "로그인")
+public class LoginEntity {
 
     @ApiModelProperty(example = "사용자 아이디")
     public int user_id;

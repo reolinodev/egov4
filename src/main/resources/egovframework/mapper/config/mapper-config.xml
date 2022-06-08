@@ -13,8 +13,13 @@
 	<!-- Type Aliases 설정-->
 	<typeAliases>
 		<typeAlias alias="egovMap" 			type="org.egovframe.rte.psl.dataaccess.util.EgovMap" />
-		<typeAlias alias="loginVO" 			type="egovframework.admin.login.service.LoginVO" />
+		<typeAlias alias="loginEntity" 		type="egovframework.admin.login.service.domain.LoginEntity" />
 		<typeAlias alias="userEntity" 		type="egovframework.admin.user.service.domain.UserEntity" />
+		<typeAlias alias="user" 			type="egovframework.admin.user.service.domain.User" />
+		<typeAlias alias="authEntity" 		type="egovframework.admin.user.service.domain.AuthEntity" />
+		<typeAlias alias="userAuthEntity" 	type="egovframework.admin.user.service.domain.UserAuthEntity" />
+
+
 		<typeAlias alias="codeGrp" 			type="egovframework.admin.code.service.domain.CodeGrp" />
 		<typeAlias alias="codeEntity" 		type="egovframework.admin.code.service.domain.CodeEntity" />
 		<typeAlias alias="code" 			type="egovframework.admin.code.service.domain.Code" />

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="UserAuthAdminDAO">
+
+    <select id="findByAuthIdNotAndUseYn" parameterType="userAuthEntity" resultType="userAuthEntity">
+        SELECT  ROW_NUMBER() OVER (ORDER BY USER_ID DESC) RNUM,
+                USER_ID,
+                LOGIN_ID,
+                EMAIL,
+                USER_NM
+        FROM    USER_TB A
+        WHERE   A.USE_YN = 'Y'
+        AND     USER_ID NOT IN (
+                    SELECT  USER_ID
+                    FROM    USER_AUTH_TB
+                    WHERE   AUTH_ID =  #{auth_id}
+                    AND     USE_YN = 'Y'
+                )
+        <if test="search_str != null and search_str != ''">
+        AND     (UPPER(LOGIN_ID) LIKE  '%'||UPPER(#{search_str})||'%'
+                OR UPPER(EMAIL) LIKE  '%'||UPPER(#{search_str})||'%'
+                OR UPPER(USER_NM) LIKE  '%'||UPPER(#{search_str})||'%')
+        </if>
+        ORDER BY USER_ID DESC
+        OFFSET  #{start_idx} limit #{page_per}
+    </select>
+
+    <select id="countByAuthIdNotAndUseYn" parameterType="userAuthEntity" resultType="int">
+        SELECT  COUNT(*)
+        FROM    USER_TB A
+        WHERE   A.USE_YN = 'Y'
+        AND     USER_ID NOT IN (
+                    SELECT USER_ID
+                    FROM USER_AUTH_TB
+                    WHERE AUTH_ID =  #{auth_id}
+                    AND USE_YN = 'Y'
+                )
+        <if test="search_str != null and search_str != ''">
+        AND     (UPPER(LOGIN_ID) LIKE  '%'||UPPER(#{search_str})||'%'
+                OR UPPER(EMAIL) LIKE  '%'||UPPER(#{search_str})||'%'
+                OR UPPER(USER_NM) LIKE  '%'||UPPER(#{search_str})||'%')
+        </if>
+    </select>
+
+    <insert id="save" parameterType="userAuthEntity">
+        WITH UPSERT AS (
+            UPDATE  USER_AUTH_TB
+            SET     USE_YN = 'Y'
+                    , UPDATED_AT = now()
+                    <if test="updated_id != null and updated_id != ''">
+                    , UPDATED_ID = #{updated_id}
+                    </if>
+            WHERE   USER_ID = #{user_id}
+            AND     AUTH_ID = #{auth_id}
+        RETURNING *
+        )
+        INSERT INTO USER_AUTH_TB (USER_ID, AUTH_ID, CREATED_AT)
+        SELECT  #{user_id}, #{auth_id}, now()
+        WHERE NOT EXISTS(SELECT * FROM UPSERT)
+    </insert>
+
+    <select id="findAll" parameterType="userAuthEntity" resultType="userAuthEntity">
+        SELECT  ROW_NUMBER() OVER (ORDER BY A.AUTH_ID ASC, A.CREATED_AT DESC) RNUM,
+                A.USER_ID,
+                A.AUTH_ID,
+                C.USER_NM,
+                C.LOGIN_ID,
+                C.EMAIL,
+                B.AUTH_ROLE,
+                B.AUTH_NM,
+                GETCODENM('AUTH_ROLE', B.AUTH_ROLE) AS AUTH_ROLE_NM
+        FROM    USER_AUTH_TB A, AUTH_TB B, USER_TB C
+        WHERE   A.AUTH_ID = B.AUTH_ID
+        AND     A.USER_ID = C.USER_ID
+        AND     A.USE_YN = 'Y'
+        <if test="auth_role != null and auth_role != ''">
+        AND     B.AUTH_ROLE = #{auth_role}
+        </if>
+        <if test="auth_id != null and auth_id != ''">
+        AND     A.AUTH_ID = #{auth_id}
+        </if>
+        <if test="search_str != null and search_str != ''">
+        AND     (UPPER(C.LOGIN_ID) LIKE  '%'||UPPER(#{search_str})||'%'
+                OR UPPER(C.EMAIL) LIKE  '%'||UPPER(#{search_str})||'%'
+                OR UPPER(C.USER_NM) LIKE  '%'||UPPER(#{search_str})||'%')
+        </if>
+        ORDER BY A.AUTH_ID ASC, A.CREATED_AT DESC
+        OFFSET  #{start_idx} limit #{page_per}
+    </select>
+
+    <select id="countAll" parameterType="userAuthEntity" resultType="int">
+        SELECT  COUNT (*)
+        FROM    USER_AUTH_TB A, AUTH_TB B, USER_TB C
+        WHERE   A.AUTH_ID = B.AUTH_ID
+        AND     A.USER_ID = C.USER_ID
+        AND     A.USE_YN = 'Y'
+        <if test="auth_role != null and auth_role != ''">
+        AND     B.AUTH_ROLE = #{auth_role}
+        </if>
+        <if test="auth_id != null and auth_id != ''">
+        AND     A.AUTH_ID = #{auth_id}
+        </if>
+        <if test="search_str != null and search_str != ''">
+        AND     (UPPER(C.LOGIN_ID) LIKE  '%'||UPPER(#{search_str})||'%'
+                OR UPPER(C.EMAIL) LIKE  '%'||UPPER(#{search_str})||'%'
+                OR UPPER(C.USER_NM) LIKE  '%'||UPPER(#{search_str})||'%')
+        </if>
+    </select>
+
+    <update id="deleteUserAuth" parameterType="userAuthEntity">
+        UPDATE  USER_AUTH_TB
+        SET     UPDATED_AT = now()
+                , USE_YN = 'N'
+                <if test="updated_id != null and updated_id != ''">
+                , UPDATED_ID = #{updated_id}
+                </if>
+        WHERE   AUTH_ID = #{auth_id}
+        AND     USER_ID IN
+                <foreach collection="user_arr" item="type" open="(" close=")" separator=",">
+                    #{type.value}
+                </foreach>
+    </update>
+
+</mapper>

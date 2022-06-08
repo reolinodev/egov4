@@ -15,9 +15,9 @@ module.exports = {
 
     entry: {
         adminConfig: '/js/admin/adminConfig.js',
-        // login: '/src/main/resources/static/js/custom/login.js',
-        // signUp: '/src/main/resources/static/js/custom/signUp.js',
-        // pwChange: '/src/main/resources/static/js/custom/pwChange.js',
+        adminLogin: '/js/admin/login/adminLogin.js',
+        adminSignUp: '/js/admin/login/adminSignUp.js',
+        adminPwChange: '/js/admin/login/adminPwChange.js',
         // main: '/src/main/resources/static/js/custom/main.js',
         // gridContent: '/src/main/resources/static/js/custom/gridContent.js',
         // userMngView: '/src/main/resources/static/js/custom/user/userMngView.js',
