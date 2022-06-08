@@ -13,7 +13,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 class UserAdminServiceTest {
 
     @Autowired
-    UserAdminDAO userAdminDAO;
+    private UserAdminDAO userAdminDAO;
 
     @Test
     void checkLoginId() {

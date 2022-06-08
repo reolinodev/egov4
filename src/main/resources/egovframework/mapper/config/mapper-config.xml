@@ -15,7 +15,9 @@
 		<typeAlias alias="egovMap" 			type="org.egovframe.rte.psl.dataaccess.util.EgovMap" />
 		<typeAlias alias="loginVO" 			type="egovframework.admin.login.service.LoginVO" />
 		<typeAlias alias="userEntity" 		type="egovframework.admin.user.service.domain.UserEntity" />
-
+		<typeAlias alias="codeGrp" 			type="egovframework.admin.code.service.domain.CodeGrp" />
+		<typeAlias alias="codeEntity" 		type="egovframework.admin.code.service.domain.CodeEntity" />
+		<typeAlias alias="code" 			type="egovframework.admin.code.service.domain.Code" />
 
 		<typeAlias alias="FileVO"			type="egovframework.com.cmm.service.FileVO" />
 		<typeAlias alias="ComDefaultCodeVO" type="egovframework.com.cmm.ComDefaultCodeVO" />

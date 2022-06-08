@@ -39,33 +39,33 @@
 	</insert>
 
 	<update id="updateUserPw" parameterType="userEntity">
-		UPDATE USER_TB
-		SET UPDATED_AT = now()
-		  , USER_PW = #{user_pw}
-		WHERE LOGIN_ID = #{login_id}
+		UPDATE 	USER_TB
+		SET 	UPDATED_AT = now()
+		  		, USER_PW = #{user_pw}
+		WHERE 	LOGIN_ID = #{login_id}
 	</update>
 
 	<select id="findAll" parameterType="userEntity" resultType="userEntity">
 		SELECT  ROW_NUMBER() OVER (ORDER BY USER_ID DESC) RNUM,
-		USER_ID,
-		LOGIN_ID,
-		EMAIL,
-		USER_NM,
-		CELL_PHONE,
-		getCodeNm('USE_YN', USE_YN) as USE_YN_NM,
-		USE_YN
+				USER_ID,
+				LOGIN_ID,
+				EMAIL,
+				USER_NM,
+				CELL_PHONE,
+				getCodeNm('USE_YN', USE_YN) as USE_YN_NM,
+				USE_YN
 		FROM    USER_TB
 		WHERE	1=1
 		<if test="search_str != null and search_str != ''">
-			AND (UPPER(LOGIN_ID) LIKE  '%'||UPPER(#{search_str})||'%'
-			OR UPPER(EMAIL) LIKE  '%'||UPPER(#{search_str})||'%'
-			OR UPPER(USER_NM) LIKE  '%'||UPPER(#{search_str})||'%')
+		AND 	(UPPER(LOGIN_ID) LIKE  '%'||UPPER(#{search_str})||'%'
+		OR 		UPPER(EMAIL) LIKE  '%'||UPPER(#{search_str})||'%'
+		OR 		UPPER(USER_NM) LIKE  '%'||UPPER(#{search_str})||'%')
 		</if>
 		<if test="use_yn != null and use_yn != ''">
-			AND USE_YN = #{use_yn}
+		AND 	USE_YN = #{use_yn}
 		</if>
 		ORDER BY USER_ID DESC
-		OFFSET #{start_idx} limit #{page_per};
+		OFFSET 	#{start_idx} limit #{page_per};
 	</select>
 
 	<select id="countByAll" parameterType="userEntity" resultType="int">
@@ -73,12 +73,12 @@
 		FROM 	USER_TB
 		WHERE	1=1
 		<if test="search_str != null and search_str != ''">
-			AND (UPPER(LOGIN_ID) LIKE  '%'||UPPER(#{search_str})||'%'
-			OR UPPER(EMAIL) LIKE  '%'||UPPER(#{search_str})||'%'
-			OR UPPER(USER_NM) LIKE  '%'||UPPER(#{search_str})||'%')
+		AND 	(UPPER(LOGIN_ID) LIKE  '%'||UPPER(#{search_str})||'%'
+		OR 		UPPER(EMAIL) LIKE  '%'||UPPER(#{search_str})||'%'
+		OR 		UPPER(USER_NM) LIKE  '%'||UPPER(#{search_str})||'%')
 		</if>
 		<if test="use_yn != null and use_yn != ''">
-			AND USE_YN = #{use_yn}
+		AND 	USE_YN = #{use_yn}
 		</if>
 	</select>
 
@@ -89,24 +89,24 @@
 	</select>
 
 	<update id="updateUser" parameterType="userEntity">
-		UPDATE USER_TB
-		SET UPDATED_AT = now()
-		<if test="email != null and email != ''">
-			, EMAIL = #{email}
-		</if>
-		<if test="user_nm != null and user_nm != ''">
-			, USER_NM = #{user_nm}
-		</if>
-		<if test="user_pw != null and user_pw != ''">
-			, USER_PW = #{user_pw}
-		</if>
-		<if test="cell_phone != null and cell_phone != ''">
-			, CELL_PHONE = #{cell_phone}
-		</if>
-		<if test="use_yn != null and use_yn != ''">
-			, USE_YN = #{use_yn}
-		</if>
-		WHERE USER_ID = #{user_id}
+		UPDATE 	USER_TB
+		SET 	UPDATED_AT = now()
+				<if test="email != null and email != ''">
+				, EMAIL = #{email}
+				</if>
+				<if test="user_nm != null and user_nm != ''">
+				, USER_NM = #{user_nm}
+				</if>
+				<if test="user_pw != null and user_pw != ''">
+				, USER_PW = #{user_pw}
+				</if>
+				<if test="cell_phone != null and cell_phone != ''">
+				, CELL_PHONE = #{cell_phone}
+				</if>
+				<if test="use_yn != null and use_yn != ''">
+				, USE_YN = #{use_yn}
+				</if>
+		WHERE 	USER_ID = #{user_id}
 	</update>
 
 </mapper>
