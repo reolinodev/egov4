@@ -1,6 +1,6 @@
 package egovframework.admin.user.service.impl;
 
-import egovframework.admin.user.service.domain.UserEntity;
+import egovframework.admin.user.service.domain.AuthEntity;
 import java.util.List;
 import org.egovframe.rte.psl.dataaccess.EgovAbstractMapper;
 import org.springframework.stereotype.Repository;
@@ -8,35 +8,35 @@ import org.springframework.stereotype.Repository;
 @Repository("AuthAdminDAO")
 public class AuthAdminDAO extends EgovAbstractMapper {
 
-//    public int countByLoginId(String login_id) {
-//	    return selectOne("UserAdminDAO.countByLoginId", login_id);
-//    }
-//
-//    public UserEntity findByLoginId(UserEntity userEntity) {
-//        return selectOne("UserAdminDAO.findByLoginId", userEntity);
-//    }
-//
-//    public int save(UserEntity userEntity) throws Exception {
-//        return insert("UserAdminDAO.save", userEntity);
-//    }
-//
-//    public int updateUserPw(UserEntity userEntity) {
-//        return update("UserAdminDAO.updateUserPw", userEntity);
-//    }
-//
-//    public List<UserEntity> findAll(UserEntity userEntity) {
-//	    return (List<UserEntity>) list("UserAdminDAO.findAll", userEntity);
-//    }
-//
-//    public int countByAll(UserEntity userEntity) {
-//        return selectOne("UserAdminDAO.countByAll", userEntity);
-//    }
-//
-//    public UserEntity findByUserId(int userId) {
-//        return selectOne("UserAdminDAO.findByUserId", userId);
-//    }
-//
-//    public int updateUser(UserEntity userEntity) {
-//        return update("UserAdminDAO.updateUser", userEntity);
-//    }
+    public List<AuthEntity> findAll(AuthEntity authEntity) {
+        return (List<AuthEntity>) list("AuthAdminDAO.findAll", authEntity);
+    }
+
+    public int countAll(AuthEntity authEntity) {
+        return selectOne("AuthAdminDAO.countAll", authEntity);
+    }
+
+    public int save(AuthEntity authEntity) throws Exception {
+        return insert("AuthAdminDAO.save", authEntity);
+    }
+
+    public List<AuthEntity> findByUseYn(AuthEntity authEntity) {
+        return (List<AuthEntity>) list("AuthAdminDAO.findByUseYn", authEntity);
+    }
+
+    public int updateAuth(AuthEntity authEntity) throws Exception {
+        return update("AuthAdminDAO.updateAuth", authEntity);
+    }
+
+    public AuthEntity findByAuthId(int authId) {
+        return selectOne("AuthAdminDAO.findByAuthId", authId);
+    }
+
+    public int countByAuthVal(AuthEntity authEntity) {
+        return selectOne("AuthAdminDAO.countByAuthVal", authEntity);
+    }
+
+    public List<AuthEntity> findByAuthRoleAndUseYn(AuthEntity authEntity) {
+        return (List<AuthEntity>) list("AuthAdminDAO.findByAuthRoleAndUseYn", authEntity);
+    }
 }
