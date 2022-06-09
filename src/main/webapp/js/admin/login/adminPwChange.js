@@ -38,13 +38,13 @@ const pwChangeProc = () => {
     }
 
     $.ajax({
-        url: "/api/user/userPw",
+        url: "/api/admin/user/userPw",
         type: 'PUT',
         data: JSON.stringify(param),
         headers: {'Content-Type': 'application/json'},
     }).then((data) => {
         if (data.header.resultCode === 'ok') {
-            AlertMove(data.header.message, '/login');
+            AlertMove(data.header.message, '/admin/login');
         } else {
             $('#msg').html(data.header.message);
         }
@@ -74,7 +74,7 @@ const pwChangeProc = () => {
  *  login : 로그인 화면 이동
  */
 const login = () => {
-    location.href = '/login';
+    location.href = '/admin/login';
 }
 
 $(document).ready(() => {

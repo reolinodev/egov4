@@ -22,7 +22,7 @@ public class LoginAdminController {
 	private final LoginAdminService loginAdminService;
 
 	@GetMapping(value = "/admin/login")
-	public String loginView() throws Exception {
+	public String loginView() {
 		return "/admin/login/loginView";
 	}
 
@@ -52,6 +52,14 @@ public class LoginAdminController {
 
 		//세션저장
 		LoginEntity loginInfo = loginAdminService.getLoginId(loginEntity);
+
+		if(loginInfo == null){
+			msg = "Permission does not exist.";
+			mav.addObject("msg", msg);
+			mav.setViewName("/admin/login/loginView");
+			return mav;
+		}
+
 		setSessionInfo(loginInfo);
 
 		//로그인 내역 기록
@@ -68,7 +76,7 @@ public class LoginAdminController {
 	 * : 세션을 초기화 후 로그인 화면으로 이동한다.
 	 */
 	@GetMapping(value = "/admin/logout")
-	public ModelAndView logout(HttpServletRequest request) {
+	public ModelAndView logout(HttpServletRequest request)  {
 		ModelAndView mav = new ModelAndView();
 		HttpSession session = request.getSession();
 		session.invalidate();

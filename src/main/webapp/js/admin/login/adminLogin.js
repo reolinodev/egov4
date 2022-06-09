@@ -39,14 +39,14 @@ const loginProc = () => {
  *  signUp : 회원가입 화면 이동
  */
 const signUp = () => {
-    location.href = 'signUp';
+    location.href = '/admin/signUp';
 };
 
 /**
  *  pwChange : 비밀번호 변경 화면 이동
  */
 const pwChange = () => {
-    location.href = 'pwChange';
+    location.href = '/admin/pwChange';
 };
 
 
