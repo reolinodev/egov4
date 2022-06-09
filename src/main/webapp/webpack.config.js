@@ -18,6 +18,7 @@ module.exports = {
         adminLogin: '/js/admin/login/adminLogin.js',
         adminSignUp: '/js/admin/login/adminSignUp.js',
         adminPwChange: '/js/admin/login/adminPwChange.js',
+        adminMain: '/js/admin/main/adminMain.js',
         // main: '/src/main/resources/static/js/custom/main.js',
         // gridContent: '/src/main/resources/static/js/custom/gridContent.js',
         // userMngView: '/src/main/resources/static/js/custom/user/userMngView.js',

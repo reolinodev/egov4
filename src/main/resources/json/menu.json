@@ -1,0 +1,21 @@
+{
+  "defaultFirstUrl" : {
+    "menu_id": 6, "menu_nm": "메뉴 관리", "menu_lv": 2, "parent_id": 5, "menu_url" : "/menu/menuMng", "parent_nm": "메뉴 설정"
+  },
+  "defaultMenu1List" : [
+    { "menu_id": 1, "menu_nm": "사용자 설정", "menu_lv": 1, "parent_id": 1, "menu_url" : "", "parent_nm": "사용자 설정" },
+    { "menu_id": 5, "menu_nm": "메뉴 설정", "menu_lv": 1, "parent_id": 5, "menu_url" : "", "parent_nm": "메뉴 설정" },
+    { "menu_id": 8, "menu_nm": "게시판 설정", "menu_lv": 1, "parent_id": 8, "menu_url" : "", "parent_nm": "게시판 설정" },
+    { "menu_id": 11, "menu_nm": "기타 설정", "menu_lv": 1, "parent_id": 11, "menu_url" : "", "parent_nm": "기타 설정" }
+  ],
+  "defaultMenu2List" : [
+    { "menu_id": 2, "menu_nm": "사용자 관리", "menu_lv": 2, "parent_id": 1, "menu_url" : "/user/userMng", "parent_nm": "사용자 설정" },
+    { "menu_id": 3, "menu_nm": "권한 관리", "menu_lv": 2, "parent_id": 1, "menu_url" : "/user/authMng", "parent_nm": "사용자 설정" },
+    { "menu_id": 4, "menu_nm": "사용자 권한 관리", "menu_lv": 2, "parent_id": 1, "menu_url" : "/user/authUserMng", "parent_nm": "사용자 설정" },
+    { "menu_id": 6, "menu_nm": "메뉴 관리", "menu_lv": 2, "parent_id": 5, "menu_url" : "/menu/menuMng", "parent_nm": "메뉴 설정" },
+    { "menu_id": 7, "menu_nm": "권한별 메뉴 관리", "menu_lv": 2, "parent_id": 5, "menu_url" : "/menu/authMenuMng", "parent_nm": "메뉴 설정" },
+    { "menu_id": 9, "menu_nm": "게시판 관리", "menu_lv": 2, "parent_id": 8, "menu_url" : "/board/boardMng", "parent_nm": "게시판 설정" },
+    { "menu_id": 10, "menu_nm": "게시글 관리", "menu_lv": 2, "parent_id": 8, "menu_url" : "/board/postMng", "parent_nm": "게시판 설정" },
+    { "menu_id": 12, "menu_nm": "코드 관리", "menu_lv": 2, "parent_id": 11, "menu_url" : "/etc/codeMng", "parent_nm": "기타 설정" }
+  ]
+}
