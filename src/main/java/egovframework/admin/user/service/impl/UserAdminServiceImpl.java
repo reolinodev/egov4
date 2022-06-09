@@ -1,6 +1,7 @@
 package egovframework.admin.user.service.impl;
 
 import egovframework.admin.user.service.UserAdminService;
+import egovframework.admin.user.service.domain.UserAuthEntity;
 import egovframework.admin.user.service.domain.UserEntity;
 import egovframework.let.utl.sim.service.EgovFileScrty;
 import java.util.List;
@@ -13,6 +14,9 @@ public class UserAdminServiceImpl extends EgovAbstractServiceImpl implements Use
 	
     @Resource(name = "UserAdminDAO")
     private UserAdminDAO userAdminDAO;
+
+    @Resource(name = "UserAuthAdminDAO")
+    private UserAuthAdminDAO userAuthAdminDAO;
 
     /**
      * 아이디 중복 체크
@@ -32,11 +36,11 @@ public class UserAdminServiceImpl extends EgovAbstractServiceImpl implements Use
 
         UserEntity userResult = userAdminDAO.findByLoginId(userEntity);
         if(userResult.user_id != 0){
-//            UserAuthEntity userAuthEntity = new UserAuthEntity();
-//            userAuthEntity.user_id = userResult.user_id;
-//            // 어드민/슈퍼 관리자 권한 부여)
-//            userAuthEntity.auth_id = 1;
-//            userAuthRepository.save(userAuthEntity);
+            UserAuthEntity userAuthEntity = new UserAuthEntity();
+            userAuthEntity.user_id = userResult.user_id;
+            // 어드민/슈퍼 관리자 권한 부여)
+            userAuthEntity.auth_id = 1;
+            userAuthAdminDAO.save(userAuthEntity);
         }
         return result;
     }
