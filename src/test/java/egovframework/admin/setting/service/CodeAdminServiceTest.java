@@ -1,8 +1,8 @@
-package egovframework.admin.code.service;
+package egovframework.admin.setting.service;
 
-import egovframework.admin.code.service.domain.Code;
-import egovframework.admin.code.service.domain.CodeEntity;
-import egovframework.admin.code.service.impl.CodeAdminDAO;
+import egovframework.admin.setting.service.domain.Code;
+import egovframework.admin.setting.service.domain.CodeEntity;
+import egovframework.admin.setting.service.impl.CodeAdminDAO;
 import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

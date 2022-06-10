@@ -1,6 +1,6 @@
-package egovframework.admin.code.service.impl;
+package egovframework.admin.setting.service.impl;
 
-import egovframework.admin.code.service.domain.CodeGrp;
+import egovframework.admin.setting.service.domain.CodeGrp;
 import java.util.List;
 import org.egovframe.rte.psl.dataaccess.EgovAbstractMapper;
 import org.springframework.stereotype.Repository;

@@ -1,8 +1,8 @@
-package egovframework.admin.code.service.impl;
+package egovframework.admin.setting.service.impl;
 
-import egovframework.admin.code.service.CodeAdminService;
-import egovframework.admin.code.service.domain.Code;
-import egovframework.admin.code.service.domain.CodeEntity;
+import egovframework.admin.setting.service.CodeAdminService;
+import egovframework.admin.setting.service.domain.Code;
+import egovframework.admin.setting.service.domain.CodeEntity;
 import java.util.List;
 import javax.annotation.Resource;
 import org.egovframe.rte.fdl.cmmn.EgovAbstractServiceImpl;

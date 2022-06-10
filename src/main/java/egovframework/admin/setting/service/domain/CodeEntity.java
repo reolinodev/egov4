@@ -1,4 +1,4 @@
-package egovframework.admin.code.service.domain;
+package egovframework.admin.setting.service.domain;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

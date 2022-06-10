@@ -1,8 +1,6 @@
-package egovframework.admin.code.service;
+package egovframework.admin.setting.service;
 
-import egovframework.admin.code.service.domain.Code;
-import egovframework.admin.code.service.domain.CodeEntity;
-import egovframework.admin.code.service.domain.CodeGrp;
+import egovframework.admin.setting.service.domain.CodeEntity;
 import java.util.List;
 
 public interface CodeAdminService {

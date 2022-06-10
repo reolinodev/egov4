@@ -18,9 +18,9 @@
 		<typeAlias alias="user" 			type="egovframework.admin.user.service.domain.User" />
 		<typeAlias alias="authEntity" 		type="egovframework.admin.user.service.domain.AuthEntity" />
 		<typeAlias alias="userAuthEntity" 	type="egovframework.admin.user.service.domain.UserAuthEntity" />
-		<typeAlias alias="codeGrp" 			type="egovframework.admin.code.service.domain.CodeGrp" />
-		<typeAlias alias="codeEntity" 		type="egovframework.admin.code.service.domain.CodeEntity" />
-		<typeAlias alias="code" 			type="egovframework.admin.code.service.domain.Code" />
+		<typeAlias alias="codeGrp" 			type="egovframework.admin.setting.service.domain.CodeGrp" />
+		<typeAlias alias="codeEntity" 		type="egovframework.admin.setting.service.domain.CodeEntity" />
+		<typeAlias alias="code" 			type="egovframework.admin.setting.service.domain.Code" />
 
 		<typeAlias alias="FileVO"			type="egovframework.com.cmm.service.FileVO" />
 		<typeAlias alias="ComDefaultCodeVO" type="egovframework.com.cmm.ComDefaultCodeVO" />
