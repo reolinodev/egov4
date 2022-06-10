@@ -18,8 +18,6 @@
 		<typeAlias alias="user" 			type="egovframework.admin.user.service.domain.User" />
 		<typeAlias alias="authEntity" 		type="egovframework.admin.user.service.domain.AuthEntity" />
 		<typeAlias alias="userAuthEntity" 	type="egovframework.admin.user.service.domain.UserAuthEntity" />
-
-
 		<typeAlias alias="codeGrp" 			type="egovframework.admin.code.service.domain.CodeGrp" />
 		<typeAlias alias="codeEntity" 		type="egovframework.admin.code.service.domain.CodeEntity" />
 		<typeAlias alias="code" 			type="egovframework.admin.code.service.domain.Code" />

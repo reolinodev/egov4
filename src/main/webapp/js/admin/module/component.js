@@ -2,7 +2,7 @@
  * setCommonSelectBox : 공통코드를 사용한 셀렉트 박스 생성
  * 생성할 아이디, 코드, 타입(전체, 선택, ''), 선택된 값('')
  */
-export function setCodeSelBox(id,code_grp,type,selected_value ){
+export function setCodeSelBox(id,codeGrp,type,selectedValue ){
 
    let str = '';
 
@@ -10,21 +10,22 @@ export function setCodeSelBox(id,code_grp,type,selected_value ){
    else if(type==='SEL') str += `<option value="">-- Sel --</option>`;
 
    $.ajax({
-      url : `/api/code/item/${code_grp}`,
+      url : `/api/code/item/${codeGrp}`,
       type: 'GET',
       headers: {'Content-Type': 'application/json'},
    }).then((result) => {
       const dataList = result.data;
 
+      // eslint-disable-next-line no-plusplus
       for (let i=0; i < dataList.length;i++) {
-         if(selected_value !=='' && selected_value === dataList[i].code_val){
+         if(selectedValue !=='' && selectedValue === dataList[i].code_val){
             str += `<option value="${dataList[i].code_val}" selected> ${dataList[i].code_nm}</option>`;}
          else{
             str += `<option value="${dataList[i].code_val}"> ${dataList[i].code_nm}</option>`;
          }
       }
 
-      $("#"+id).html(str);
+      $(`#${id}`).html(str);
    }, (request, status, error) => {
       if(request.status === 500){
          console.log(
@@ -33,10 +34,10 @@ export function setCodeSelBox(id,code_grp,type,selected_value ){
              `error:${error}`
          );
       }else if(request.status === 400){
-         const errorList = request.responseJSON.errorList;
+         const {errorList} = request.responseJSON;
          if(errorList !== undefined){
             if(errorList.lengh !==0){
-               const message = errorList[0].message;
+               const {message} = errorList[0];
                $('#msg').html(message);
             }
          }else {
@@ -51,26 +52,28 @@ export function setCodeSelBox(id,code_grp,type,selected_value ){
  * setCommSelBox : 공통코드를 사용하지 않는 경우 셀렉트 박스 생성
  * 생성할 아이디, url, url_type(url 전송 타입) ,타입(전체, 선택, ''), 선택된 값(''), 파라미터(''), option(옵션안에 넣을 텍스트와 value의 값을 추출)
  */
-export function setCommSelBox(id,url, url_type,type,selected_value, params, option ){
+// eslint-disable-next-line camelcase
+export function setCommSelBox(id,url,url_type,type,selected_value, params, option ){
    let str = '';
 
    if(type==='ALL') str += `<option value="">-- All --</option>`;
    else if(type==='SEL') str += `<option value="">-- Sel --</option>`;
 
    if(params === ''){
+      // eslint-disable-next-line no-param-reassign
       params = {}
    }
 
    if(url === ''){
       str += '</select>';
-      $("#"+id).html(str);
+      $(`#${id}`).html(str);
    }else {
       $.ajax({
-         url : url,
+         url,
          type: url_type,
          data: JSON.stringify(params),
          headers: {'Content-Type': 'application/json'},
-         success : function (result){
+         success (result){
             const list = result.data;
 
             if(list.length === 0 && type!=='ALL'){
@@ -79,9 +82,10 @@ export function setCommSelBox(id,url, url_type,type,selected_value, params, opti
 
             for (let i=0; i < list.length;i++) {
                if(option !== ''){
-                  let oTxt = option.oTxt;
-                  let oVal = option.oVal;
+                  const {oTxt} = option;
+                  const {oVal} = option;
 
+                  // eslint-disable-next-line camelcase
                   if(selected_value !==''){
                      str += `<option value="${list[i][oVal]}" selected> ${list[i][oTxt]}</option>`;
                   }else{
@@ -90,10 +94,10 @@ export function setCommSelBox(id,url, url_type,type,selected_value, params, opti
                }
             }
 
-            $("#"+id).html(str);
+            $(`#${id}`).html(str);
          },
-         error : function (request, status, error){
-            console.log('code:'+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+         error (request, status, error){
+            console.log(`code:${request.status}\n`+`message:${request.responseText}\n`+`error:${error}`);
          }
       });
    }

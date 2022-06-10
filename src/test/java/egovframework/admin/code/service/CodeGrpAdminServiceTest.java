@@ -58,8 +58,8 @@ class CodeGrpAdminServiceTest {
     void inputCodeGrp() throws Exception {
         //given
         CodeGrp codeGrp = new CodeGrp();
-        codeGrp.code_grp_val = "TEST111";
-        codeGrp.code_grp_nm = "TEST111";
+        codeGrp.code_grp_val = "AUTH_ROLE";
+        codeGrp.code_grp_nm = "권한구분";
 
         //when
         int result = codeGrpAdminDAO.save(codeGrp);

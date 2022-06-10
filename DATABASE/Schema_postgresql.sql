@@ -157,7 +157,7 @@ CREATE TABLE USER_AUTH_TB
     created_at timestamp,
     updated_at timestamp,
     updated_id int,
-    use_yn varchar(1),
+    use_yn varchar(1) NULL DEFAULT 'Y'::character varying,
     primary key(user_id, auth_id),
     foreign key (auth_id) REFERENCES AUTH_TB (auth_id),
     foreign key (user_id) REFERENCES USER_TB (user_id)
@@ -201,7 +201,6 @@ CREATE SEQUENCE auth_seq START 1;
 CREATE SEQUENCE menu_seq START 1;
 CREATE SEQUENCE code_grp_seq START 1;
 CREATE SEQUENCE code_seq START 1;
-
 
 CREATE FUNCTION getCodeNm (codeGrpVal varchar(50), codeVal varchar(50))
     RETURNS TABLE( codeNm varchar(50)) AS $$

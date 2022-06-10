@@ -16,10 +16,6 @@ public class MainAdminController {
     @Resource
     private SessionInfo sessionInfo;
 
-//	@RequestMapping(value = "/admin/login")
-//	public String loginView() throws Exception {
-//		return "/admin/loginView";
-//	}
     /**
      * 메인 화면
      */

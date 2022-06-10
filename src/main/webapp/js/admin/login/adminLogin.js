@@ -39,6 +39,7 @@ const loginProc = () => {
  *  signUp : 회원가입 화면 이동
  */
 const signUp = () => {
+    // eslint-disable-next-line no-restricted-globals
     location.href = '/admin/signUp';
 };
 
@@ -46,6 +47,7 @@ const signUp = () => {
  *  pwChange : 비밀번호 변경 화면 이동
  */
 const pwChange = () => {
+    // eslint-disable-next-line no-restricted-globals
     location.href = '/admin/pwChange';
 };
 
@@ -73,12 +75,12 @@ $(document).ready(() => {
         signUp();
     });
 
-    //디바이스 정보 세팅
+    // 디바이스 정보 세팅
     const deviceInfo = getDeviceInfo();
     $('#loginDevice').val(deviceInfo.device);
     $('#deviceBrowser').val(deviceInfo.browser);
 
-    //아이디 기억하기(쿠키 불러오기)
+    // 아이디 기억하기(쿠키 불러오기)
     const idSaveCheck = document.getElementById('idSaveCheck');
 
     if (getCookie("idSaveCheck") === 'Y'){

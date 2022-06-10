@@ -2,7 +2,7 @@
  *  calcHeight : iframe 크기 조절 ( 브라우저 크기에 따라 적용)
  */
 const calcHeight = () => {
-    const defaultHeight = 800; //테스트 필요(브라우저 크기에 따라서)
+    const defaultHeight = 800; // 테스트 필요(브라우저 크기에 따라서)
     const contentHeight = document.getElementById('contentFrame').contentWindow.document.body.scrollHeight;
     document.getElementById('contentFrame').height = defaultHeight >= contentHeight ? defaultHeight : contentHeight;
     document.getElementById('contentFrame').style.overflow = "hidden";
@@ -34,6 +34,7 @@ $(document).ready(() => {
 
     mainPageLoad();
 
+    // eslint-disable-next-line func-names
     $("li[id^='menu_']").click(function() {
         const url = this.getAttribute("data-url");
         const menuNm = this.getAttribute("data-menunm");
@@ -42,6 +43,7 @@ $(document).ready(() => {
         pageRouter(url, parentNm, menuNm);
     });
 
+    // eslint-disable-next-line func-names
     $("a[id='menuUrl']").click(function() {
 
         const url = this.getAttribute("data-url");

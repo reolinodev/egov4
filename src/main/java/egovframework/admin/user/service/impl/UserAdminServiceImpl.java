@@ -1,7 +1,6 @@
 package egovframework.admin.user.service.impl;
 
 import egovframework.admin.user.service.UserAdminService;
-import egovframework.admin.user.service.domain.UserAuthEntity;
 import egovframework.admin.user.service.domain.UserEntity;
 import egovframework.let.utl.sim.service.EgovFileScrty;
 import java.util.List;
@@ -29,20 +28,8 @@ public class UserAdminServiceImpl extends EgovAbstractServiceImpl implements Use
      * 사용자 등록
      */
     public int inputUser(UserEntity userEntity) throws Exception {
-        int result = 1;
-
         userEntity.setUser_pw(EgovFileScrty.encryptPassword(userEntity.user_pw));
-        userAdminDAO.save(userEntity);
-
-        UserEntity userResult = userAdminDAO.findByLoginId(userEntity);
-        if(userResult.user_id != 0){
-            UserAuthEntity userAuthEntity = new UserAuthEntity();
-            userAuthEntity.user_id = userResult.user_id;
-            // 어드민/슈퍼 관리자 권한 부여)
-            userAuthEntity.auth_id = 1;
-            userAuthAdminDAO.save(userAuthEntity);
-        }
-        return result;
+        return userAdminDAO.save(userEntity);
     }
 
     /**

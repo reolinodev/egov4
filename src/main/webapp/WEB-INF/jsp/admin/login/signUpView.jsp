@@ -4,8 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>EX-EM</title>
-	<script type="module" src="/dist/adminConfig.js"></script>
-	<link rel="stylesheet" href="/lib/tmpl/dist/css/adminlte.min.css"/>
+	<%@include file ="../include/config.jsp" %>
 	<script type="module" src="/dist/adminSignUp.js"></script>
 </head>
 <body class="hold-transition register-page">

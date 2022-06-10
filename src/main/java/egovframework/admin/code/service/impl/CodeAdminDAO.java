@@ -2,6 +2,7 @@ package egovframework.admin.code.service.impl;
 
 import egovframework.admin.code.service.domain.Code;
 import egovframework.admin.code.service.domain.CodeEntity;
+import egovframework.admin.code.service.domain.CodeGrp;
 import java.util.List;
 import org.egovframe.rte.psl.dataaccess.EgovAbstractMapper;
 import org.springframework.stereotype.Repository;
@@ -10,11 +11,11 @@ import org.springframework.stereotype.Repository;
 public class CodeAdminDAO extends EgovAbstractMapper {
 
     public List<CodeEntity> findByCodeGrpId(int codeId) {
-        return selectOne("CodeAdminDAO.findByCodeGrpId", codeId);
+        return (List<CodeEntity>) list("CodeAdminDAO.findByCodeGrpId", codeId);
     }
 
     public List<CodeEntity> findByCodeGrpVal(String codeGrpVal) {
-        return selectOne("CodeAdminDAO.findByCodeGrpId", codeGrpVal);
+        return (List<CodeEntity>) list("CodeAdminDAO.findByCodeGrpVal", codeGrpVal);
     }
 
     public int save(Code code) throws Exception {

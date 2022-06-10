@@ -2,6 +2,8 @@
  *  Alert : 얼럿
  *  msg : 메세지
  */
+import Swal from "sweetalert2";
+
 export function Alert(msg) {
     Swal.fire({
         title: msg,

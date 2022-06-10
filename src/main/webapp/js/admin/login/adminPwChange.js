@@ -56,10 +56,10 @@ const pwChangeProc = () => {
                 `error:${error}`
             );
         }else if(request.status === 400){
-            const errorList = request.responseJSON.errorList;
+            const {errorList} = request.responseJSON;
             if(errorList !== undefined){
                 if(errorList.lengh !==0){
-                    const message = errorList[0].message;
+                    const {message} = errorList[0];
                     $('#msg').html(message);
                 }
             }else {
@@ -74,6 +74,7 @@ const pwChangeProc = () => {
  *  login : 로그인 화면 이동
  */
 const login = () => {
+    // eslint-disable-next-line no-restricted-globals
     location.href = '/admin/login';
 }
 

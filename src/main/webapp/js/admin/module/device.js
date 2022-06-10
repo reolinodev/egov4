@@ -2,16 +2,20 @@
  * getDeviceInfo
  * : 디바이스의 정보를 가져온다.
  */
+// eslint-disable-next-line import/prefer-default-export
 export function getDeviceInfo() {
-    let deviceInfo = {};
+    const deviceInfo = {};
     let device = 'PC';
     const ua = navigator.userAgent;
 
+    // eslint-disable-next-line no-use-before-define
     const mobileCheck = isMobile(ua);
     if(mobileCheck)  {
+        // eslint-disable-next-line no-use-before-define
         device = checkMobile(ua);
     }
 
+    // eslint-disable-next-line no-use-before-define
     const browser = checkBrowser(ua);
 
     deviceInfo.device = device;
@@ -37,17 +41,18 @@ function checkMobile(ua) {
 
     if ( device.indexOf('android') > -1) {
         return "ANDROID";
-    } else if ( device.indexOf("iphone") > -1||device.indexOf("ipad") > -1||device.indexOf("ipod") > -1 ) {
+    } 
+    if ( device.indexOf("iphone") > -1||device.indexOf("ipad") > -1||device.indexOf("ipod") > -1 ) {
         return "IOS";
-    } else {
-        return "OTHER";
-    }
+    } 
+    return "OTHER";
 }
 
 /**
  * checkBrowser
  * : 모바일 기기의 종륲를 체크
  */
+// eslint-disable-next-line consistent-return
 function checkBrowser(ua) {
     const agt = ua.toLowerCase();
     if (agt.indexOf("chrome") !== -1) return 'Chrome';
@@ -70,7 +75,7 @@ function checkBrowser(ua) {
             if (re.exec(ua) != null)
                 rv = parseFloat(RegExp.$1);
         }
-        return 'Internet Explorer '+rv;
+        return `Internet Explorer ${rv}`;
     }
 }
 
