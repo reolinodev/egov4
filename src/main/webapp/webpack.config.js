@@ -19,8 +19,9 @@ module.exports = {
         adminSignUp: '/js/admin/login/adminSignUp.js',
         adminPwChange: '/js/admin/login/adminPwChange.js',
         adminMain: '/js/admin/main/adminMain.js',
-        adminUser: '/js/admin/user/adminUser.js',
         adminGridContent: '/js/admin/main/adminGridContent.js',
+        adminUser: '/js/admin/user/adminUser.js',
+        adminAuth: '/js/admin/user/adminAuth.js',
     },
     output: {
         path: path.resolve(__dirname + '/dist'),

@@ -36,7 +36,7 @@
                                 <c:forEach var="menuLv2" items="${menuLv2List}">
                                     <c:if test="${menuLv1.menu_id eq menuLv2.parent_id}">
                                         <li class="nav-item"
-                                            id="|menu_${menuLv2.menu_id}|"
+                                            id="menu_${menuLv2.menu_id}"
                                             data-id="${menuLv2.menu_id}"
                                             data-url="${menuLv2.menu_url}"
                                             data-menunm="${menuLv2.menu_nm}"

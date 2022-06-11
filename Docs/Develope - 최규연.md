@@ -25,7 +25,7 @@
 24. 히스토리 저장 [] - 특히 READ, UPDATE, DELETE 되는 거 확인
 25. 권한처리 하기 []
 26. 불필요한 소스 삭제 [0] - java단의 let은 남겨 놓음. utill이 존재함
-
+27. swagger 오류 수정 []
 
 # 이슈사항
 5.validation이 정상 작동하지 않음. 전자정부 자체 validation을
