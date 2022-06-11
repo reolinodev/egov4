@@ -93,7 +93,7 @@ const signUpCheck = () => {
     }
 
     $.ajax({
-        url: `/api/user/${$writeLoginId.val()}`,
+        url: `/api/admin/user/${$writeLoginId.val()}`,
     }).then((data) => {
         if (data.header.resultCode === 'ok') {
             $('#signUpChk').val('Y');
@@ -195,7 +195,7 @@ const signUpProc = () => {
     };
 
     $.ajax({
-        url: "/api/user/",
+        url: "/api/admin/user/",
         type: 'PUT',
         data: JSON.stringify(param),
         headers: {'Content-Type': 'application/json'},
@@ -244,7 +244,7 @@ const $editUseYn = $('#editUseYn');
  */
 const userMngEdit = (userId) =>  {
     $.ajax({
-        url: `/api/user/info/${userId}`,
+        url: `/api/admin/user/info/${userId}`,
         type: 'GET',
         headers: {'Content-Type': 'application/json'},
         success (result){
@@ -329,7 +329,7 @@ const editProc = () => {
     };
 
     $.ajax({
-        url: `/api/user/info/${$editUserId.val()}`,
+        url: `/api/admin/user/info/${$editUserId.val()}`,
         type: 'PUT',
         data: JSON.stringify(param),
         headers: {'Content-Type': 'application/json'},

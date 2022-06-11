@@ -48,7 +48,8 @@ export function checkKr(str) {
 export function checkDuplicateList(list, key) {
     let result = true;
     const arr = [];
-    for (let obj of list){
+    // eslint-disable-next-line no-restricted-syntax
+    for (const obj of list){
         arr.push(obj[key]);
     }
     const set = new Set(arr);
@@ -65,7 +66,8 @@ export function checkDuplicateList(list, key) {
  */
 export function checkNullList(list, key) {
     let result = true;
-    for (let obj of list){
+    // eslint-disable-next-line no-restricted-syntax
+    for (const obj of list){
         if(obj[key] === ''){
             result = false;
         }
