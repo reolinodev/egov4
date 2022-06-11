@@ -1,5 +1,7 @@
 const path = require('path');
+// eslint-disable-next-line node/no-unpublished-require
 const webpack = require('webpack');
+// eslint-disable-next-line node/no-unpublished-require
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const childProcess = require('child_process');
@@ -22,9 +24,11 @@ module.exports = {
         adminGridContent: '/js/admin/main/adminGridContent.js',
         adminUser: '/js/admin/user/adminUser.js',
         adminAuth: '/js/admin/user/adminAuth.js',
+        adminUserAuth: '/js/admin/user/adminUserAuth.js',
+        adminUserAuthWrite: '/js/admin/user/adminUserAuthWrite.js',
     },
     output: {
-        path: path.resolve(__dirname + '/dist'),
+        path: path.resolve(`${__dirname  }/dist`),
         filename: '[name].js',
         clean: true,
     },

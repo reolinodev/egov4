@@ -41,7 +41,7 @@ public class AuthAdminControllerAPI {
         List<AuthEntity> list = authAdminService.getAuthList(authEntity);
         int listCount = authAdminService.getAuthCount(authEntity);
 
-        String message = listCount+"건이 조회되었습니다.";
+        String message = listCount+" item has been viewed.";
         String code = "ok";
         Header header = ResponseUtils.setHeader(message, code, httpServletRequest);
 
@@ -98,8 +98,10 @@ public class AuthAdminControllerAPI {
     public ResponseEntity <Map<String,Object>> getAuthInfo(@PathVariable Integer auth_id, HttpServletRequest httpServletRequest) {
         Map <String,Object> responseMap = new HashMap<>();
         AuthEntity data = authAdminService.getAuthInfo(auth_id);
+        int count = 0;
+        if (!"".equals(data.auth_id)) count= 1;
 
-        String message = "1건이 조회되었습니다.";
+        String message = count+" item has been viewed.";
         String code = "ok";
         Header header = ResponseUtils.setHeader(message, code, httpServletRequest);
 
@@ -140,7 +142,7 @@ public class AuthAdminControllerAPI {
         Map <String,Object> responseMap = new HashMap<>();
         List<AuthEntity> list = authAdminService.getAuthRoleList(authEntity);
 
-        String message = list.size()+"건이 조회되었습니다.";
+        String message = list.size()+" item has been viewed.";
         String code = "ok";
         Header header = ResponseUtils.setHeader(message, code, httpServletRequest);
 

@@ -1,12 +1,12 @@
-import {setCodeSelBox, setCommSelBox} from "../../module/component";
-import Page, { setPagination } from "../../module/pagination"
-import { serializeFormJson } from "../../module/json";
+import {setCodeSelBox, setCommSelBox} from "../module/component";
+import Page, { setPagination } from "../module/pagination"
+import { serializeFormJson } from "../module/json";
 import {
     setCheckBoxGrid,
     getCheckedRows,
     setCheckBoxGridId,
-} from "../../module/grid";
-import { Alert } from "../../module/alert";
+} from "../module/grid";
+import { Alert } from "../module/alert";
 
 let page = new Page(1, false, 10, 0);
 let grid;
@@ -14,82 +14,7 @@ let grid2;
 let pagination;
 let selectedData = [];
 
-$(document).ready(function() {
-    setCodeSelBox('authRole','AUTH_ROLE','SEL','' );
-
-    setCommSelBox('authId','','','SEL', '', '', '');
-
-    setCodeSelBox('pagePer','PAGE_PER','','10' );
-
-    //그리드 세팅
-    grid = setGridLayout();
-    grid2 = setGridLayout2();
-
-    //페이징 세팅
-    pagination = setPagination(page, pagingCallback);
-
-    //권한 구분 변경시 권한 변경
-    $("#authRole").change(function(){
-
-        const authRole =  $("#authRole").val();
-
-        if(authRole === ''){
-            setCommSelBox('authId','','','SEL', '', '', '');
-        }else{
-            let params= {
-                auth_role : authRole
-            }
-            let option = {
-                oTxt: 'auth_nm',
-                oVal: 'auth_id'
-            }
-            setCommSelBox('authId','/api/auth/role','POST', 'SEL', '', params, option);
-        }
-    });
-
-    //권한 선택시 검색
-    $("#authId").change(function(){
-        pageInit();
-        search();
-    });
-
-    //검색버튼 클릭시 검색
-    $("#searchIcon").click(function(){
-        pageInit();
-        search();
-    });
-
-    //추가 버튼 클릭 이벤트
-    $("#addBtn").click(function(){
-        setAuthUser();
-    });
-
-    //페이지 개수 변경시 검색
-    $("#pagePer").change(function(){
-        pageInit();
-        pagination = setPagination(page, pagingCallback);
-        search();
-    });
-
-    //삭제 버튼 클릭 이벤트
-    $("#delBtn").click(function(){
-        deleteAuthUser();
-    });
-
-
-    //저장 버튼 클릭 이벤트
-    $("#saveBtn").click(function(){
-        insertProc();
-    });
-
-    //뒤로가기 버튼 클릭 이벤트
-    $("#backBtn").click(function(){
-        location.href = '/user/authUserMng';
-    });
-
-});
-
-//페이징 초기화
+// 페이징 초기화
 const pageInit = () => {
     page = new Page(1, false, Number($("#pagePer").val()),  0);
 }
@@ -99,7 +24,7 @@ const pageInit = () => {
  */
 const search = () => {
 
-    let params = serializeFormJson('authUserMngWriteFrm');
+    const params = serializeFormJson('authUserMngWriteFrm');
     params.current_page = page.currentPage;
     params.page_per = page.pagePer;
 
@@ -109,11 +34,11 @@ const search = () => {
     }
 
     $.ajax({
-        url : '/api/userAuth/user',
+        url : '/api/admin/userAuth/user',
         type: 'POST',
         data: JSON.stringify(params),
         headers: {'Content-Type': 'application/json'},
-        success : function (result){
+        success (result){
             const gridData = result.data;
             page.totalCount = result.total;
             grid.resetData(gridData);
@@ -123,8 +48,9 @@ const search = () => {
                 page.pageInit = true;
             }
         },
-        error : function (request, status, error){
-            console.log('code:'+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+        error (request, status, error){
+            // eslint-disable-next-line no-useless-concat
+            console.log(`code:${request.status}\n`+`message:${request.responseText}\n`+`error:${error}`);
         }
     });
 }
@@ -181,6 +107,7 @@ const setAuthUser = () => {
         return;
     }
 
+    // eslint-disable-next-line no-use-before-define
     setSelectedUser(checkedRows);
 }
 
@@ -189,10 +116,12 @@ const setAuthUser = () => {
  */
 const setSelectedUser = (list) => {
 
+    // eslint-disable-next-line no-restricted-syntax
     for (const obj of list) {
         selectedData.push(obj);
     }
 
+    // eslint-disable-next-line no-use-before-define
     selectedData = removeDuplicateItem(selectedData);
 
     grid2.resetData(selectedData);
@@ -202,9 +131,8 @@ const setSelectedUser = (list) => {
  */
 const removeDuplicateItem = (data) => {
     let uniqueData;
-    uniqueData = data.filter((character, idx, arr) => {
-        return arr.findIndex((item) => item.user_id === character.user_id) === idx
-    });
+    // eslint-disable-next-line prefer-const
+    uniqueData = data.filter((character, idx, arr) => arr.findIndex((item) => item.user_id === character.user_id) === idx);
 
     return uniqueData;
 }
@@ -232,8 +160,9 @@ const insertProc = () => {
         return;
     }
 
-    let userArr = [];
+    const userArr = [];
 
+    // eslint-disable-next-line no-restricted-syntax
     for (const obj of selectedData) {
         userArr.push(obj.user_id);
     }
@@ -244,13 +173,14 @@ const insertProc = () => {
     };
 
     $.ajax({
-        url: "/api/userAuth/",
+        url: "/api/admin/userAuth/",
         type: 'PUT',
         data: JSON.stringify(params),
         headers: {'Content-Type': 'application/json'},
     }).then((data) => {
         if (data.header.resultCode === 'ok') {
             Alert(data.header.message);
+            // eslint-disable-next-line no-use-before-define
             refreshSearch();
         }
     }, (request, status, error) => {
@@ -261,10 +191,10 @@ const insertProc = () => {
                 `error:${error}`
             );
         }else if(request.status === 400){
-            const errorList = request.responseJSON.errorList;
+            const {errorList} = request.responseJSON;
             if(errorList !== undefined){
                 if(errorList.lengh !==0){
-                    const message = errorList[0].message;
+                    const {message} = errorList[0];
                     Alert(message);
                 }
             }else {
@@ -286,3 +216,79 @@ const refreshSearch = () => {
     grid2.resetData(selectedData);
     search();
 }
+
+$(document).ready(() => {
+    setCodeSelBox('authRole','AUTH_ROLE','SEL','' );
+
+    setCommSelBox('authId','','','SEL', '', '', '');
+
+    setCodeSelBox('pagePer','PAGE_PER','','10' );
+
+    // 그리드 세팅
+    grid = setGridLayout();
+    grid2 = setGridLayout2();
+
+    // 페이징 세팅
+    pagination = setPagination(page, pagingCallback);
+
+    // 권한 구분 변경시 권한 변경
+    $("#authRole").change(()=> {
+
+        const authRole =  $("#authRole").val();
+
+        if(authRole === ''){
+            setCommSelBox('authId','','','SEL', '', '', '');
+        }else{
+            const params= {
+                auth_role : authRole
+            }
+            const option = {
+                oTxt: 'auth_nm',
+                oVal: 'auth_id'
+            }
+            setCommSelBox('authId','/api/admin/auth/role','POST', 'SEL', '', params, option);
+        }
+    });
+
+    // 권한 선택시 검색
+    $("#authId").change(()=> {
+        pageInit();
+        search();
+    });
+
+    // 검색버튼 클릭시 검색
+    $("#searchIcon").click(()=> {
+        pageInit();
+        search();
+    });
+
+    // 추가 버튼 클릭 이벤트
+    $("#addBtn").click(()=> {
+        setAuthUser();
+    });
+
+    // 페이지 개수 변경시 검색
+    $("#pagePer").change(()=> {
+        pageInit();
+        pagination = setPagination(page, pagingCallback);
+        search();
+    });
+
+    // 삭제 버튼 클릭 이벤트
+    $("#delBtn").click(()=> {
+        deleteAuthUser();
+    });
+
+
+    // 저장 버튼 클릭 이벤트
+    $("#saveBtn").click(()=> {
+        insertProc();
+    });
+
+    // 뒤로가기 버튼 클릭 이벤트
+    $("#backBtn").click(()=> {
+        // eslint-disable-next-line no-restricted-globals
+        location.href = '/admin/user/userAuth';
+    });
+
+});

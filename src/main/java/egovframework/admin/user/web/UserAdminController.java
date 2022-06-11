@@ -37,4 +37,14 @@ public class UserAdminController {
         return mav;
     }
 
+    /**
+     * 사용자 권한 관리 등록
+     */
+    @GetMapping(value = "/admin/user/userAuth/write")
+    public ModelAndView userAuthWrite() {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("/admin/user/userAuthWrite");
+        return mav;
+    }
+
 }
