@@ -1,7 +1,7 @@
-package egovframework.admin.setting.service.impl;
+package egovframework.admin.mng.service.impl;
 
-import egovframework.admin.setting.service.CodeGrpAdminService;
-import egovframework.admin.setting.service.domain.CodeGrp;
+import egovframework.admin.mng.service.CodeGrpAdminService;
+import egovframework.admin.mng.service.domain.CodeGrp;
 import java.util.List;
 import javax.annotation.Resource;
 import org.egovframe.rte.fdl.cmmn.EgovAbstractServiceImpl;

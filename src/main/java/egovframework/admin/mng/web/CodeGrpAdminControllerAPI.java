@@ -1,7 +1,7 @@
-package egovframework.admin.setting.web;
+package egovframework.admin.mng.web;
 
-import egovframework.admin.setting.service.CodeGrpAdminService;
-import egovframework.admin.setting.service.domain.CodeGrp;
+import egovframework.admin.mng.service.CodeGrpAdminService;
+import egovframework.admin.mng.service.domain.CodeGrp;
 import egovframework.common.domain.Header;
 import egovframework.common.support.ResponseUtils;
 import io.swagger.annotations.ApiOperation;
@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/admin/codeGrp")
+@RequestMapping("/api/admin/mng/codeGrp")
 @RequiredArgsConstructor
 public class CodeGrpAdminControllerAPI {
 

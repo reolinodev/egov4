@@ -1,4 +1,4 @@
-package egovframework.admin.setting.service.domain;
+package egovframework.admin.mng.service.domain;
 
 import egovframework.common.domain.Param;
 import egovframework.common.domain.ValidationGroups.CodeGrpCreateGroup;

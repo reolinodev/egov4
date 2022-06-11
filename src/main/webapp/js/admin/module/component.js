@@ -10,7 +10,7 @@ export function setCodeSelBox(id,codeGrp,type,selectedValue ){
    else if(type==='SEL') str += `<option value="">-- Sel --</option>`;
 
    $.ajax({
-      url : `/api/admin/code/item/${codeGrp}`,
+      url : `/api/admin/mng/code/item/${codeGrp}`,
       type: 'GET',
       headers: {'Content-Type': 'application/json'},
    }).then((result) => {

@@ -1,6 +1,6 @@
-package egovframework.admin.setting.service;
+package egovframework.admin.mng.service;
 
-import egovframework.admin.setting.service.domain.CodeEntity;
+import egovframework.admin.mng.service.domain.CodeEntity;
 import java.util.List;
 
 public interface CodeAdminService {

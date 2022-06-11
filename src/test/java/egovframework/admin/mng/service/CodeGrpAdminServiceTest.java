@@ -1,7 +1,7 @@
-package egovframework.admin.setting.service;
+package egovframework.admin.mng.service;
 
-import egovframework.admin.setting.service.domain.CodeGrp;
-import egovframework.admin.setting.service.impl.CodeGrpAdminDAO;
+import egovframework.admin.mng.service.domain.CodeGrp;
+import egovframework.admin.mng.service.impl.CodeGrpAdminDAO;
 import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

@@ -1,6 +1,6 @@
-package egovframework.admin.setting.service;
+package egovframework.admin.mng.service;
 
-import egovframework.admin.setting.service.domain.CodeGrp;
+import egovframework.admin.mng.service.domain.CodeGrp;
 import java.util.List;
 
 public interface CodeGrpAdminService {

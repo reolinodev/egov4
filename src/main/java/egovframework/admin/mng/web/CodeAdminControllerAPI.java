@@ -1,7 +1,7 @@
-package egovframework.admin.setting.web;
+package egovframework.admin.mng.web;
 
-import egovframework.admin.setting.service.CodeAdminService;
-import egovframework.admin.setting.service.domain.CodeEntity;
+import egovframework.admin.mng.service.CodeAdminService;
+import egovframework.admin.mng.service.domain.CodeEntity;
 import egovframework.common.domain.Header;
 import egovframework.common.support.ResponseUtils;
 import io.swagger.annotations.ApiOperation;
@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/admin/code")
+@RequestMapping("/api/admin/mng/code")
 @RequiredArgsConstructor
 public class CodeAdminControllerAPI {
 
