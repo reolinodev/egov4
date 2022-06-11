@@ -26,3 +26,14 @@ INSERT INTO CODE_TB ( CODE_ID, CODE_GRP_ID, CODE_NM, CODE_VAL, BIGO, ORD, CREATE
 VALUES ( nextval('code_seq'), 2, '관리자 사이트', 'ADMIN', NULL, '1', now() );
 INSERT INTO CODE_TB ( CODE_ID, CODE_GRP_ID, CODE_NM, CODE_VAL, BIGO, ORD, CREATED_AT )
 VALUES ( nextval('code_seq'), 2, '사용자 사이트', 'USER', NULL, '2', now() );
+
+INSERT INTO CODE_GRP_TB ( CODE_GRP_ID, CODE_GRP_NM, CODE_GRP_VAL, CREATED_AT )
+VALUES ( nextval('code_grp_seq'),'페이지 항목', 'PAGE_PER', NOW() );
+INSERT INTO CODE_TB ( CODE_ID, CODE_GRP_ID, CODE_NM, CODE_VAL, BIGO, ORD, CREATED_AT )
+VALUES ( nextval('code_seq'), 4, '10개', '10', NULL, '1', now() );
+INSERT INTO CODE_TB ( CODE_ID, CODE_GRP_ID, CODE_NM, CODE_VAL, BIGO, ORD, CREATED_AT )
+VALUES ( nextval('code_seq'), 4, '20개', '20', NULL, '2', now() );
+INSERT INTO CODE_TB ( CODE_ID, CODE_GRP_ID, CODE_NM, CODE_VAL, BIGO, ORD, CREATED_AT )
+VALUES ( nextval('code_seq'), 4, '50개', '50', NULL, '3', now() );
+INSERT INTO CODE_TB ( CODE_ID, CODE_GRP_ID, CODE_NM, CODE_VAL, BIGO, ORD, CREATED_AT )
+VALUES ( nextval('code_seq'), 4, '100개', '100', NULL, '4', now() );

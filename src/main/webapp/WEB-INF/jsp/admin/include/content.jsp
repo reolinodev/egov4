@@ -14,12 +14,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0" th:id="menuNm" th:text="${firstUrl.menu_nm}"></h1>
+                    <h1 class="m-0" id="menuNm">${firstUrl.menu_nm}</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item" th:id="parentMenuNm" th:text="${firstUrl.menu_nm}"></li>
-                        <li class="breadcrumb-item active" th:id="childMenuNm" th:text="${firstUrl.menu_nm}"></li>
+                        <li class="breadcrumb-item" id="parentMenuNm">${firstUrl.menu_nm}</li>
+                        <li class="breadcrumb-item active" id="childMenuNm">${firstUrl.menu_nm}</li>
                     </ol>
                 </div>
             </div>

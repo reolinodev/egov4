@@ -159,5 +159,7 @@
         </div>
     </form>
 </div>
+<%@include file ="../include/grid.jsp" %>
+
 </body>
 </html>

@@ -23,7 +23,7 @@ const search = () => {
     params.page_per = page.pagePer;
 
     $.ajax({
-        url : '/api/user/',
+        url : '/api/admin/user/',
         type: 'POST',
         data: JSON.stringify(params),
         headers: {'Content-Type': 'application/json'},

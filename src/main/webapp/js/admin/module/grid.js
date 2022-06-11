@@ -11,7 +11,7 @@ export function setBasicGrid (columns, gridData) {
         data: gridData,
         scrollX: false,
         scrollY: false,
-        columns: columns
+        columns
     });
 
     Grid.applyTheme('striped');
@@ -32,7 +32,7 @@ export function setBasicGridId (columns, gridData, gridId) {
         data: gridData,
         scrollX: false,
         scrollY: false,
-        columns: columns
+        columns
     });
 
     Grid.applyTheme('striped');
@@ -55,7 +55,7 @@ export function setCheckBoxGridId (columns, gridData, gridId) {
         data: gridData,
         scrollX: false,
         scrollY: false,
-        columns: columns
+        columns
     });
 
     Grid.applyTheme('striped');
@@ -78,7 +78,7 @@ export function setCheckBoxGrid (columns, gridData) {
         data: gridData,
         scrollX: false,
         scrollY: false,
-        columns: columns
+        columns
     });
 
     Grid.applyTheme('striped');
@@ -92,15 +92,15 @@ export function setCheckBoxGrid (columns, gridData) {
  * setGridClickEvent : 그리드 클릭 이벤트
  * grid: 그리드, select_column : 선택할 컬럼, return_column: 반환할 컬럼, callbackFunc: 콜백
  */
-export function setGridClickEvent(grid, select_column, return_column, callbackFunc) {
+export function setGridClickEvent(grid, selectColumn, returnColumn, callbackFunc) {
 
     grid.getData().forEach(row => {
-        grid.addCellClassName(row.rowKey, select_column, 'cell-click');
+        grid.addCellClassName(row.rowKey, selectColumn, 'cell-click');
     });
 
     grid.on('focusChange', ev => {
-        if(ev.columnName === select_column){
-            callbackFunc(grid.getValue(ev.rowKey, return_column));
+        if(ev.columnName === selectColumn){
+            callbackFunc(grid.getValue(ev.rowKey, returnColumn));
         }
     });
 }

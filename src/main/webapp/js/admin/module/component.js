@@ -10,7 +10,7 @@ export function setCodeSelBox(id,codeGrp,type,selectedValue ){
    else if(type==='SEL') str += `<option value="">-- Sel --</option>`;
 
    $.ajax({
-      url : `/api/code/item/${codeGrp}`,
+      url : `/api/admin/code/item/${codeGrp}`,
       type: 'GET',
       headers: {'Content-Type': 'application/json'},
    }).then((result) => {
@@ -80,6 +80,7 @@ export function setCommSelBox(id,url,url_type,type,selected_value, params, optio
                str += `<option value="">-- None --</option>`;
             }
 
+            // eslint-disable-next-line no-plusplus
             for (let i=0; i < list.length;i++) {
                if(option !== ''){
                   const {oTxt} = option;
@@ -97,7 +98,7 @@ export function setCommSelBox(id,url,url_type,type,selected_value, params, optio
             $(`#${id}`).html(str);
          },
          error (request, status, error){
-            console.log(`code:${request.status}\n`+`message:${request.responseText}\n`+`error:${error}`);
+            console.log(`code:${request.status}\nmessage:${request.responseText}\nerror:${error}`);
          }
       });
    }
