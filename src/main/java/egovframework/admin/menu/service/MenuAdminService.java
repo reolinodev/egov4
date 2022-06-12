@@ -11,5 +11,5 @@ public interface MenuAdminService {
 
     int inputMenu(MenuEntity menuEntity) throws Exception;
 
-
+    int updateMenu(MenuEntity menuEntity) throws Exception;
 }

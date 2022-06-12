@@ -22,6 +22,12 @@ public class MenuAdminServiceImpl extends EgovAbstractServiceImpl implements Men
     }
 
     public int inputMenu(MenuEntity menuEntity) throws Exception {
+        //todo 메인여부 로직 넣기, 업데이트 역시 동일한 로직
         return  menuAdminDAO.save(menuEntity);
+    }
+
+    public int updateMenu(MenuEntity menuEntity) throws Exception {
+        //todo 메인여부 로직 넣기, 업데이트 역시 동일한 로직
+        return  menuAdminDAO.updateMenu(menuEntity);
     }
 }

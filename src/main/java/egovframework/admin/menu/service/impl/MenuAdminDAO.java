@@ -19,4 +19,8 @@ public class MenuAdminDAO extends EgovAbstractMapper {
     public MenuEntity findByMenuId(int menuId) {
         return selectOne("MenuAdminDAO.findByMenuId", menuId);
     }
+
+    public int updateMenu(MenuEntity menuEntity) throws Exception {
+        return update("MenuAdminDAO.updateMenu", menuEntity);
+    }
 }
