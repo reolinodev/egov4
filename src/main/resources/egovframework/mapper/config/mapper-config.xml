@@ -21,6 +21,7 @@
 		<typeAlias alias="codeGrp" 			type="egovframework.admin.mng.service.domain.CodeGrp" />
 		<typeAlias alias="codeEntity" 		type="egovframework.admin.mng.service.domain.CodeEntity" />
 		<typeAlias alias="code" 			type="egovframework.admin.mng.service.domain.Code" />
+		<typeAlias alias="menuEntity" 		type="egovframework.admin.menu.service.domain.MenuEntity" />
 
 		<typeAlias alias="FileVO"			type="egovframework.com.cmm.service.FileVO" />
 		<typeAlias alias="ComDefaultCodeVO" type="egovframework.com.cmm.ComDefaultCodeVO" />

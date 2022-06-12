@@ -44,4 +44,10 @@ public class Menu {
 
     @ApiModelProperty(example = "사용여부")
     public String use_yn;
+
+    @ApiModelProperty(example = "권한구분")
+    public String auth_role;
+
+    @ApiModelProperty(example = "메인화면 여부")
+    public String main_yn;
 }

@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MenuAdminDAO">
+
+    <insert id="save" parameterType="menuEntity">
+        INSERT INTO MENU_TB
+        (
+            MENU_ID,
+            MENU_NM,
+            MENU_LV,
+            PARENT_ID,
+            MENU_URL,
+            ORD,
+            MENU_TYPE,
+            USE_YN,
+            CREATED_AT,
+            AUTH_ROLE
+        )
+        VALUES
+        (
+            nextval('menu_seq'),
+            #{menu_nm},
+            #{menu_lv},
+            #{parent_id},
+            #{menu_url},
+            #{ord},
+            #{menu_type},
+            #{use_yn},
+            now(),
+            #{auth_role}
+        )
+    </insert>
+
+    <select id="findAllMenu" parameterType="menuEntity" resultType="menuEntity">
+        WITH RECURSIVE RECUR_DATA AS(
+            SELECT  MENU_ID,
+                    MENU_NM,
+                    MENU_LV,
+                    PARENT_ID,
+                    MENU_URL,
+                    ORD,
+                    MENU_TYPE,
+                    USE_YN,
+                    AUTH_ROLE,
+                    '' || MENU_ID AS MENU_IDS,
+                    ORD AS PARENT_ORD
+            FROM    MENU_TB
+            WHERE   MENU_LV = 1
+            AND     AUTH_ROLE = #{auth_role}
+            UNION
+            SELECT  B.MENU_ID,
+                    B.MENU_NM,
+                    B.MENU_LV,
+                    B.PARENT_ID,
+                    B.MENU_URL,
+                    B.ORD,
+                    B.MENU_TYPE,
+                    B.USE_YN,
+                    B.AUTH_ROLE,
+                    A.MENU_IDS || ',' || B.MENU_ID AS MENU_IDS,
+                    A.ORD AS PARENT_ORD
+            FROM    RECUR_DATA A
+            INNER JOIN MENU_TB B ON A.MENU_ID = B.PARENT_ID
+            WHERE B.AUTH_ROLE = #{auth_role}
+        )
+        SELECT  MENU_ID,
+                MENU_NM,
+                MENU_LV,
+                PARENT_ID,
+                MENU_URL,
+                ORD,
+                MENU_TYPE,
+                USE_YN,
+                AUTH_ROLE,
+                (SELECT MENU_NM FROM MENU_TB A WHERE A.MENU_ID = B.PARENT_ID) AS PARENT_NM
+        FROM    RECUR_DATA B
+        WHERE   AUTH_ROLE = #{auth_role}
+        ORDER BY PARENT_ORD, MENU_IDS, ORD
+    </select>
+
+    <select id="findByMenuId" parameterType="int" resultType="menuEntity">
+        SELECT MENU_ID,
+               MENU_NM,
+               MENU_LV,
+               PARENT_ID,
+               MENU_URL,
+               ORD,
+               MENU_TYPE,
+               USE_YN,
+               AUTH_ROLE,
+               MAIN_YN
+        FROM   MENU_TB
+        WHERE  MENU_ID = #{menu_id}
+    </select>
+
+    <select id="findByParentId" parameterType="menuEntity" resultType="menuEntity">
+        SELECT MENU_ID,
+               MENU_NM,
+               MENU_LV,
+               PARENT_ID,
+               MENU_URL,
+               ORD,
+               MENU_TYPE,
+               USE_YN
+        FROM   MENU_TB
+        WHERE  MENU_LV = 2
+        AND    PARENT_ID = #{parent_id}
+        ORDER BY CAST(ORD AS INTEGER) ASC
+    </select>
+
+
+    <delete id="deleteByMenuId" parameterType="menuEntity">
+        DELETE FROM MENU_TB
+        WHERE MENU_ID = #{menu_id}
+    </delete>
+
+
+
+<!--    <select id="findAll" parameterType="authEntity" resultType="authEntity">-->
+<!--        SELECT  ROW_NUMBER() OVER (ORDER BY AUTH_ID ASC) RNUM,-->
+<!--                AUTH_ID,-->
+<!--                AUTH_NM,-->
+<!--                AUTH_VAL,-->
+<!--                AUTH_ROLE,-->
+<!--                getCodeNm('AUTH_ROLE', AUTH_ROLE) as AUTH_ROLE_NM,-->
+<!--                ORD,-->
+<!--                BIGO,-->
+<!--                CREATED_AT,-->
+<!--                UPDATED_AT,-->
+<!--                UPDATED_ID,-->
+<!--                USE_YN,-->
+<!--                getCodeNm('USE_YN', USE_YN) as USE_YN_NM-->
+<!--        FROM AUTH_TB-->
+<!--        WHERE 1=1-->
+<!--        <if test="use_yn != null and use_yn != ''">-->
+<!--            AND USE_YN = #{use_yn}-->
+<!--        </if>-->
+<!--        <if test="auth_role != null and auth_role != ''">-->
+<!--            AND AUTH_ROLE = #{auth_role}-->
+<!--        </if>-->
+<!--        OFFSET #{start_idx} limit #{page_per};-->
+<!--    </select>-->
+
+<!--    <select id="countAll" parameterType="authEntity" resultType="int">-->
+<!--        SELECT  COUNT(*)-->
+<!--        FROM AUTH_TB-->
+<!--        WHERE 1=1-->
+<!--        <if test="use_yn != null and use_yn != ''">-->
+<!--            AND USE_YN = #{use_yn}-->
+<!--        </if>-->
+<!--        <if test="auth_role != null and auth_role != ''">-->
+<!--            AND AUTH_ROLE = #{auth_role}-->
+<!--        </if>-->
+<!--    </select>-->
+
+<!--    <insert id="save" parameterType="authEntity">-->
+<!--        INSERT INTO AUTH_TB-->
+<!--        (-->
+<!--            AUTH_ID,-->
+<!--            AUTH_NM,-->
+<!--            AUTH_VAL,-->
+<!--            AUTH_ROLE,-->
+<!--            ORD,-->
+<!--            BIGO,-->
+<!--            CREATED_AT-->
+<!--        )-->
+<!--        VALUES-->
+<!--        (-->
+<!--            nextval('auth_seq'),-->
+<!--            #{auth_nm},-->
+<!--            #{auth_val},-->
+<!--            #{auth_role},-->
+<!--            #{ord},-->
+<!--            #{bigo},-->
+<!--            now()-->
+<!--        )-->
+<!--    </insert>-->
+
+<!--    <select id="findByUseYn" parameterType="authEntity" resultType="authEntity">-->
+<!--        SELECT  AUTH_ID,-->
+<!--                AUTH_NM,-->
+<!--                AUTH_VAL,-->
+<!--                AUTH_ROLE,-->
+<!--                ORD,-->
+<!--                BIGO,-->
+<!--                CREATED_AT,-->
+<!--                UPDATED_AT,-->
+<!--                UPDATED_ID,-->
+<!--                USE_YN-->
+<!--        FROM AUTH_TB-->
+<!--        WHERE USE_YN= 'Y'-->
+<!--        <if test="auth_role != null and auth_role != ''">-->
+<!--            AND AUTH_ROLE = #{auth_role}-->
+<!--        </if>-->
+<!--    </select>-->
+
+<!--    <update id="updateAuth" parameterType="authEntity">-->
+<!--        UPDATE AUTH_TB-->
+<!--        SET UPDATED_AT = now()-->
+<!--        <if test="auth_nm != null and auth_nm != ''">-->
+<!--            , AUTH_NM = #{auth_nm}-->
+<!--        </if>-->
+<!--        <if test="auth_role != null and auth_role != ''">-->
+<!--            , AUTH_ROLE = #{auth_role}-->
+<!--        </if>-->
+<!--        <if test="ord != null and ord != ''">-->
+<!--            , ORD = #{ord}-->
+<!--        </if>-->
+<!--        <if test="bigo != null and bigo != ''">-->
+<!--            , BIGO = #{bigo}-->
+<!--        </if>-->
+<!--        <if test="use_yn != null and use_yn != ''">-->
+<!--            , USE_YN = #{use_yn}-->
+<!--        </if>-->
+<!--        WHERE AUTH_ID = #{auth_id}-->
+<!--    </update>-->
+
+<!--    <select id="findByAuthId" parameterType="int" resultType="authEntity">-->
+<!--        SELECT  AUTH_ID,-->
+<!--                AUTH_NM,-->
+<!--                AUTH_VAL,-->
+<!--                AUTH_ROLE,-->
+<!--                ORD,-->
+<!--                BIGO,-->
+<!--                CREATED_AT,-->
+<!--                UPDATED_AT,-->
+<!--                UPDATED_ID,-->
+<!--                USE_YN-->
+<!--        FROM AUTH_TB-->
+<!--        WHERE AUTH_ID = #{auth_id}-->
+<!--    </select>-->
+
+<!--    <select id="countByAuthVal" parameterType="authEntity" resultType="int">-->
+<!--        SELECT COUNT(*)-->
+<!--        FROM AUTH_TB-->
+<!--        WHERE AUTH_VAL = #{auth_val}-->
+<!--    </select>-->
+
+<!--    <select id="findByAuthRoleAndUseYn" parameterType="authEntity" resultType="authEntity">-->
+<!--        SELECT  AUTH_ID,-->
+<!--                AUTH_NM,-->
+<!--                AUTH_VAL,-->
+<!--                AUTH_ROLE-->
+<!--        FROM AUTH_TB-->
+<!--        WHERE AUTH_ROLE = #{auth_role}-->
+<!--        AND USE_YN = 'Y'-->
+<!--    </select>-->
+
+</mapper>
