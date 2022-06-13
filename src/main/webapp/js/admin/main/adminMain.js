@@ -16,15 +16,29 @@ const pageRouter = (url, parentMenuName, childMenuName) => {
     $('#parentMenuNm').html(parentMenuName);
     $('#childMenuNm').html(childMenuName);
     $('#contentFrame').attr('src', url);
-}
 
+    sessionStorage.setItem('url', url);
+    sessionStorage.setItem('parentMenuName', parentMenuName);
+    sessionStorage.setItem('childMenuName', childMenuName);
+
+}
 /**
  *  mainPageLoad : 메인 페이지 로드
  */
 const mainPageLoad = () => {
-    const url = $("#mainUrl").val();
-    const menuNm = $("#mainMenuNm").val();
-    const parentNm = $("#mainParentNm").val();
+    let url = $("#mainUrl").val();
+    let menuNm = $("#mainMenuNm").val();
+    let parentNm = $("#mainParentNm").val();
+
+    const sUrl = sessionStorage.getItem('url');
+    if(sUrl !== null) url = sUrl;
+
+    const sChildMenuName = sessionStorage.getItem('childMenuName');
+    if(sChildMenuName !== null) menuNm = sChildMenuName;
+
+    const sParentMenuName= sessionStorage.getItem('parentMenuName');
+    if(sParentMenuName !== null) parentNm = sParentMenuName;
+
     pageRouter(url, parentNm, menuNm);
 }
 

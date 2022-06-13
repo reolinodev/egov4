@@ -28,6 +28,7 @@ module.exports = {
         adminUserAuthWrite: '/js/admin/user/adminUserAuthWrite.js',
         adminCode: '/js/admin/mng/adminCode.js',
         adminMenu: '/js/admin/menu/adminMenu.js',
+        adminHead: '/js/admin/main/adminHead.js',
     },
     output: {
         path: path.resolve(`${__dirname  }/dist`),

@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>EX-EM</title>
+    <script type="module" src="/dist/adminHead.js"></script>
 </head>
 
 <header class="header">
@@ -26,7 +27,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-widget="fullscreen" href="/admin/logout" role="button">
+                <a class="nav-link" id="logout"  href="#" role="button">
                     <span class="logout">LOGOUT</span>
                 </a>
             </li>
