@@ -18,12 +18,6 @@
                             <div class="col-6">
                                 <select class="custom-select rounded-0" id="authRole" name="auth_role"></select>
                             </div>
-                            <div class="col-3">
-                                <button type="button" class="btn btn-block btn-warning btn-sm" id="menuAddBtn">ADD</button>
-                            </div>
-                            <div class="col-3">
-                                <button type="button" class="btn btn-block btn-danger btn-sm" id="menuDelBtn">DEL</button>
-                            </div>
                         </div>
                     </div>
                     <div class="card-body">
@@ -37,6 +31,9 @@
                     <div class="card-header">
                         <h3 class="card-title" id="menu_nm"></h3>
                         <div class="row justify-content-end">
+                            <div class="col-3">
+                                <button type="button" class="btn btn-block btn-warning btn-sm" id="addBtn">ADD</button>
+                            </div>
                             <div class="col-3">
                                 <button type="button" class="btn btn-block btn-danger btn-sm" id="delBtn">DEL</button>
                             </div>

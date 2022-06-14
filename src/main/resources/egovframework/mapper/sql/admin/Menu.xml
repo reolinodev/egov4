@@ -2,6 +2,53 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="MenuAdminDAO">
+    <select id="findAllMenu" parameterType="String" resultType="menuEntity">
+        WITH RECURSIVE RECUR_DATA AS(
+            SELECT  MENU_ID,
+                    MENU_NM,
+                    MENU_LV,
+                    PARENT_ID,
+                    MENU_URL,
+                    ORD,
+                    MENU_TYPE,
+                    USE_YN,
+                    AUTH_ROLE,
+                    '' || MENU_ID AS MENU_IDS,
+                    ORD AS PARENT_ORD
+            FROM    MENU_TB
+            WHERE   MENU_LV = 1
+              AND     AUTH_ROLE = #{auth_role}
+            UNION
+            SELECT  B.MENU_ID,
+                    B.MENU_NM,
+                    B.MENU_LV,
+                    B.PARENT_ID,
+                    B.MENU_URL,
+                    B.ORD,
+                    B.MENU_TYPE,
+                    B.USE_YN,
+                    B.AUTH_ROLE,
+                    A.MENU_IDS || ',' || B.MENU_ID AS MENU_IDS,
+                    A.ORD AS PARENT_ORD
+            FROM    RECUR_DATA A
+                        INNER JOIN MENU_TB B ON A.MENU_ID = B.PARENT_ID
+            WHERE B.AUTH_ROLE = #{auth_role}
+        )
+        SELECT  MENU_ID,
+                MENU_NM,
+                MENU_LV,
+                PARENT_ID,
+                MENU_URL,
+                ORD,
+                MENU_TYPE,
+                USE_YN,
+                AUTH_ROLE,
+                (SELECT MENU_NM FROM MENU_TB A WHERE A.MENU_ID = B.PARENT_ID) AS PARENT_NM
+        FROM    RECUR_DATA B
+        WHERE   AUTH_ROLE = #{auth_role}
+        ORDER BY PARENT_ORD, MENU_IDS, ORD
+    </select>
+
     <insert id="save" parameterType="menuEntity">
         INSERT INTO MENU_TB
         (
@@ -33,52 +80,7 @@
         )
     </insert>
 
-    <select id="findAllMenu" parameterType="menuEntity" resultType="menuEntity">
-        WITH RECURSIVE RECUR_DATA AS(
-            SELECT  MENU_ID,
-                    MENU_NM,
-                    MENU_LV,
-                    PARENT_ID,
-                    MENU_URL,
-                    ORD,
-                    MENU_TYPE,
-                    USE_YN,
-                    AUTH_ROLE,
-                    '' || MENU_ID AS MENU_IDS,
-                    ORD AS PARENT_ORD
-            FROM    MENU_TB
-            WHERE   MENU_LV = 1
-            AND     AUTH_ROLE = #{auth_role}
-            UNION
-            SELECT  B.MENU_ID,
-                    B.MENU_NM,
-                    B.MENU_LV,
-                    B.PARENT_ID,
-                    B.MENU_URL,
-                    B.ORD,
-                    B.MENU_TYPE,
-                    B.USE_YN,
-                    B.AUTH_ROLE,
-                    A.MENU_IDS || ',' || B.MENU_ID AS MENU_IDS,
-                    A.ORD AS PARENT_ORD
-            FROM    RECUR_DATA A
-            INNER JOIN MENU_TB B ON A.MENU_ID = B.PARENT_ID
-            WHERE B.AUTH_ROLE = #{auth_role}
-        )
-        SELECT  MENU_ID,
-                MENU_NM,
-                MENU_LV,
-                PARENT_ID,
-                MENU_URL,
-                ORD,
-                MENU_TYPE,
-                USE_YN,
-                AUTH_ROLE,
-                (SELECT MENU_NM FROM MENU_TB A WHERE A.MENU_ID = B.PARENT_ID) AS PARENT_NM
-        FROM    RECUR_DATA B
-        WHERE   AUTH_ROLE = #{auth_role}
-        ORDER BY PARENT_ORD, MENU_IDS, ORD
-    </select>
+
 
     <select id="findByMenuId" parameterType="int" resultType="menuEntity">
         SELECT MENU_ID,

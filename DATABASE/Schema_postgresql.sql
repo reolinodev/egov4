@@ -65,7 +65,8 @@ CREATE TABLE MENU_TB
     updated_at timestamp,
     updated_id int,
     use_yn varchar(1) DEFAULT 'Y'::character varying,
-    main_yn varchar(1),
+    auth_role varchar(20) NULL,
+    main_yn varchar(1) NULL,
     primary key(menu_id)
 );
 
@@ -81,6 +82,7 @@ COMMENT ON COLUMN public.menu_tb.created_at IS '생성일';
 COMMENT ON COLUMN public.menu_tb.updated_at IS '수정일';
 COMMENT ON COLUMN public.menu_tb.updated_id IS '수정자';
 COMMENT ON COLUMN public.menu_tb.use_yn IS '사용여부';
+COMMENT ON COLUMN public.menu_tb.auth_role IS '권한 구분';
 COMMENT ON COLUMN public.menu_tb.main_yn IS '메인화면 여부';
 
 CREATE TABLE CODE_GRP_TB

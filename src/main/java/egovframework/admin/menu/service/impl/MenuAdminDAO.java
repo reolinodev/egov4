@@ -8,13 +8,14 @@ import org.springframework.stereotype.Repository;
 @Repository("MenuAdminDAO")
 public class MenuAdminDAO extends EgovAbstractMapper {
 
+    public List<MenuEntity> findAllMenu(String authRole) {
+        return (List<MenuEntity>) list("MenuAdminDAO.findAllMenu", authRole);
+    }
+
     public int save(MenuEntity menuEntity) throws Exception {
         return insert("MenuAdminDAO.save", menuEntity);
     }
 
-    public List<MenuEntity> findAllMenu(MenuEntity menuEntity) {
-        return (List<MenuEntity>) list("MenuAdminDAO.findAllMenu", menuEntity);
-    }
 
     public MenuEntity findByMenuId(int menuId) {
         return selectOne("MenuAdminDAO.findByMenuId", menuId);

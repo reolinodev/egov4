@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface MenuAdminService {
 
-    List<MenuEntity> getMenuList(MenuEntity menuEntity);
+    List<MenuEntity> getMenuList(String authRole);
 
     MenuEntity getMenuInfo(int menuId);
 

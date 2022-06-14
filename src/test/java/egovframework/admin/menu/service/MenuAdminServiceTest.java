@@ -36,11 +36,10 @@ class MenuAdminServiceTest {
     @Test
     void getMenuList() throws Exception {
         //given
-        MenuEntity menuEntity = new MenuEntity();
-        menuEntity.auth_role ="ADMIN";
+        String auth_role ="ADMIN";
 
         //when
-        List<MenuEntity> result = menuAdminDAO.findAllMenu(menuEntity);
+        List<MenuEntity> result = menuAdminDAO.findAllMenu(auth_role);
         //then
         Assertions.assertEquals(7, result.size());
     }

@@ -1,4 +1,4 @@
-import {setCodeSelBox} from "../module/component";
+import {setCodeSelBoxCall} from "../module/component";
 import {setBasicTree} from "../module/tree";
 
 // import Page, { setPagination } from "../../module/pagination"
@@ -14,10 +14,66 @@ import {setBasicTree} from "../module/tree";
 // eslint-disable-next-line no-unused-vars
 let tree;
 
+/**
+ * search : 조회
+ */
+const search = () => {
+
+    $.ajax({
+        url : '/api/admin/menu/'+$("#authRole").val(),
+        type: 'GET',
+        headers: {'Content-Type': 'application/json'},
+        success : function (result){
+           setMenuList(result.data);
+        },
+        error : function (request, status, error){
+            console.log('code:'+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+        }
+    });
+}
+
+/**
+ * setMenuList : 메뉴 리스트 트리화 하기
+ */
+const setMenuList = (list) => {
+
+    const menu = [];
+
+    for (const data of list) {
+
+        if(data.menu_lv === 1){
+            let obj1 ={};
+            let children = [];
+
+            obj1.text = data.menu_nm;
+            obj1.id = data.menu_id;
+            for (const data2 of list) {
+                if(data.menu_id === data2.parent_id){
+                    let obj2 ={};
+                    obj2.text = data2.menu_nm;
+                    obj2.id = data2.menu_id;
+                    children.push(obj2);
+                }
+            }
+            obj1.children = children;
+            menu.push(obj1);
+        }
+    }
+
+    tree = setBasicTree(menu);
+}
+
+
+
+
 $(document).ready(() => {
-    setCodeSelBox('authRole','AUTH_ROLE','','ADMIN' );
-    const data = [];
-    tree = setBasicTree(data);
+    setCodeSelBoxCall('authRole','AUTH_ROLE','','ADMIN', search);
+
+    // 권한 구분 변경시 검색
+    $("#authRole").change(function(){
+        search();
+    });
+
     // 그리드 세팅
     // grid = setGridLayout();
     // grid2 = setGridLayout2();
@@ -31,12 +87,7 @@ $(document).ready(() => {
     //     search_grp();
     // });
     //
-    // //페이지 개수 변경시 검색
-    // $("#pagePer").change(function(){
-    //     pageInit();
-    //     pagination = setPagination(page, pagingCallback);
-    //     search_grp();
-    // });
+
     //
     //
     // //코드 그룹추가 버튼 클릭 이벤트(입력화면 호출)

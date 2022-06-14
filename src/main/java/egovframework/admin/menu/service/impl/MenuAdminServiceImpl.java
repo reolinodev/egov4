@@ -13,8 +13,8 @@ public class MenuAdminServiceImpl extends EgovAbstractServiceImpl implements Men
     @Resource(name = "MenuAdminDAO")
     private MenuAdminDAO menuAdminDAO;
 
-    public List<MenuEntity> getMenuList(MenuEntity menuEntity) {
-        return menuAdminDAO.findAllMenu(menuEntity);
+    public List<MenuEntity> getMenuList(String authRole) {
+        return menuAdminDAO.findAllMenu(authRole);
     }
 
     public MenuEntity getMenuInfo(int menuId) {
