@@ -12,6 +12,14 @@ public class MenuAdminDAO extends EgovAbstractMapper {
         return (List<MenuEntity>) list("MenuAdminDAO.findAllMenu", authRole);
     }
 
+    public List<MenuEntity> findByAuthRoleAndMenuLv1(MenuEntity menuEntity) {
+        return (List<MenuEntity>) list("MenuAdminDAO.findByAuthRoleAndMenuLv1", menuEntity);
+    }
+
+    public int updateMainYnAllN(MenuEntity menuEntity) throws Exception {
+        return update("MenuAdminDAO.updateMainYnAllN", menuEntity);
+    }
+
     public int save(MenuEntity menuEntity) throws Exception {
         return insert("MenuAdminDAO.save", menuEntity);
     }
@@ -24,4 +32,14 @@ public class MenuAdminDAO extends EgovAbstractMapper {
     public int updateMenu(MenuEntity menuEntity) throws Exception {
         return update("MenuAdminDAO.updateMenu", menuEntity);
     }
+
+    public int countByChild(int menuId) {
+        return selectOne("MenuAdminDAO.countByChild", menuId);
+    }
+
+    public int deleteByMenuId(int menuId) throws Exception {
+        return delete("MenuAdminDAO.deleteByMenuId", menuId);
+    }
+
+
 }

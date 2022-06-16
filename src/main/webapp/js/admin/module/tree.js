@@ -2,51 +2,27 @@ import Tree from 'tui-tree';
 
 /**
  * setBasicTree : 기본 트리 생성
- * data : 트리 데이터
+ * data : 트리 데이터, 콜백함수
  */
-export function setBasicTree (data) {
+export function setBasicTree (data, callback) {
 
-    // if(data.length === 0){
-    //     $("#tree").html("-- No Data --");
-    // }else {
-    //     return new Tree('#tree', {
-    //         data: data,
-    //         nodeDefaultState: 'opened'
-    //     }).enableFeature('Selectable', {
-    //         selectedClassName: 'tui-tree-selected',
-    //     });
-    // }
+    if(data.length === 0){
+        $("#tree").html("-- No Data --");
+    }else {
 
-    var util = {
-        addEventListener: function(element, eventName, handler) {
-            if (element.addEventListener) {
-                element.addEventListener(eventName, handler, false);
-            } else {
-                element.attachEvent('on' + eventName, handler);
-            }
-        }
+        const tree = new Tree('#tree', {
+            data: data,
+            nodeDefaultState: 'opened'
+        }).enableFeature('Selectable', {
+            selectedClassName: 'tui-tree-selected',
+        });
+
+        tree.on('select', function(eventData) {
+            const nodeData = tree.getNodeData(eventData.nodeId);
+            callback(nodeData.target);
+        });
+        
+        return tree;
     }
-
-    var tree = new Tree('#tree', {
-        data: data,
-        nodeDefaultState: 'opened'
-    }).enableFeature('Selectable', {
-        selectedClassName: 'tui-tree-selected',
-    });
-
-    var selectedBtn = document.getElementById('selectedBtn');
-    var deselectedBtn = document.getElementById('deselectedBtn');
-    var rootNodeId = tree.getRootNodeId();
-    var firstChildId = tree.getChildIds(rootNodeId)[0];
-    var selectedValue = document.getElementById('selectedValue');
-
-    tree.on('select', function(eventData) {
-        console.log('aaa', eventData);
-        var nodeData = tree.getNodeData(eventData.nodeId);
-        console.log('ccc', nodeData);
-    });
-
-
-    return tree;
 }
 

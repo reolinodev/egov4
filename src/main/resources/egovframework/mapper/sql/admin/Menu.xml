@@ -49,6 +49,30 @@
         ORDER BY PARENT_ORD, MENU_IDS, ORD
     </select>
 
+    <select id="findByAuthRoleAndMenuLv1" parameterType="menuEntity" resultType="menuEntity">
+        SELECT MENU_ID,
+               MENU_NM,
+               MENU_LV,
+               PARENT_ID,
+               MENU_URL,
+               ORD,
+               MENU_TYPE,
+               USE_YN
+        FROM   MENU_TB
+        WHERE  MENU_LV = 1
+          AND  AUTH_ROLE = #{auth_role}
+          <if test="parent_id != null and parent_id != ''">
+          AND  MENU_ID = #{parent_id}
+          </if>
+        ORDER BY CAST(ORD AS INTEGER) ASC
+    </select>
+
+    <update id="updateMainYnAllN" parameterType="menuEntity">
+        UPDATE 	MENU_TB
+        SET 	MAIN_YN = 'N'
+        WHERE 	AUTH_ROLE = #{auth_role}
+    </update>
+
     <insert id="save" parameterType="menuEntity">
         INSERT INTO MENU_TB
         (
@@ -79,8 +103,6 @@
             now()
         )
     </insert>
-
-
 
     <select id="findByMenuId" parameterType="int" resultType="menuEntity">
         SELECT MENU_ID,
@@ -121,11 +143,6 @@
         WHERE 	MENU_ID = #{menu_id}
     </update>
 
-    <delete id="deleteByMenuId" parameterType="menuEntity">
-        DELETE  FROM MENU_TB
-        WHERE   MENU_ID = #{menu_id}
-    </delete>
-
     <select id="findByParentId" parameterType="menuEntity" resultType="menuEntity">
         SELECT MENU_ID,
                MENU_NM,
@@ -140,5 +157,17 @@
         AND    PARENT_ID = #{parent_id}
         ORDER BY CAST(ORD AS INTEGER) ASC
     </select>
+
+    <select id="countByChild" parameterType="int" resultType="int">
+        SELECT COUNT(*)
+        FROM   MENU_TB
+        WHERE  MENU_LV = 2
+          AND  PARENT_ID = #{menu_id}
+    </select>
+
+    <delete id="deleteByMenuId" parameterType="int">
+        DELETE  FROM MENU_TB
+        WHERE   MENU_ID = #{menu_id}
+    </delete>
 
 </mapper>

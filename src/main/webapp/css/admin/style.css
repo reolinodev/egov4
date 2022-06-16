@@ -22,3 +22,7 @@
     text-decoration: underline;
     color: #0f6674;
 }
+
+.form-group label {
+    margin-bottom: 10px;
+}

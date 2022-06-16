@@ -17,17 +17,41 @@ public class MenuAdminServiceImpl extends EgovAbstractServiceImpl implements Men
         return menuAdminDAO.findAllMenu(authRole);
     }
 
+    public List<MenuEntity> getParentMenu(MenuEntity menuEntity) {
+        return menuAdminDAO.findByAuthRoleAndMenuLv1(menuEntity);
+    }
+
+    public int inputMenu(MenuEntity menuEntity) throws Exception {
+        if("Y".equals(menuEntity.main_yn)){
+            menuAdminDAO.updateMainYnAllN(menuEntity);
+        }
+
+        return  menuAdminDAO.save(menuEntity);
+    }
+
     public MenuEntity getMenuInfo(int menuId) {
         return menuAdminDAO.findByMenuId(menuId);
     }
 
-    public int inputMenu(MenuEntity menuEntity) throws Exception {
-        //todo 메인여부 로직 넣기, 업데이트 역시 동일한 로직
-        return  menuAdminDAO.save(menuEntity);
-    }
 
     public int updateMenu(MenuEntity menuEntity) throws Exception {
-        //todo 메인여부 로직 넣기, 업데이트 역시 동일한 로직
+        if("Y".equals(menuEntity.main_yn)){
+            menuAdminDAO.updateMainYnAllN(menuEntity);
+        }
+
         return  menuAdminDAO.updateMenu(menuEntity);
+    }
+
+    public int deleteMenu(MenuEntity menuEntity) throws Exception {
+        int menuId = menuEntity.menu_id;
+
+        if(menuEntity.menu_lv == 1){
+           int count = menuAdminDAO.countByChild(menuId);
+           if(count > 0) {
+               return -1;
+           }
+        }
+
+        return  menuAdminDAO.deleteByMenuId(menuId);
     }
 }
