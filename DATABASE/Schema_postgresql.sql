@@ -55,7 +55,7 @@ COMMENT ON COLUMN public.auth_tb.use_yn IS '사용 여부';
 CREATE TABLE MENU_TB
 (
     menu_id int NOT NULL,
-    menu_nm varchar(50) not null,
+    menu_nm varchar(100) not null,
     menu_lv int,
     parent_id int,
     menu_url varchar(200),

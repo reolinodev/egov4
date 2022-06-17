@@ -143,7 +143,7 @@
         WHERE 	MENU_ID = #{menu_id}
     </update>
 
-    <select id="findByParentId" parameterType="menuEntity" resultType="menuEntity">
+    <select id="findByParentId" parameterType="int" resultType="menuEntity">
         SELECT MENU_ID,
                MENU_NM,
                MENU_LV,
@@ -154,7 +154,7 @@
                USE_YN
         FROM   MENU_TB
         WHERE  MENU_LV = 2
-        AND    PARENT_ID = #{parent_id}
+        AND    PARENT_ID = #{menu_id}
         ORDER BY CAST(ORD AS INTEGER) ASC
     </select>
 

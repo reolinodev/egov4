@@ -16,5 +16,4 @@ public interface MenuAdminService {
     int updateMenu(MenuEntity menuEntity) throws Exception;
 
     int deleteMenu(MenuEntity menuEntity) throws Exception;
-
 }

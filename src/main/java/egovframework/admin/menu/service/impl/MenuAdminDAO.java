@@ -41,5 +41,8 @@ public class MenuAdminDAO extends EgovAbstractMapper {
         return delete("MenuAdminDAO.deleteByMenuId", menuId);
     }
 
+    public List<MenuEntity> findByParentId(int menuId) {
+        return (List<MenuEntity>) list("MenuAdminDAO.findByParentId", menuId);
+    }
 
 }

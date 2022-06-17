@@ -1,6 +1,6 @@
 {
   "defaultFirstUrl" :
-  { "menu_id": 6, "menu_nm": "메뉴 관리", "menu_lv": 2, "parent_id": 5, "menu_url" : "/admin/menu/menu", "parent_nm": "메뉴 설정" },
+  { "menu_id": 7, "menu_nm": "권한별 메뉴 관리", "menu_lv": 2, "parent_id": 5, "menu_url" : "/admin/menu/authMenu", "parent_nm": "메뉴 설정" },
   "defaultMenu1List" : [
     { "menu_id": 1, "menu_nm": "사용자 설정", "menu_lv": 1, "parent_id": 1, "menu_url" : "", "parent_nm": "사용자 설정" },
     { "menu_id": 5, "menu_nm": "메뉴 설정", "menu_lv": 1, "parent_id": 5, "menu_url" : "", "parent_nm": "메뉴 설정" },
