@@ -39,4 +39,8 @@ public class AuthAdminDAO extends EgovAbstractMapper {
     public List<AuthEntity> findByAuthRoleAndUseYn(AuthEntity authEntity) {
         return (List<AuthEntity>) list("AuthAdminDAO.findByAuthRoleAndUseYn", authEntity);
     }
+
+    public List<AuthEntity> findByAuthRoleAndUserId(AuthEntity authEntity) {
+        return (List<AuthEntity>) list("AuthAdminDAO.findByAuthRoleAndUserId", authEntity);
+    }
 }

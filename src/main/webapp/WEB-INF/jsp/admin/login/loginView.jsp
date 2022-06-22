@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Admin</title>
+	<title>Seoul Verse</title>
 	<%@include file ="../include/config.jsp" %>
 	<script type="module" src="/dist/adminLogin.js"></script>
 </head>
@@ -11,7 +11,7 @@
 	<div class="login-box">
 		<div class="card card-outline card-primary">
 			<div class="card-header text-center">
-				<a href="#" class="h1"><b>Admin</b></a>
+				<a href="#" class="h1"><b>Seoul Verse</b></a>
 			</div>
 
 			<div class="card-body">
@@ -63,7 +63,6 @@
 				<div class="form-group row">
 					<div class="col-12 text-lg-center" id="msg">${ msg }</div>
 				</div>
-
 			</div>
 		</div>
 	</div>

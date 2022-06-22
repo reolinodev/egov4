@@ -1,0 +1,58 @@
+{
+  "id": "API_0306",
+  "result": [
+    {
+      "house_cnt": "6079",
+      "adm_cd": "1118051",
+      "adm_nm": "가산동"
+    },
+    {
+      "house_cnt": "12988",
+      "adm_cd": "1118052",
+      "adm_nm": "독산1동"
+    },
+    {
+      "house_cnt": "4850",
+      "adm_cd": "1118053",
+      "adm_nm": "독산2동"
+    },
+    {
+      "house_cnt": "6946",
+      "adm_cd": "1118054",
+      "adm_nm": "독산3동"
+    },
+    {
+      "house_cnt": "3934",
+      "adm_cd": "1118055",
+      "adm_nm": "독산4동"
+    },
+    {
+      "house_cnt": "9809",
+      "adm_cd": "1118057",
+      "adm_nm": "시흥1동"
+    },
+    {
+      "house_cnt": "7644",
+      "adm_cd": "1118058",
+      "adm_nm": "시흥2동"
+    },
+    {
+      "house_cnt": "3939",
+      "adm_cd": "1118059",
+      "adm_nm": "시흥3동"
+    },
+    {
+      "house_cnt": "5885",
+      "adm_cd": "1118060",
+      "adm_nm": "시흥4동"
+    },
+    {
+      "house_cnt": "5207",
+      "adm_cd": "1118061",
+      "adm_nm": "시흥5동"
+    }
+  ],
+  "errMsg": "Success",
+  "errCd": 0,
+  "trId": "2htx_API_0306_1655685534990"
+}

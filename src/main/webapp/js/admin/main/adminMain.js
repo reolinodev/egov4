@@ -20,7 +20,6 @@ const pageRouter = (url, parentMenuName, childMenuName) => {
     sessionStorage.setItem('url', url);
     sessionStorage.setItem('parentMenuName', parentMenuName);
     sessionStorage.setItem('childMenuName', childMenuName);
-
 }
 /**
  *  mainPageLoad : 메인 페이지 로드

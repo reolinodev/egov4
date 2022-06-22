@@ -1,0 +1,108 @@
+{
+  "id": "API_0306",
+  "result": [
+    {
+      "house_cnt": "5516",
+      "adm_cd": "1108058",
+      "adm_nm": "돈암1동"
+    },
+    {
+      "house_cnt": "8078",
+      "adm_cd": "1108059",
+      "adm_nm": "돈암2동"
+    },
+    {
+      "house_cnt": "3987",
+      "adm_cd": "1108060",
+      "adm_nm": "안암동"
+    },
+    {
+      "house_cnt": "4536",
+      "adm_cd": "1108061",
+      "adm_nm": "보문동"
+    },
+    {
+      "house_cnt": "5778",
+      "adm_cd": "1108062",
+      "adm_nm": "정릉1동"
+    },
+    {
+      "house_cnt": "7831",
+      "adm_cd": "1108063",
+      "adm_nm": "정릉2동"
+    },
+    {
+      "house_cnt": "5273",
+      "adm_cd": "1108064",
+      "adm_nm": "정릉3동"
+    },
+    {
+      "house_cnt": "8867",
+      "adm_cd": "1108065",
+      "adm_nm": "정릉4동"
+    },
+    {
+      "house_cnt": "11619",
+      "adm_cd": "1108066",
+      "adm_nm": "길음1동"
+    },
+    {
+      "house_cnt": "5718",
+      "adm_cd": "1108068",
+      "adm_nm": "길음2동"
+    },
+    {
+      "house_cnt": "8044",
+      "adm_cd": "1108071",
+      "adm_nm": "월곡1동"
+    },
+    {
+      "house_cnt": "5627",
+      "adm_cd": "1108072",
+      "adm_nm": "월곡2동"
+    },
+    {
+      "house_cnt": "5841",
+      "adm_cd": "1108076",
+      "adm_nm": "장위1동"
+    },
+    {
+      "house_cnt": "3602",
+      "adm_cd": "1108077",
+      "adm_nm": "장위2동"
+    },
+    {
+      "house_cnt": "5703",
+      "adm_cd": "1108078",
+      "adm_nm": "장위3동"
+    },
+    {
+      "house_cnt": "5183",
+      "adm_cd": "1108081",
+      "adm_nm": "성북동"
+    },
+    {
+      "house_cnt": "6804",
+      "adm_cd": "1108082",
+      "adm_nm": "삼선동"
+    },
+    {
+      "house_cnt": "4286",
+      "adm_cd": "1108083",
+      "adm_nm": "동선동"
+    },
+    {
+      "house_cnt": "12202",
+      "adm_cd": "1108084",
+      "adm_nm": "종암동"
+    },
+    {
+      "house_cnt": "10398",
+      "adm_cd": "1108085",
+      "adm_nm": "석관동"
+    }
+  ],
+  "errMsg": "Success",
+  "errCd": 0,
+  "trId": "nZUj_API_0306_1655685367864"
+}

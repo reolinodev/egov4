@@ -41,4 +41,9 @@ public class AuthAdminServiceImpl extends EgovAbstractServiceImpl implements Aut
     public List<AuthEntity> getAuthRoleList(AuthEntity authEntity) {
         return authAdminDAO.findByAuthRoleAndUseYn(authEntity);
     }
+
+    public List<AuthEntity> getMyAuthList(AuthEntity authEntity) {
+        return authAdminDAO.findByAuthRoleAndUserId(authEntity);
+    }
+
 }

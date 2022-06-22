@@ -133,4 +133,18 @@
         AND     USE_YN = 'Y'
     </select>
 
+    <select id="findByAuthRoleAndUserId" parameterType="authEntity" resultType="authEntity">
+        SELECT  A.AUTH_ID,
+                A.AUTH_NM,
+                A.AUTH_VAL,
+                A.AUTH_ROLE
+        FROM    AUTH_TB A
+        LEFT OUTER JOIN USER_AUTH_TB B
+        ON A.AUTH_ID = B.AUTH_ID
+        WHERE   A.AUTH_ROLE = #{auth_role}
+          AND     A.USE_YN = 'Y'
+          AND B.USER_ID = #{user_id}
+        ORDER BY CAST(ORD AS INTEGER) ASC
+    </select>
+
 </mapper>

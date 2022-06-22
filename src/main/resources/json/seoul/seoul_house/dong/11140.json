@@ -1,0 +1,88 @@
+{
+  "id": "API_0306",
+  "result": [
+    {
+      "house_cnt": "7012",
+      "adm_cd": "1114059",
+      "adm_nm": "용강동"
+    },
+    {
+      "house_cnt": "3324",
+      "adm_cd": "1114060",
+      "adm_nm": "대흥동"
+    },
+    {
+      "house_cnt": "3042",
+      "adm_cd": "1114061",
+      "adm_nm": "염리동"
+    },
+    {
+      "house_cnt": "7453",
+      "adm_cd": "1114063",
+      "adm_nm": "신수동"
+    },
+    {
+      "house_cnt": "8487",
+      "adm_cd": "1114066",
+      "adm_nm": "서교동"
+    },
+    {
+      "house_cnt": "5846",
+      "adm_cd": "1114068",
+      "adm_nm": "합정동"
+    },
+    {
+      "house_cnt": "6837",
+      "adm_cd": "1114069",
+      "adm_nm": "망원1동"
+    },
+    {
+      "house_cnt": "6337",
+      "adm_cd": "1114070",
+      "adm_nm": "망원2동"
+    },
+    {
+      "house_cnt": "5308",
+      "adm_cd": "1114071",
+      "adm_nm": "연남동"
+    },
+    {
+      "house_cnt": "6375",
+      "adm_cd": "1114072",
+      "adm_nm": "성산1동"
+    },
+    {
+      "house_cnt": "12549",
+      "adm_cd": "1114073",
+      "adm_nm": "성산2동"
+    },
+    {
+      "house_cnt": "9285",
+      "adm_cd": "1114074",
+      "adm_nm": "상암동"
+    },
+    {
+      "house_cnt": "6874",
+      "adm_cd": "1114075",
+      "adm_nm": "도화동"
+    },
+    {
+      "house_cnt": "8164",
+      "adm_cd": "1114076",
+      "adm_nm": "서강동"
+    },
+    {
+      "house_cnt": "11288",
+      "adm_cd": "1114077",
+      "adm_nm": "공덕동"
+    },
+    {
+      "house_cnt": "8649",
+      "adm_cd": "1114078",
+      "adm_nm": "아현동"
+    }
+  ],
+  "errMsg": "Success",
+  "errCd": 0,
+  "trId": "H0Kg_API_0306_1655685459506"
+}

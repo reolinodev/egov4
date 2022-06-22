@@ -1,0 +1,78 @@
+{
+  "id": "API_0306",
+  "result": [
+    {
+      "house_cnt": "7089",
+      "adm_cd": "1110051",
+      "adm_nm": "쌍문1동"
+    },
+    {
+      "house_cnt": "6310",
+      "adm_cd": "1110052",
+      "adm_nm": "쌍문2동"
+    },
+    {
+      "house_cnt": "4999",
+      "adm_cd": "1110053",
+      "adm_nm": "쌍문3동"
+    },
+    {
+      "house_cnt": "6641",
+      "adm_cd": "1110054",
+      "adm_nm": "쌍문4동"
+    },
+    {
+      "house_cnt": "8152",
+      "adm_cd": "1110055",
+      "adm_nm": "방학1동"
+    },
+    {
+      "house_cnt": "5854",
+      "adm_cd": "1110056",
+      "adm_nm": "방학2동"
+    },
+    {
+      "house_cnt": "9489",
+      "adm_cd": "1110057",
+      "adm_nm": "방학3동"
+    },
+    {
+      "house_cnt": "8786",
+      "adm_cd": "1110059",
+      "adm_nm": "창1동"
+    },
+    {
+      "house_cnt": "8535",
+      "adm_cd": "1110060",
+      "adm_nm": "창2동"
+    },
+    {
+      "house_cnt": "3870",
+      "adm_cd": "1110061",
+      "adm_nm": "창3동"
+    },
+    {
+      "house_cnt": "9752",
+      "adm_cd": "1110062",
+      "adm_nm": "창4동"
+    },
+    {
+      "house_cnt": "8443",
+      "adm_cd": "1110063",
+      "adm_nm": "창5동"
+    },
+    {
+      "house_cnt": "6750",
+      "adm_cd": "1110064",
+      "adm_nm": "도봉1동"
+    },
+    {
+      "house_cnt": "9229",
+      "adm_cd": "1110065",
+      "adm_nm": "도봉2동"
+    }
+  ],
+  "errMsg": "Success",
+  "errCd": 0,
+  "trId": "b3Qa_API_0306_1655685394864"
+}

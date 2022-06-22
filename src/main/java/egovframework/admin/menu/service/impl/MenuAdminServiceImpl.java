@@ -54,4 +54,12 @@ public class MenuAdminServiceImpl extends EgovAbstractServiceImpl implements Men
 
         return  menuAdminDAO.deleteByMenuId(menuId);
     }
+
+    public List<MenuEntity> getMenuListLv(MenuEntity menuEntity) {
+        return menuAdminDAO.findByMenuLvAndAuthId(menuEntity);
+    }
+
+    public MenuEntity getMainUrl(MenuEntity menuEntity) {
+        return menuAdminDAO.findByMainUrl(menuEntity);
+    }
 }

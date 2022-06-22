@@ -140,8 +140,12 @@ export function setCommSelBox(id,url,url_type,type,selected_value, params, optio
 
                   // eslint-disable-next-line camelcase
                   if(selected_value !==''){
-                     str += `<option value="${list[i][oVal]}" selected> ${list[i][oTxt]}</option>`;
-                  }else{
+                     if(list[i][oVal].toString() === selected_value.toString()){
+                        str += `<option value="${list[i][oVal]}" selected> ${list[i][oTxt]}</option>`;
+                     }else {
+                        str += `<option value="${list[i][oVal]}"> ${list[i][oTxt]}</option>`;
+                     }
+                  }else {
                      str += `<option value="${list[i][oVal]}"> ${list[i][oTxt]}</option>`;
                   }
                }

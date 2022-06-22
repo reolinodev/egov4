@@ -15,4 +15,7 @@ public class MenuEntity extends Menu {
     @ApiModelProperty(example = "부모 메뉴명")
     public String parent_nm;
 
+    @ApiModelProperty(example = "권한 아이디")
+    public int auth_id;
+
 }

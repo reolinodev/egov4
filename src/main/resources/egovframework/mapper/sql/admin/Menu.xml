@@ -170,4 +170,90 @@
         WHERE   MENU_ID = #{menu_id}
     </delete>
 
+    <select id="findByMenuLvAndAuthId" parameterType="menuEntity" resultType="menuEntity">
+        SELECT  A.MENU_ID,
+                A.MENU_NM,
+                A.MENU_LV,
+                (SELECT MENU_NM FROM MENU_TB C WHERE C.MENU_ID = A.PARENT_ID) AS PARENT_NM,
+                A.PARENT_ID,
+                A.MENU_URL,
+                A.ORD,
+                A.MENU_TYPE,
+                A.USE_YN,
+                B.AUTH_ID
+        FROM    MENU_TB A
+        LEFT OUTER JOIN AUTH_MENU_TB B
+        ON A.MENU_ID = B.MENU_ID
+        WHERE   A.MENU_LV = #{menu_lv}
+        AND     B.AUTH_ID = #{auth_id}
+        AND     A.USE_YN = 'Y'
+        ORDER BY CAST(ORD AS INTEGER) ASC
+    </select>
+
+    <select id="findByMainUrl" parameterType="menuEntity" resultType="menuEntity">
+        SELECT  MENU_ID
+                , MENU_NM
+                , MENU_LV
+                , PARENT_ID
+                , MENU_URL
+                , PARENT_NM
+        FROM    (
+                     SELECT *
+                     FROM   (
+                                SELECT  0 AS MENU_ID
+                                        , CODE_NM AS MENU_NM
+                                        , 1 AS MENU_LV
+                                        , 0 AS PARENT_ID
+                                        , CODE_VAL AS MENU_URL
+                                        , '메인' AS PARENT_NM
+                                        , 1 AS ORD
+                                FROM    CODE_TB
+                                WHERE   CODE_GRP_ID = (SELECT CODE_GRP_ID FROM CODE_GRP_TB CGT  WHERE CODE_GRP_VAL = 'MAIN_URL')
+                                AND     USE_YN = 'Y'
+                                ORDER BY CAST(ORD AS INTEGER) ASC
+                                LIMIT 1
+                          ) A
+                     UNION ALL
+                     SELECT *
+                     FROM   (
+                                SELECT  A.MENU_ID
+                                        , A.MENU_NM
+                                        , A.MENU_LV
+                                        , A.PARENT_ID
+                                        , A.MENU_URL
+                                        , (SELECT MENU_NM FROM MENU_TB C WHERE C.MENU_ID = A.PARENT_ID) AS PARENT_NM
+                                        , 2 AS ORD
+                                FROM    MENU_TB A
+                                LEFT OUTER JOIN AUTH_MENU_TB B
+                                ON      A.MENU_ID = B.MENU_ID
+                                WHERE   A.MAIN_YN = 'Y'
+                                AND     A.USE_YN = 'Y'
+                                AND     A.AUTH_ROLE = 'ADMIN'
+                                AND     B.AUTH_ID = #{auth_id}
+                            ) B
+                     UNION ALL
+                     SELECT *
+                     FROM   (
+                                SELECT  A.MENU_ID
+                                        , A.MENU_NM
+                                        , A.MENU_LV
+                                        , A.PARENT_ID
+                                        , A.MENU_URL
+                                        , (SELECT MENU_NM FROM MENU_TB C WHERE C.MENU_ID = A.PARENT_ID) AS PARENT_NM
+                                        , 3 AS ORD
+                                FROM    MENU_TB A
+                                LEFT OUTER JOIN AUTH_MENU_TB B
+                                ON      A.MENU_ID = B.MENU_ID
+                                WHERE   A.USE_YN = 'Y'
+                                AND     A.MENU_LV = 2
+                                AND     A.AUTH_ROLE = 'ADMIN'
+                                AND     B.AUTH_ID = #{auth_id}
+                                ORDER BY A.CREATED_AT ASC
+                                LIMIT 1
+                          ) C
+                ) A
+        ORDER BY ORD ASC
+        LIMIT 1
+    </select>
+
 </mapper>

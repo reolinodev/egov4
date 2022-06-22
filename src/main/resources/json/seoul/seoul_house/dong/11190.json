@@ -1,0 +1,98 @@
+{
+  "id": "API_0306",
+  "result": [
+    {
+      "house_cnt": "9714",
+      "adm_cd": "1119054",
+      "adm_nm": "여의동"
+    },
+    {
+      "house_cnt": "5755",
+      "adm_cd": "1119055",
+      "adm_nm": "당산1동"
+    },
+    {
+      "house_cnt": "10555",
+      "adm_cd": "1119056",
+      "adm_nm": "당산2동"
+    },
+    {
+      "house_cnt": "3978",
+      "adm_cd": "1119061",
+      "adm_nm": "양평1동"
+    },
+    {
+      "house_cnt": "7065",
+      "adm_cd": "1119062",
+      "adm_nm": "양평2동"
+    },
+    {
+      "house_cnt": "4259",
+      "adm_cd": "1119063",
+      "adm_nm": "신길1동"
+    },
+    {
+      "house_cnt": "4707",
+      "adm_cd": "1119065",
+      "adm_nm": "신길3동"
+    },
+    {
+      "house_cnt": "2756",
+      "adm_cd": "1119066",
+      "adm_nm": "신길4동"
+    },
+    {
+      "house_cnt": "2259",
+      "adm_cd": "1119067",
+      "adm_nm": "신길5동"
+    },
+    {
+      "house_cnt": "5023",
+      "adm_cd": "1119068",
+      "adm_nm": "신길6동"
+    },
+    {
+      "house_cnt": "6379",
+      "adm_cd": "1119069",
+      "adm_nm": "신길7동"
+    },
+    {
+      "house_cnt": "4044",
+      "adm_cd": "1119070",
+      "adm_nm": "대림1동"
+    },
+    {
+      "house_cnt": "4214",
+      "adm_cd": "1119071",
+      "adm_nm": "대림2동"
+    },
+    {
+      "house_cnt": "7258",
+      "adm_cd": "1119072",
+      "adm_nm": "대림3동"
+    },
+    {
+      "house_cnt": "6383",
+      "adm_cd": "1119073",
+      "adm_nm": "영등포본동"
+    },
+    {
+      "house_cnt": "7377",
+      "adm_cd": "1119074",
+      "adm_nm": "영등포동"
+    },
+    {
+      "house_cnt": "3994",
+      "adm_cd": "1119075",
+      "adm_nm": "도림동"
+    },
+    {
+      "house_cnt": "8834",
+      "adm_cd": "1119076",
+      "adm_nm": "문래동"
+    }
+  ],
+  "errMsg": "Success",
+  "errCd": 0,
+  "trId": "mkPV_API_0306_1655685557556"
+}

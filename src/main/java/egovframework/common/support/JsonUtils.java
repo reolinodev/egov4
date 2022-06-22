@@ -13,7 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 public class JsonUtils {
 
-
     public static ModelAndView getJsonMenu() throws IOException, ParseException {
         ModelAndView mav = new ModelAndView();
         List<MenuEntity> menuLv1List = new ArrayList<>();
@@ -63,6 +62,22 @@ public class JsonUtils {
         mav.addObject("firstUrl",firstUrl);
 
         return mav;
+    }
+
+    public static JSONObject getJsonSeoulLv1() throws IOException, ParseException {
+        return convertJsonFile("json/seoul/seoul_map/seoul.geojson");
+    }
+
+    public static JSONObject getJsonSeoulLv2(int map_key) throws IOException, ParseException {
+        return convertJsonFile("json/seoul/seoul_map/dong/" +map_key+".geojson");
+    }
+
+    public static JSONObject getJsonHouseLv1() throws IOException, ParseException {
+        return convertJsonFile("json/seoul/seoul_house/house.json");
+    }
+
+    public static JSONObject getJsonHouseLv2(int map_key) throws IOException, ParseException {
+        return convertJsonFile("json/seoul/seoul_house/dong/" +map_key+".json");
     }
 
     private static JSONObject convertJsonFile(String url) throws IOException, ParseException {

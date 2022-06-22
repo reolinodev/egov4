@@ -37,3 +37,44 @@ INSERT INTO CODE_TB ( CODE_ID, CODE_GRP_ID, CODE_NM, CODE_VAL, BIGO, ORD, CREATE
 VALUES ( nextval('code_seq'), 4, '50개', '50', NULL, '3', now() );
 INSERT INTO CODE_TB ( CODE_ID, CODE_GRP_ID, CODE_NM, CODE_VAL, BIGO, ORD, CREATED_AT )
 VALUES ( nextval('code_seq'), 4, '100개', '100', NULL, '4', now() );
+
+INSERT INTO CODE_GRP_TB ( CODE_GRP_ID, CODE_GRP_NM, CODE_GRP_VAL, CREATED_AT )
+VALUES ( nextval('code_grp_seq'),'메인 페이지', 'MAIN_URL', NOW() );
+
+-- 메뉴등록
+INSERT INTO public.menu_tb
+(menu_id, menu_nm, menu_lv, parent_id, menu_url, ord, use_yn, menu_type, auth_role, main_yn)
+VALUES(nextval('menu_seq'), '사용자 설정', 1, 0, '', 1, 'Y', 'url', 'ADMIN', 'N');
+INSERT INTO public.menu_tb
+(menu_id, menu_nm, menu_lv, parent_id, menu_url, ord, use_yn, menu_type, auth_role, main_yn)
+VALUES(nextval('menu_seq'), '메뉴 설정', 1, 0, '', 2, 'Y', 'url', 'ADMIN', 'N');
+INSERT INTO public.menu_tb
+(menu_id, menu_nm, menu_lv, parent_id, menu_url, ord, use_yn, menu_type, auth_role, main_yn)
+VALUES(nextval('menu_seq'), '게시판 설정', 1, 0, '', 3, 'Y', 'url', 'ADMIN', 'N');
+INSERT INTO public.menu_tb
+(menu_id, menu_nm, menu_lv, parent_id, menu_url, ord, use_yn, menu_type, auth_role, main_yn)
+VALUES(nextval('menu_seq'), '기타 설정', 1, 0, '', 4, 'Y', 'url', 'ADMIN', 'N');
+INSERT INTO public.menu_tb
+(menu_id, menu_nm, menu_lv, parent_id, menu_url, ord, use_yn, menu_type, auth_role, main_yn)
+VALUES(nextval('menu_seq'), '사용자 관리', 2, (select menu_id from menu_tb where menu_nm = '사용자 설정'), '/admin/user/user', 1, 'Y', 'url', 'ADMIN', 'N');
+INSERT INTO public.menu_tb
+(menu_id, menu_nm, menu_lv, parent_id, menu_url, ord, use_yn, menu_type, auth_role, main_yn)
+VALUES(nextval('menu_seq'), '권한 관리', 2, (select menu_id from menu_tb where menu_nm = '사용자 설정'), '/admin/user/auth', 2, 'Y', 'url', 'ADMIN', 'N');
+INSERT INTO public.menu_tb
+(menu_id, menu_nm, menu_lv, parent_id, menu_url, ord, use_yn, menu_type, auth_role, main_yn)
+VALUES(nextval('menu_seq'), '사용자 권한 관리', 2, (select menu_id from menu_tb where menu_nm = '사용자 설정'), '/admin/user/userAuth', 3, 'Y', 'url', 'ADMIN', 'N');
+INSERT INTO public.menu_tb
+(menu_id, menu_nm, menu_lv, parent_id, menu_url, ord, use_yn, menu_type, auth_role, main_yn)
+VALUES(nextval('menu_seq'), '메뉴 관리', 2, (select menu_id from menu_tb where menu_nm = '메뉴 설정'), '/admin/menu/menu', 1, 'Y', 'url', 'ADMIN', 'N');
+INSERT INTO public.menu_tb
+(menu_id, menu_nm, menu_lv, parent_id, menu_url, ord, use_yn, menu_type, auth_role, main_yn)
+VALUES(nextval('menu_seq'), '권한별 메뉴 관리', 2, (select menu_id from menu_tb where menu_nm = '메뉴 설정'), '/admin/menu/authMenu', 2, 'Y', 'url', 'ADMIN', 'N');
+INSERT INTO public.menu_tb
+(menu_id, menu_nm, menu_lv, parent_id, menu_url, ord, use_yn, menu_type, auth_role, main_yn)
+VALUES(nextval('menu_seq'), '코드 관리', 2, (select menu_id from menu_tb where menu_nm = '기타 설정'), '/admin/mng/code', 4, 'Y', 'url', 'ADMIN', 'N');
+INSERT INTO public.menu_tb
+(menu_id, menu_nm, menu_lv, parent_id, menu_url, ord, use_yn, menu_type, auth_role, main_yn)
+VALUES(nextval('menu_seq'), '게시판 관리', 2, (select menu_id from menu_tb where menu_nm = '게시판 설정'), '/admin/board/board', 1, 'Y', 'url', 'ADMIN', 'N');
+INSERT INTO public.menu_tb
+(menu_id, menu_nm, menu_lv, parent_id, menu_url, ord, use_yn, menu_type, auth_role, main_yn)
+VALUES(nextval('menu_seq'), '게시글 관리', 2, (select menu_id from menu_tb where menu_nm = '게시판 설정'), '/admin/board/post', 2, 'Y', 'url', 'ADMIN', 'N');

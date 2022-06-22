@@ -21,4 +21,7 @@ public class AuthEntity extends Auth {
     @ApiModelProperty(example = "권한 구분")
     private String auth_role_nm;
 
+    @ApiModelProperty(example = "사용자 아이디")
+    private int user_id;
+
 }

@@ -1,0 +1,73 @@
+{
+  "id": "API_0306",
+  "result": [
+    {
+      "house_cnt": "4515",
+      "adm_cd": "1109060",
+      "adm_nm": "번1동"
+    },
+    {
+      "house_cnt": "6435",
+      "adm_cd": "1109061",
+      "adm_nm": "번2동"
+    },
+    {
+      "house_cnt": "7041",
+      "adm_cd": "1109062",
+      "adm_nm": "번3동"
+    },
+    {
+      "house_cnt": "6522",
+      "adm_cd": "1109063",
+      "adm_nm": "수유1동"
+    },
+    {
+      "house_cnt": "6987",
+      "adm_cd": "1109064",
+      "adm_nm": "수유2동"
+    },
+    {
+      "house_cnt": "5936",
+      "adm_cd": "1109065",
+      "adm_nm": "수유3동"
+    },
+    {
+      "house_cnt": "7537",
+      "adm_cd": "1109069",
+      "adm_nm": "삼양동"
+    },
+    {
+      "house_cnt": "6522",
+      "adm_cd": "1109070",
+      "adm_nm": "미아동"
+    },
+    {
+      "house_cnt": "8781",
+      "adm_cd": "1109071",
+      "adm_nm": "송중동"
+    },
+    {
+      "house_cnt": "7136",
+      "adm_cd": "1109072",
+      "adm_nm": "송천동"
+    },
+    {
+      "house_cnt": "10963",
+      "adm_cd": "1109073",
+      "adm_nm": "삼각산동"
+    },
+    {
+      "house_cnt": "6750",
+      "adm_cd": "1109074",
+      "adm_nm": "우이동"
+    },
+    {
+      "house_cnt": "9845",
+      "adm_cd": "1109075",
+      "adm_nm": "인수동"
+    }
+  ],
+  "errMsg": "Success",
+  "errCd": 0,
+  "trId": "OPr9_API_0306_1655685379242"
+}

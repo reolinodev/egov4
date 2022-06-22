@@ -1,0 +1,88 @@
+{
+  "id": "API_0306",
+  "result": [
+    {
+      "house_cnt": "5217",
+      "adm_cd": "1103051",
+      "adm_nm": "후암동"
+    },
+    {
+      "house_cnt": "2992",
+      "adm_cd": "1103052",
+      "adm_nm": "용산2가동"
+    },
+    {
+      "house_cnt": "1712",
+      "adm_cd": "1103053",
+      "adm_nm": "남영동"
+    },
+    {
+      "house_cnt": "4479",
+      "adm_cd": "1103057",
+      "adm_nm": "원효로2동"
+    },
+    {
+      "house_cnt": "3360",
+      "adm_cd": "1103058",
+      "adm_nm": "효창동"
+    },
+    {
+      "house_cnt": "4133",
+      "adm_cd": "1103059",
+      "adm_nm": "용문동"
+    },
+    {
+      "house_cnt": "9190",
+      "adm_cd": "1103063",
+      "adm_nm": "이촌1동"
+    },
+    {
+      "house_cnt": "3227",
+      "adm_cd": "1103064",
+      "adm_nm": "이촌2동"
+    },
+    {
+      "house_cnt": "2009",
+      "adm_cd": "1103065",
+      "adm_nm": "이태원1동"
+    },
+    {
+      "house_cnt": "2746",
+      "adm_cd": "1103066",
+      "adm_nm": "이태원2동"
+    },
+    {
+      "house_cnt": "3970",
+      "adm_cd": "1103069",
+      "adm_nm": "서빙고동"
+    },
+    {
+      "house_cnt": "3466",
+      "adm_cd": "1103070",
+      "adm_nm": "보광동"
+    },
+    {
+      "house_cnt": "5606",
+      "adm_cd": "1103071",
+      "adm_nm": "청파동"
+    },
+    {
+      "house_cnt": "5025",
+      "adm_cd": "1103072",
+      "adm_nm": "원효로1동"
+    },
+    {
+      "house_cnt": "5743",
+      "adm_cd": "1103073",
+      "adm_nm": "한강로동"
+    },
+    {
+      "house_cnt": "7154",
+      "adm_cd": "1103074",
+      "adm_nm": "한남동"
+    }
+  ],
+  "errMsg": "Success",
+  "errCd": 0,
+  "trId": "krai_API_0306_1655684538613"
+}

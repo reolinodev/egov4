@@ -73,6 +73,9 @@
                 <if test="ord != null and ord != ''">
                 , ORD = #{ord}
                 </if>
+                <if test="use_yn != null and use_yn != ''">
+                , USE_YN = #{use_yn}
+                </if>
         WHERE   CODE_ID = #{code_id}
     </update>
 

@@ -16,11 +16,11 @@ import org.springframework.web.context.WebApplicationContext;
 @ToString
 public class SessionInfo implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    public static final long serialVersionUID = 1L;
 
-    private int user_id;
+    public int user_id;
 
-    private String user_nm;
+    public String user_nm;
 
     public int auth_id;
 

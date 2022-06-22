@@ -45,4 +45,12 @@ public class MenuAdminDAO extends EgovAbstractMapper {
         return (List<MenuEntity>) list("MenuAdminDAO.findByParentId", menuId);
     }
 
+    public List<MenuEntity> findByMenuLvAndAuthId(MenuEntity menuEntity) {
+        return (List<MenuEntity>) list("MenuAdminDAO.findByMenuLvAndAuthId", menuEntity);
+    }
+
+    public MenuEntity findByMainUrl(MenuEntity menuEntity) {
+        return selectOne("MenuAdminDAO.findByMainUrl", menuEntity);
+    }
+
 }

@@ -1,11 +1,12 @@
 {
   "defaultFirstUrl" :
-  { "menu_id": 7, "menu_nm": "권한별 메뉴 관리", "menu_lv": 2, "parent_id": 5, "menu_url" : "/admin/menu/authMenu", "parent_nm": "메뉴 설정" },
+  { "menu_id": 14, "menu_nm": "GIS", "menu_lv": 2, "parent_id": 13, "menu_url" : "/admin/pilot/gis", "parent_nm": "샘플" },
   "defaultMenu1List" : [
-    { "menu_id": 1, "menu_nm": "사용자 설정", "menu_lv": 1, "parent_id": 1, "menu_url" : "", "parent_nm": "사용자 설정" },
-    { "menu_id": 5, "menu_nm": "메뉴 설정", "menu_lv": 1, "parent_id": 5, "menu_url" : "", "parent_nm": "메뉴 설정" },
-    { "menu_id": 8, "menu_nm": "게시판 설정", "menu_lv": 1, "parent_id": 8, "menu_url" : "", "parent_nm": "게시판 설정" },
-    { "menu_id": 11, "menu_nm": "기타 설정", "menu_lv": 1, "parent_id": 11, "menu_url" : "", "parent_nm": "기타 설정" }
+    { "menu_id": 1, "menu_nm": "사용자 설정", "menu_lv": 1, "parent_id": 1, "menu_url" : "", "parent_nm": "" },
+    { "menu_id": 5, "menu_nm": "메뉴 설정", "menu_lv": 1, "parent_id": 5, "menu_url" : "", "parent_nm": "" },
+    { "menu_id": 8, "menu_nm": "게시판 설정", "menu_lv": 1, "parent_id": 8, "menu_url" : "", "parent_nm": "" },
+    { "menu_id": 11, "menu_nm": "기타 설정", "menu_lv": 1, "parent_id": 11, "menu_url" : "", "parent_nm": "" },
+    { "menu_id": 13, "menu_nm": "샘플", "menu_lv": 1, "parent_id": 13, "menu_url" : "", "parent_nm": "" }
   ],
   "defaultMenu2List" : [
     { "menu_id": 2, "menu_nm": "사용자 관리", "menu_lv": 2, "parent_id": 1, "menu_url" : "/admin/user/user", "parent_nm": "사용자 설정" },
@@ -15,6 +16,7 @@
     { "menu_id": 7, "menu_nm": "권한별 메뉴 관리", "menu_lv": 2, "parent_id": 5, "menu_url" : "/admin/menu/authMenu", "parent_nm": "메뉴 설정" },
     { "menu_id": 9, "menu_nm": "게시판 관리", "menu_lv": 2, "parent_id": 8, "menu_url" : "/admin/board/board", "parent_nm": "게시판 설정" },
     { "menu_id": 10, "menu_nm": "게시글 관리", "menu_lv": 2, "parent_id": 8, "menu_url" : "/admin/board/post", "parent_nm": "게시판 설정" },
-    { "menu_id": 12, "menu_nm": "코드 관리", "menu_lv": 2, "parent_id": 11, "menu_url" : "/admin/mng/code", "parent_nm": "기타 설정" }
+    { "menu_id": 12, "menu_nm": "코드 관리", "menu_lv": 2, "parent_id": 11, "menu_url" : "/admin/mng/code", "parent_nm": "기타 설정" },
+    { "menu_id": 14, "menu_nm": "GIS", "menu_lv": 2, "parent_id": 13, "menu_url" : "/admin/pilot/gis", "parent_nm": "샘플" }
   ]
 }

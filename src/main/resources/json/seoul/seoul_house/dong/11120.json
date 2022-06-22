@@ -1,0 +1,88 @@
+{
+  "id": "API_0306",
+  "result": [
+    {
+      "house_cnt": "12104",
+      "adm_cd": "1112051",
+      "adm_nm": "녹번동"
+    },
+    {
+      "house_cnt": "13206",
+      "adm_cd": "1112052",
+      "adm_nm": "불광1동"
+    },
+    {
+      "house_cnt": "7212",
+      "adm_cd": "1112055",
+      "adm_nm": "갈현1동"
+    },
+    {
+      "house_cnt": "9200",
+      "adm_cd": "1112056",
+      "adm_nm": "갈현2동"
+    },
+    {
+      "house_cnt": "10187",
+      "adm_cd": "1112057",
+      "adm_nm": "구산동"
+    },
+    {
+      "house_cnt": "8477",
+      "adm_cd": "1112058",
+      "adm_nm": "대조동"
+    },
+    {
+      "house_cnt": "7310",
+      "adm_cd": "1112059",
+      "adm_nm": "응암1동"
+    },
+    {
+      "house_cnt": "8974",
+      "adm_cd": "1112060",
+      "adm_nm": "응암2동"
+    },
+    {
+      "house_cnt": "9304",
+      "adm_cd": "1112065",
+      "adm_nm": "신사1동"
+    },
+    {
+      "house_cnt": "6451",
+      "adm_cd": "1112066",
+      "adm_nm": "신사2동"
+    },
+    {
+      "house_cnt": "4844",
+      "adm_cd": "1112067",
+      "adm_nm": "증산동"
+    },
+    {
+      "house_cnt": "3072",
+      "adm_cd": "1112068",
+      "adm_nm": "수색동"
+    },
+    {
+      "house_cnt": "16544",
+      "adm_cd": "1112071",
+      "adm_nm": "진관동"
+    },
+    {
+      "house_cnt": "8731",
+      "adm_cd": "1112072",
+      "adm_nm": "불광2동"
+    },
+    {
+      "house_cnt": "6974",
+      "adm_cd": "1112073",
+      "adm_nm": "응암3동"
+    },
+    {
+      "house_cnt": "14512",
+      "adm_cd": "1112074",
+      "adm_nm": "역촌동"
+    }
+  ],
+  "errMsg": "Success",
+  "errCd": 0,
+  "trId": "Qdts_API_0306_1655685425513"
+}

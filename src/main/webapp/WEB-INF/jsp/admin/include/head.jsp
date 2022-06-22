@@ -17,6 +17,9 @@
 
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
+                <select class="custom-select rounded-0" id="authId" name="auth_id"></select>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                     <span><span style="font-weight: bold">${userNm}</span>님, 안녕하세요.</span>
                 </a>
@@ -32,6 +35,9 @@
                 </a>
             </li>
         </ul>
+        <input type="hidden" id="userId" value="${userId}">
+        <input type="hidden" id="menuType" value="${menuType}">
+        <input type="hidden" id="authIdSet" value="${authId}">
     </nav>
 </header>
 </html>

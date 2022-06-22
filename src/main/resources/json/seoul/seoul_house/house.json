@@ -1,0 +1,133 @@
+{
+  "id": "API_0306",
+  "result": [
+    {
+      "house_cnt": "44665",
+      "adm_cd": "11010",
+      "adm_nm": "종로구"
+    },
+    {
+      "house_cnt": "40384",
+      "adm_cd": "11020",
+      "adm_nm": "중구"
+    },
+    {
+      "house_cnt": "70029",
+      "adm_cd": "11030",
+      "adm_nm": "용산구"
+    },
+    {
+      "house_cnt": "88791",
+      "adm_cd": "11040",
+      "adm_nm": "성동구"
+    },
+    {
+      "house_cnt": "89097",
+      "adm_cd": "11050",
+      "adm_nm": "광진구"
+    },
+    {
+      "house_cnt": "101498",
+      "adm_cd": "11060",
+      "adm_nm": "동대문구"
+    },
+    {
+      "house_cnt": "110354",
+      "adm_cd": "11070",
+      "adm_nm": "중랑구"
+    },
+    {
+      "house_cnt": "134893",
+      "adm_cd": "11080",
+      "adm_nm": "성북구"
+    },
+    {
+      "house_cnt": "94970",
+      "adm_cd": "11090",
+      "adm_nm": "강북구"
+    },
+    {
+      "house_cnt": "103899",
+      "adm_cd": "11100",
+      "adm_nm": "도봉구"
+    },
+    {
+      "house_cnt": "183587",
+      "adm_cd": "11110",
+      "adm_nm": "노원구"
+    },
+    {
+      "house_cnt": "147102",
+      "adm_cd": "11120",
+      "adm_nm": "은평구"
+    },
+    {
+      "house_cnt": "98269",
+      "adm_cd": "11130",
+      "adm_nm": "서대문구"
+    },
+    {
+      "house_cnt": "116830",
+      "adm_cd": "11140",
+      "adm_nm": "마포구"
+    },
+    {
+      "house_cnt": "139228",
+      "adm_cd": "11150",
+      "adm_nm": "양천구"
+    },
+    {
+      "house_cnt": "187922",
+      "adm_cd": "11160",
+      "adm_nm": "강서구"
+    },
+    {
+      "house_cnt": "128048",
+      "adm_cd": "11170",
+      "adm_nm": "구로구"
+    },
+    {
+      "house_cnt": "67281",
+      "adm_cd": "11180",
+      "adm_nm": "금천구"
+    },
+    {
+      "house_cnt": "104554",
+      "adm_cd": "11190",
+      "adm_nm": "영등포구"
+    },
+    {
+      "house_cnt": "114847",
+      "adm_cd": "11200",
+      "adm_nm": "동작구"
+    },
+    {
+      "house_cnt": "126804",
+      "adm_cd": "11210",
+      "adm_nm": "관악구"
+    },
+    {
+      "house_cnt": "125781",
+      "adm_cd": "11220",
+      "adm_nm": "서초구"
+    },
+    {
+      "house_cnt": "161328",
+      "adm_cd": "11230",
+      "adm_nm": "강남구"
+    },
+    {
+      "house_cnt": "205417",
+      "adm_cd": "11240",
+      "adm_nm": "송파구"
+    },
+    {
+      "house_cnt": "133164",
+      "adm_cd": "11250",
+      "adm_nm": "강동구"
+    }
+  ],
+  "errMsg": "Success",
+  "errCd": 0,
+  "trId": "4PrP_API_0306_1655683642667"
+}

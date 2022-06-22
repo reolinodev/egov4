@@ -1,0 +1,113 @@
+{
+  "id": "API_0306",
+  "result": [
+    {
+      "house_cnt": "6213",
+      "adm_cd": "1121052",
+      "adm_nm": "보라매동"
+    },
+    {
+      "house_cnt": "5178",
+      "adm_cd": "1121054",
+      "adm_nm": "청림동"
+    },
+    {
+      "house_cnt": "7061",
+      "adm_cd": "1121057",
+      "adm_nm": "행운동"
+    },
+    {
+      "house_cnt": "3517",
+      "adm_cd": "1121058",
+      "adm_nm": "낙성대동"
+    },
+    {
+      "house_cnt": "3582",
+      "adm_cd": "1121061",
+      "adm_nm": "중앙동"
+    },
+    {
+      "house_cnt": "6838",
+      "adm_cd": "1121062",
+      "adm_nm": "인헌동"
+    },
+    {
+      "house_cnt": "5258",
+      "adm_cd": "1121063",
+      "adm_nm": "남현동"
+    },
+    {
+      "house_cnt": "5433",
+      "adm_cd": "1121064",
+      "adm_nm": "서원동"
+    },
+    {
+      "house_cnt": "3846",
+      "adm_cd": "1121065",
+      "adm_nm": "신원동"
+    },
+    {
+      "house_cnt": "5128",
+      "adm_cd": "1121066",
+      "adm_nm": "서림동"
+    },
+    {
+      "house_cnt": "4188",
+      "adm_cd": "1121068",
+      "adm_nm": "신사동"
+    },
+    {
+      "house_cnt": "4234",
+      "adm_cd": "1121069",
+      "adm_nm": "신림동"
+    },
+    {
+      "house_cnt": "4826",
+      "adm_cd": "1121071",
+      "adm_nm": "난향동"
+    },
+    {
+      "house_cnt": "4170",
+      "adm_cd": "1121072",
+      "adm_nm": "조원동"
+    },
+    {
+      "house_cnt": "4386",
+      "adm_cd": "1121073",
+      "adm_nm": "대학동"
+    },
+    {
+      "house_cnt": "10492",
+      "adm_cd": "1121078",
+      "adm_nm": "은천동"
+    },
+    {
+      "house_cnt": "10425",
+      "adm_cd": "1121079",
+      "adm_nm": "성현동"
+    },
+    {
+      "house_cnt": "7850",
+      "adm_cd": "1121080",
+      "adm_nm": "청룡동"
+    },
+    {
+      "house_cnt": "7635",
+      "adm_cd": "1121081",
+      "adm_nm": "난곡동"
+    },
+    {
+      "house_cnt": "7768",
+      "adm_cd": "1121082",
+      "adm_nm": "삼성동"
+    },
+    {
+      "house_cnt": "8776",
+      "adm_cd": "1121083",
+      "adm_nm": "미성동"
+    }
+  ],
+  "errMsg": "Success",
+  "errCd": 0,
+  "trId": "lW7X_API_0306_1655685585259"
+}

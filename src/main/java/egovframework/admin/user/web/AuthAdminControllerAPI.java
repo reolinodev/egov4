@@ -152,4 +152,20 @@ public class AuthAdminControllerAPI {
         return new ResponseEntity<> (responseMap, HttpStatus.OK);
     }
 
+    @ApiOperation(value = "내가 가진 권한을 가져온다.")
+    @PostMapping("/mine")
+    public ResponseEntity <Map<String,Object>> getMyAuthList(@RequestBody AuthEntity authEntity, HttpServletRequest httpServletRequest) {
+        Map <String,Object> responseMap = new HashMap<>();
+        List<AuthEntity> list = authAdminService.getMyAuthList(authEntity);
+
+        String message = list.size()+" item has been viewed.";
+        String code = "ok";
+        Header header = ResponseUtils.setHeader(message, code, httpServletRequest);
+
+        responseMap.put("header", header);
+        responseMap.put("data", list);
+
+        return new ResponseEntity<> (responseMap, HttpStatus.OK);
+    }
+
 }

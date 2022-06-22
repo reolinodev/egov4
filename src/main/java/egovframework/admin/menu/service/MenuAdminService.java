@@ -16,4 +16,8 @@ public interface MenuAdminService {
     int updateMenu(MenuEntity menuEntity) throws Exception;
 
     int deleteMenu(MenuEntity menuEntity) throws Exception;
+
+    List<MenuEntity> getMenuListLv(MenuEntity menuEntity);
+
+    MenuEntity getMainUrl(MenuEntity menuEntity);
 }

@@ -1,0 +1,83 @@
+{
+  "id": "API_0306",
+  "result": [
+    {
+      "house_cnt": "5261",
+      "adm_cd": "1105053",
+      "adm_nm": "화양동"
+    },
+    {
+      "house_cnt": "4552",
+      "adm_cd": "1105054",
+      "adm_nm": "군자동"
+    },
+    {
+      "house_cnt": "3606",
+      "adm_cd": "1105055",
+      "adm_nm": "중곡1동"
+    },
+    {
+      "house_cnt": "4981",
+      "adm_cd": "1105056",
+      "adm_nm": "중곡2동"
+    },
+    {
+      "house_cnt": "3857",
+      "adm_cd": "1105057",
+      "adm_nm": "중곡3동"
+    },
+    {
+      "house_cnt": "7366",
+      "adm_cd": "1105058",
+      "adm_nm": "중곡4동"
+    },
+    {
+      "house_cnt": "2529",
+      "adm_cd": "1105059",
+      "adm_nm": "능동"
+    },
+    {
+      "house_cnt": "5158",
+      "adm_cd": "1105060",
+      "adm_nm": "구의1동"
+    },
+    {
+      "house_cnt": "7309",
+      "adm_cd": "1105061",
+      "adm_nm": "구의2동"
+    },
+    {
+      "house_cnt": "8796",
+      "adm_cd": "1105062",
+      "adm_nm": "구의3동"
+    },
+    {
+      "house_cnt": "10167",
+      "adm_cd": "1105063",
+      "adm_nm": "광장동"
+    },
+    {
+      "house_cnt": "5374",
+      "adm_cd": "1105064",
+      "adm_nm": "자양1동"
+    },
+    {
+      "house_cnt": "7025",
+      "adm_cd": "1105065",
+      "adm_nm": "자양2동"
+    },
+    {
+      "house_cnt": "8519",
+      "adm_cd": "1105066",
+      "adm_nm": "자양3동"
+    },
+    {
+      "house_cnt": "4597",
+      "adm_cd": "1105067",
+      "adm_nm": "자양4동"
+    }
+  ],
+  "errMsg": "Success",
+  "errCd": 0,
+  "trId": "hs4r_API_0306_1655685266153"
+}

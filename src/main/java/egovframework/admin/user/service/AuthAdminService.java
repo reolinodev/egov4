@@ -18,4 +18,6 @@ public interface AuthAdminService {
     int updateAuth(AuthEntity authEntity) throws Exception;
 
     List<AuthEntity> getAuthRoleList(AuthEntity authEntity);
+
+    List<AuthEntity> getMyAuthList(AuthEntity authEntity);
 }
