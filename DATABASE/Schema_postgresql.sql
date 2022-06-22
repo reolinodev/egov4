@@ -110,7 +110,7 @@ CREATE TABLE CODE_TB
     code_id int NOT NULL,
     code_grp_id int NOT NULL,
     code_nm varchar(50) not null,
-    code_val varchar(10) not null,
+    code_val varchar(50) not null,
     bigo varchar(500),
     ord varchar(10),
     created_at timestamp,
@@ -218,4 +218,111 @@ WHERE A.CODE_GRP_ID = B.CODE_GRP_ID
 END; $$
 LANGUAGE 'plpgsql';
 
+CREATE TABLE BOARD_TB
+(
+    board_id int NOT NULL,
+    title varchar(100) not null,
+    bigo varchar(500),
+    created_at timestamp,
+    updated_at timestamp,
+    updated_id int,
+    use_yn varchar(1) DEFAULT 'Y'::character varying,
+    primary key(board_id)
+);
 
+COMMENT ON TABLE public.BOARD_TB IS '게시판';
+COMMENT ON COLUMN public.BOARD_TB.board_id IS '게시판 아이디';
+COMMENT ON COLUMN public.BOARD_TB.title IS '제목';
+COMMENT ON COLUMN public.BOARD_TB.bigo IS '비고';
+COMMENT ON COLUMN public.BOARD_TB.created_at IS '생성일';
+COMMENT ON COLUMN public.BOARD_TB.updated_at IS '수정일';
+COMMENT ON COLUMN public.BOARD_TB.updated_id IS '수정자';
+COMMENT ON COLUMN public.BOARD_TB.use_yn IS '사용여부';
+
+CREATE SEQUENCE board_seq START 1;
+
+CREATE TABLE POST_TB
+(
+    post_id int NOT NULL,
+    board_id int NOT NULL,
+    title varchar(100) not null,
+    main_text text,
+    created_at timestamp,
+    updated_at timestamp,
+    updated_id int,
+    post_cnt int,
+    attach_grp_id int,
+    use_yn varchar(1) DEFAULT 'Y'::character varying,
+    primary key(post_id),
+    foreign key (board_id) REFERENCES BOARD_TB (board_id)
+);
+
+COMMENT ON TABLE public.POST_TB IS '게시글';
+COMMENT ON COLUMN public.POST_TB.post_id IS '게시글 아이디';
+COMMENT ON COLUMN public.POST_TB.board_id IS '게시판 아이디';
+COMMENT ON COLUMN public.POST_TB.title IS '제목';
+COMMENT ON COLUMN public.POST_TB.main_text IS '본문';
+COMMENT ON COLUMN public.POST_TB.created_at IS '생성일';
+COMMENT ON COLUMN public.POST_TB.updated_at IS '수정일';
+COMMENT ON COLUMN public.POST_TB.updated_id IS '수정자';
+COMMENT ON COLUMN public.POST_TB.post_cnt IS '조회수';
+COMMENT ON COLUMN public.POST_TB.attach_grp_id IS '첨부 그룹 아이디';
+COMMENT ON COLUMN public.POST_TB.use_yn IS '사용여부';
+
+CREATE SEQUENCE post_seq START 1;
+CREATE SEQUENCE attach_grp_seq START 1;
+
+
+CREATE TABLE FAQ_TB
+(
+    faq_id int NOT NULL,
+    title varchar(100) not null,
+    main_text text,
+    created_at timestamp,
+    updated_at timestamp,
+    updated_id int,
+    use_yn varchar(1) DEFAULT 'Y'::character varying,
+    primary key(faq_id)
+);
+
+COMMENT ON TABLE public.FAQ_TB IS 'FAQ';
+COMMENT ON COLUMN public.FAQ_TB.faq_id IS 'FAQ 아이디';
+COMMENT ON COLUMN public.FAQ_TB.title IS '제목';
+COMMENT ON COLUMN public.FAQ_TB.main_text IS '본문';
+COMMENT ON COLUMN public.FAQ_TB.created_at IS '생성일';
+COMMENT ON COLUMN public.FAQ_TB.updated_at IS '수정일';
+COMMENT ON COLUMN public.FAQ_TB.updated_id IS '수정자';
+COMMENT ON COLUMN public.FAQ_TB.use_yn IS '사용여부';
+
+CREATE SEQUENCE faq_seq START 1;
+
+CREATE TABLE QNA_TB
+(
+    qna_id int NOT NULL,
+    title varchar(100) not null,
+    main_text text,
+    qna_lv int,
+    qna_parent_id int,
+    created_at timestamp,
+    updated_at timestamp,
+    updated_id int,
+    qna_type varchar(50),
+    hidden_yn varchar(1) DEFAULT 'N'::character varying,
+    use_yn varchar(1) DEFAULT 'Y'::character varying,
+    primary key(qna_id)
+);
+
+COMMENT ON TABLE public.QNA_TB IS 'QNA';
+COMMENT ON COLUMN public.QNA_TB.qna_id IS 'QNA 아이디';
+COMMENT ON COLUMN public.QNA_TB.title IS '제목';
+COMMENT ON COLUMN public.QNA_TB.main_text IS '본문';
+COMMENT ON COLUMN public.QNA_TB.qna_lv IS '레벨';
+COMMENT ON COLUMN public.QNA_TB.qna_parent_id IS '부모 아이디';
+COMMENT ON COLUMN public.QNA_TB.created_at IS '생성일';
+COMMENT ON COLUMN public.QNA_TB.updated_at IS '수정일';
+COMMENT ON COLUMN public.QNA_TB.updated_id IS '수정자';
+COMMENT ON COLUMN public.QNA_TB.qna_type IS '문의유형';
+COMMENT ON COLUMN public.QNA_TB.hidden_yn IS '비밀글 여부';
+COMMENT ON COLUMN public.QNA_TB.use_yn IS '사용여부';
+
+CREATE SEQUENCE qna_seq START 1;
