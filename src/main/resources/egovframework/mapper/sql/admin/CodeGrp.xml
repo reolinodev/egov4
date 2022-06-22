@@ -4,6 +4,7 @@
 <mapper namespace="CodeGrpAdminDAO">
 
     <select id="findAll" parameterType="codeGrp" resultType="codeGrp">
+        /* sql : CodeGrpAdminDAO.findAll */
         SELECT  ROW_NUMBER() OVER (ORDER BY CREATED_AT DESC) RNUM,
                 CODE_GRP_ID,
                 CODE_GRP_NM,
@@ -26,6 +27,7 @@
     </select>
 
     <select id="countAll" parameterType="codeGrp" resultType="int">
+        /* sql : CodeGrpAdminDAO.countAll */
         SELECT  COUNT(*)
         FROM    CODE_GRP_TB
         WHERE   1=1
@@ -39,12 +41,14 @@
     </select>
 
     <select id="countByCodeGrpVal" parameterType="codeGrp" resultType="int">
+        /* sql : CodeGrpAdminDAO.countByCodeGrpVal */
         SELECT  COUNT(*)
         FROM    CODE_GRP_TB
         WHERE   CODE_GRP_VAL = #{code_grp_val}
     </select>
 
     <insert id="save" parameterType="codeGrp">
+        /* sql : CodeGrpAdminDAO.save */
         INSERT INTO CODE_GRP_TB
         (
             CODE_GRP_ID,
@@ -62,6 +66,7 @@
     </insert>
 
     <select id="findByCodeGrpId" parameterType="int" resultType="codeGrp">
+        /* sql : CodeGrpAdminDAO.findByCodeGrpId */
         SELECT  CODE_GRP_ID,
                 CODE_GRP_NM,
                 CODE_GRP_VAL,
@@ -74,6 +79,7 @@
     </select>
 
     <update id="update" parameterType="codeGrp">
+        /* sql : CodeGrpAdminDAO.update */
         UPDATE  CODE_GRP_TB
         SET     UPDATED_AT = now()
                 , CODE_GRP_NM = #{code_grp_nm}

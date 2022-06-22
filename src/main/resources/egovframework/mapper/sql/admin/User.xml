@@ -4,18 +4,21 @@
 <mapper namespace="UserAdminDAO">
 
 	<select id="countByLoginId" parameterType="string" resultType="int">
+		/* sql : UserAdminDAO.countByLoginId */
 		SELECT  COUNT(*)
 		FROM 	USER_TB
 		WHERE	LOGIN_ID = #{login_id}
 	</select>
 
 	<select id="findByLoginId" parameterType="userEntity" resultType="userEntity">
+		/* sql : UserAdminDAO.findByLoginId */
 		SELECT  *
 		FROM 	USER_TB
 		WHERE	LOGIN_ID = #{login_id}
 	</select>
 
 	<insert id="save" parameterType="userEntity">
+		/* sql : UserAdminDAO.save */
 		INSERT INTO USER_TB
 		(
 			USER_ID,
@@ -39,6 +42,7 @@
 	</insert>
 
 	<update id="updateUserPw" parameterType="userEntity">
+		/* sql : UserAdminDAO.updateUserPw */
 		UPDATE 	USER_TB
 		SET 	UPDATED_AT = now()
 		  		, USER_PW = #{user_pw}
@@ -46,6 +50,7 @@
 	</update>
 
 	<select id="findAll" parameterType="userEntity" resultType="userEntity">
+		/* sql : UserAdminDAO.findAll */
 		SELECT  ROW_NUMBER() OVER (ORDER BY USER_ID DESC) RNUM,
 				USER_ID,
 				LOGIN_ID,
@@ -69,6 +74,7 @@
 	</select>
 
 	<select id="countByAll" parameterType="userEntity" resultType="int">
+		/* sql : UserAdminDAO.countByAll */
 		SELECT  COUNT(*)
 		FROM 	USER_TB
 		WHERE	1=1
@@ -83,12 +89,14 @@
 	</select>
 
 	<select id="findByUserId" parameterType="int" resultType="userEntity">
+		/* sql : UserAdminDAO.findByUserId */
 		SELECT  *
 		FROM 	USER_TB
 		WHERE	USER_ID = #{user_id}
 	</select>
 
 	<update id="updateUser" parameterType="userEntity">
+		/* sql : UserAdminDAO.updateUser */
 		UPDATE 	USER_TB
 		SET 	UPDATED_AT = now()
 				<if test="email != null and email != ''">

@@ -3,6 +3,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="MenuAdminDAO">
     <select id="findAllMenu" parameterType="String" resultType="menuEntity">
+        /* sql : MenuAdminDAO.findAllMenu */
         WITH RECURSIVE RECUR_DATA AS(
             SELECT  MENU_ID,
                     MENU_NM,
@@ -50,6 +51,7 @@
     </select>
 
     <select id="findByAuthRoleAndMenuLv1" parameterType="menuEntity" resultType="menuEntity">
+        /* sql : MenuAdminDAO.findByAuthRoleAndMenuLv1 */
         SELECT MENU_ID,
                MENU_NM,
                MENU_LV,
@@ -68,12 +70,14 @@
     </select>
 
     <update id="updateMainYnAllN" parameterType="menuEntity">
+        /* sql : MenuAdminDAO.updateMainYnAllN */
         UPDATE 	MENU_TB
         SET 	MAIN_YN = 'N'
         WHERE 	AUTH_ROLE = #{auth_role}
     </update>
 
     <insert id="save" parameterType="menuEntity">
+        /* sql : MenuAdminDAO.save */
         INSERT INTO MENU_TB
         (
             MENU_ID,
@@ -105,6 +109,7 @@
     </insert>
 
     <select id="findByMenuId" parameterType="int" resultType="menuEntity">
+        /* sql : MenuAdminDAO.findByMenuId */
         SELECT MENU_ID,
                MENU_NM,
                MENU_LV,
@@ -120,6 +125,7 @@
     </select>
 
     <update id="updateMenu" parameterType="menuEntity">
+        /* sql : MenuAdminDAO.updateMenu */
         UPDATE 	MENU_TB
         SET 	UPDATED_AT = now()
                 <if test="menu_nm != null and menu_nm != ''">
@@ -144,6 +150,7 @@
     </update>
 
     <select id="findByParentId" parameterType="int" resultType="menuEntity">
+        /* sql : MenuAdminDAO.findByParentId */
         SELECT MENU_ID,
                MENU_NM,
                MENU_LV,
@@ -159,6 +166,7 @@
     </select>
 
     <select id="countByChild" parameterType="int" resultType="int">
+        /* sql : MenuAdminDAO.countByChild */
         SELECT COUNT(*)
         FROM   MENU_TB
         WHERE  MENU_LV = 2
@@ -166,11 +174,13 @@
     </select>
 
     <delete id="deleteByMenuId" parameterType="int">
+        /* sql : MenuAdminDAO.deleteByMenuId */
         DELETE  FROM MENU_TB
         WHERE   MENU_ID = #{menu_id}
     </delete>
 
     <select id="findByMenuLvAndAuthId" parameterType="menuEntity" resultType="menuEntity">
+        /* sql : MenuAdminDAO.findByMenuLvAndAuthId */
         SELECT  A.MENU_ID,
                 A.MENU_NM,
                 A.MENU_LV,
@@ -187,10 +197,12 @@
         WHERE   A.MENU_LV = #{menu_lv}
         AND     B.AUTH_ID = #{auth_id}
         AND     A.USE_YN = 'Y'
+        AND     B.USE_YN = 'Y'
         ORDER BY CAST(ORD AS INTEGER) ASC
     </select>
 
     <select id="findByMainUrl" parameterType="menuEntity" resultType="menuEntity">
+        /* sql : MenuAdminDAO.findByMainUrl */
         SELECT  MENU_ID
                 , MENU_NM
                 , MENU_LV
@@ -210,7 +222,6 @@
                                 FROM    CODE_TB
                                 WHERE   CODE_GRP_ID = (SELECT CODE_GRP_ID FROM CODE_GRP_TB CGT  WHERE CODE_GRP_VAL = 'MAIN_URL')
                                 AND     USE_YN = 'Y'
-                                ORDER BY CAST(ORD AS INTEGER) ASC
                                 LIMIT 1
                           ) A
                      UNION ALL

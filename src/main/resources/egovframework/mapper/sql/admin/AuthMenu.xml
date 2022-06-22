@@ -4,6 +4,7 @@
 <mapper namespace="AuthMenuAdminDAO">
 
     <select id="findByAuthRoleAndMenuId" parameterType="authMenuEntity" resultType="authMenuEntity">
+        /* sql : AuthMenuAdminDAO.findByAuthRoleAndMenuId */
         SELECT    A.AUTH_ID
                 , A.AUTH_NM
                 , COALESCE(B.USE_YN, 'N') AS USE_YN
@@ -28,6 +29,7 @@
     </select>
 
     <insert id="save" parameterType="authMenu">
+        /* sql : AuthMenuAdminDAO.save */
         WITH UPSERT AS (
         UPDATE  AUTH_MENU_TB
         SET     USE_YN = #{use_yn}

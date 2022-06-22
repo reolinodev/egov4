@@ -4,6 +4,7 @@
 <mapper namespace="LoginAdminDAO">
 
 	<select id="countByLoginId" parameterType="loginEntity" resultType="int">
+		/* sql : LoginAdminDAO.countByLoginId */
 		SELECT	COUNT(*)
 		FROM 	USER_TB
 		WHERE 	LOGIN_ID = #{login_id}
@@ -11,6 +12,7 @@
 	</select>
 
 	<select id="countByLoginIdAndUserPw" parameterType="loginEntity" resultType="int">
+		/* sql : LoginAdminDAO.countByLoginIdAndUserPw */
 		SELECT  COUNT(*)
 		FROM 	USER_TB
 		WHERE 	LOGIN_ID = #{login_id}
@@ -19,6 +21,7 @@
 	</select>
 
 	<select id="findByLoginId" parameterType="user" resultType="loginEntity">
+		/* sql : LoginAdminDAO.findByLoginId */
 		SELECT 	A.USER_ID,
 		       	A.LOGIN_ID,
 		       	A.USER_NM,
@@ -35,6 +38,7 @@
 	</select>
 
 	<insert id="saveLoginHistory" parameterType="loginEntity">
+		/* sql : LoginAdminDAO.saveLoginHistory */
 		INSERT INTO LOGIN_HISTORY_TB
 		(
 			USER_ID,
@@ -52,6 +56,7 @@
 	</insert>
 
 	<update id="saveLastLoginAt" parameterType="loginEntity">
+		/* sql : LoginAdminDAO.saveLastLoginAt */
 		UPDATE 	USER_TB
 		SET 	LAST_LOGIN_AT = now()
 		WHERE 	USER_ID = #{user_id}

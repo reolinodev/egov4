@@ -4,6 +4,7 @@
 <mapper namespace="UserAuthAdminDAO">
 
     <select id="findByAuthIdNotAndUseYn" parameterType="userAuthEntity" resultType="userAuthEntity">
+        /* sql : UserAuthAdminDAO.findByAuthIdNotAndUseYn */
         SELECT  ROW_NUMBER() OVER (ORDER BY USER_ID DESC) RNUM,
                 USER_ID,
                 LOGIN_ID,
@@ -27,6 +28,7 @@
     </select>
 
     <select id="countByAuthIdNotAndUseYn" parameterType="userAuthEntity" resultType="int">
+        /* sql : UserAuthAdminDAO.countByAuthIdNotAndUseYn */
         SELECT  COUNT(*)
         FROM    USER_TB A
         WHERE   A.USE_YN = 'Y'
@@ -44,6 +46,7 @@
     </select>
 
     <insert id="save" parameterType="userAuthEntity">
+        /* sql : UserAuthAdminDAO.save */
         WITH UPSERT AS (
             UPDATE  USER_AUTH_TB
             SET     USE_YN = 'Y'
@@ -61,6 +64,7 @@
     </insert>
 
     <select id="findAll" parameterType="userAuthEntity" resultType="userAuthEntity">
+        /* sql : UserAuthAdminDAO.findAll */
         SELECT  ROW_NUMBER() OVER (ORDER BY A.AUTH_ID ASC, A.CREATED_AT DESC) RNUM,
                 A.USER_ID,
                 A.AUTH_ID,
@@ -90,6 +94,7 @@
     </select>
 
     <select id="countAll" parameterType="userAuthEntity" resultType="int">
+        /* sql : UserAuthAdminDAO.countAll */
         SELECT  COUNT (*)
         FROM    USER_AUTH_TB A, AUTH_TB B, USER_TB C
         WHERE   A.AUTH_ID = B.AUTH_ID
@@ -109,6 +114,7 @@
     </select>
 
     <update id="deleteUserAuth" parameterType="userAuthEntity">
+        /* sql : UserAuthAdminDAO.deleteUserAuth */
         UPDATE  USER_AUTH_TB
         SET     UPDATED_AT = now()
                 , USE_YN = 'N'

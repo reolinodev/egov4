@@ -4,6 +4,7 @@
 <mapper namespace="CodeAdminDAO">
 
     <select id="findByCodeGrpId" parameterType="int" resultType="codeEntity">
+        /* sql : CodeAdminDAO.findByCodeGrpId */
         SELECT  CODE_ID,
                 CODE_GRP_ID,
                 CODE_NM,
@@ -20,6 +21,7 @@
 
 
     <select id="findByCodeGrpVal" parameterType="string" resultType="codeEntity">
+        /* sql : CodeAdminDAO.findByCodeGrpVal */
         SELECT  A.CODE_ID,
                 A.CODE_NM,
                 A.CODE_VAL,
@@ -33,6 +35,7 @@
 
 
     <insert id="save" parameterType="code">
+        /* sql : CodeAdminDAO.save */
         INSERT INTO CODE_TB
         (
             CODE_ID,
@@ -56,6 +59,7 @@
     </insert>
 
     <update id="update" parameterType="code">
+        /* sql : CodeAdminDAO.update */
         UPDATE  CODE_TB
         SET     UPDATED_AT = now()
                 <if test="updated_id != null and updated_id != ''">
@@ -80,6 +84,7 @@
     </update>
 
     <delete id="deleteById" parameterType="int">
+        /* sql : CodeAdminDAO.deleteById */
         DELETE
         FROM    CODE_TB
         WHERE   CODE_ID = #{code_id}
