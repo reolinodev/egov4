@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Seoul Verse</title>
+	<title>Admin</title>
 	<%@include file ="../include/config.jsp" %>
 	<script type="module" src="/dist/adminLogin.js"></script>
 </head>
@@ -53,11 +53,11 @@
 					</div>
 				</form>
 
-				<p class="mb-1" id="pwChangeBtn">
-					<a href="#">Change Password</a>
+				<p class="mb-1">
+					<a href="#" id="pwChangeBtn">Change Password</a>
 				</p>
-				<p class="mb-0" id="signUpBtn">
-					<a href="#" class="text-center">Sign Up</a>
+				<p class="mb-0">
+					<a href="#" id="signUpBtn" class="text-center">Sign Up</a>
 				</p>
 
 				<div class="form-group row">
