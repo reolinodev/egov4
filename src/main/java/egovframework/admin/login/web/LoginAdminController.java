@@ -27,8 +27,11 @@ public class LoginAdminController {
 	}
 
 	@PostMapping(value = "/admin/login")
-	public ModelAndView login(LoginEntity loginEntity) throws Exception {
+	public ModelAndView login(LoginEntity loginEntity, HttpServletRequest request) throws Exception {
 		ModelAndView mav = new ModelAndView();
+
+		HttpSession session = request.getSession();
+		session.invalidate();
 
 		String msg = "";
 
