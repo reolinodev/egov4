@@ -222,6 +222,7 @@ CREATE TABLE BOARD_TB
 (
     board_id int NOT NULL,
     title varchar(100) not null,
+    board_type varchar(50) not null,
     bigo varchar(500),
     created_at timestamp,
     updated_at timestamp,
@@ -233,6 +234,7 @@ CREATE TABLE BOARD_TB
 COMMENT ON TABLE public.BOARD_TB IS '게시판';
 COMMENT ON COLUMN public.BOARD_TB.board_id IS '게시판 아이디';
 COMMENT ON COLUMN public.BOARD_TB.title IS '제목';
+COMMENT ON COLUMN public.BOARD_TB.board_type IS '게시판 유형';
 COMMENT ON COLUMN public.BOARD_TB.bigo IS '비고';
 COMMENT ON COLUMN public.BOARD_TB.created_at IS '생성일';
 COMMENT ON COLUMN public.BOARD_TB.updated_at IS '수정일';
@@ -326,3 +328,13 @@ COMMENT ON COLUMN public.QNA_TB.hidden_yn IS '비밀글 여부';
 COMMENT ON COLUMN public.QNA_TB.use_yn IS '사용여부';
 
 CREATE SEQUENCE qna_seq START 1;
+
+CREATE FUNCTION getusernm(userid integer)
+    RETURNS TABLE( usernm varchar(50)) AS $$
+begin
+RETURN QUERY
+SELECT USER_NM
+FROM USER_TB
+WHERE USER_ID = userId ;
+END; $$
+LANGUAGE 'plpgsql';

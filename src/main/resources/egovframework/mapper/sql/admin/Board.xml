@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="BoardAdminDAO">
+
+    <select id="findAll" parameterType="boardEntity" resultType="boardEntity">
+        /* sql : BoardAdminDAO.findAll */
+        SELECT  ROW_NUMBER() OVER (ORDER BY BOARD_ID ASC) RNUM,
+                TITLE,
+                BIGO,
+                getcodenm('BOARD_TYPE', BOARD_TYPE) AS BOARD_TYPE_NM,
+                getcodenm('USE_YN', USE_YN) AS USE_YN_NM,
+                TO_CHAR(UPDATED_AT, 'YYYY-MM-DD HH24:MI') AS UPDATED_AT,
+                getusernm(UPDATED_ID) AS UPDATED_NM,
+                BOARD_ID
+        FROM    BOARD_TB
+        WHERE   1=1
+        <if test="use_yn != null and use_yn != ''">
+        AND     USE_YN = #{use_yn}
+        </if>
+        <if test="board_type != null and board_type != ''">
+        AND     BOARD_TYPE = #{board_type}
+        </if>
+        <if test="search_str != null and search_str != ''">
+        AND     UPPER(TITLE) LIKE  '%'||UPPER(#{search_str})||'%'
+        </if>
+        OFFSET  #{start_idx} limit #{page_per};
+    </select>
+
+    <select id="countAll" parameterType="boardEntity" resultType="int">
+        /* sql : BoardAdminDAO.countAll */
+        SELECT  COUNT(*)
+        FROM    BOARD_TB
+        WHERE   1=1
+        <if test="use_yn != null and use_yn != ''">
+        AND     USE_YN = #{use_yn}
+        </if>
+        <if test="board_type != null and board_type != ''">
+        AND     BOARD_TYPE = #{board_type}
+        </if>
+        <if test="search_str != null and search_str != ''">
+        AND     UPPER(TITLE) LIKE  '%'||UPPER(#{search_str})||'%'
+        </if>
+    </select>
+
+    <insert id="save" parameterType="boardEntity">
+        /* sql : BoardAdminDAO.save */
+        INSERT INTO BOARD_TB
+        (
+            BOARD_ID,
+            TITLE,
+            BIGO,
+            BOARD_TYPE,
+            CREATED_AT,
+            UPDATED_AT,
+            UPDATED_ID
+        )
+        VALUES
+        (
+            nextval('board_seq'),
+            #{title},
+            #{bigo},
+            #{board_type},
+            now(),
+            now(),
+            #{updated_id}
+        )
+    </insert>
+
+    <select id="findByBoardId" parameterType="int" resultType="boardEntity">
+        /* sql : BoardAdminDAO.findByBoardId */
+        SELECT  BOARD_ID,
+                TITLE,
+                BIGO,
+                BOARD_TYPE,
+                CREATED_AT,
+                UPDATED_AT,
+                UPDATED_ID,
+                USE_YN
+        FROM    BOARD_TB
+        WHERE   BOARD_ID = #{board_id}
+    </select>
+
+    <update id="updateBoard" parameterType="boardEntity">
+        /* sql : BoardAdminDAO.updateBoard */
+        UPDATE  BOARD_TB
+        SET     UPDATED_AT = now()
+                <if test="title != null and title != ''">
+                , TITLE = #{title}
+                </if>
+                <if test="updated_id != null and updated_id != ''">
+                , UPDATED_ID = #{updated_id}
+                </if>
+                <if test="bigo != null and bigo != ''">
+                , BIGO = #{bigo}
+                </if>
+                <if test="use_yn != null and use_yn != ''">
+                , USE_YN = #{use_yn}
+                </if>
+        WHERE   BOARD_ID = #{board_id}
+    </update>
+
+</mapper>

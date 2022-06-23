@@ -24,6 +24,7 @@
 		<typeAlias alias="menuEntity" 		type="egovframework.admin.menu.service.domain.MenuEntity" />
 		<typeAlias alias="authMenuEntity" 	type="egovframework.admin.menu.service.domain.AuthMenuEntity" />
 		<typeAlias alias="authMenu" 		type="egovframework.admin.menu.service.domain.AuthMenu" />
+		<typeAlias alias="boardEntity" 		type="egovframework.admin.board.service.domain.BoardEntity" />
 
 		<typeAlias alias="FileVO"			type="egovframework.com.cmm.service.FileVO" />
 		<typeAlias alias="ComDefaultCodeVO" type="egovframework.com.cmm.ComDefaultCodeVO" />
