@@ -11,11 +11,20 @@
 <div id="container">
     <div class="row justify-content-end" style="margin-bottom: 10px">
         <div class="col-2">
-            <button type="button" class="btn btn-block btn-success btn-sm" id="editorBtn">Get Html</button>
+            <button type="button" class="btn btn-block btn-success btn-sm" id="editorBtn">Set Html</button>
         </div>
     </div>
-    <div class="row">
+    <div class="row" style="margin: 10px;font-weight: bold;color: darkgrey;">
+        <p>* Editor</p>
+    </div>
+    <div class="row" style="width: 100%">
         <div id="editor"></div>
+    </div>
+    <div class="row" style="margin: 10px;font-weight: bold;color: darkgrey;">
+        <p>* Viewer</p>
+    </div>
+    <div class="row">
+        <div id="viewer"></div>
     </div>
 </div>
 

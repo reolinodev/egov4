@@ -1,6 +1,5 @@
-import {setBasicViewer} from "../module/editor";
+import {setBasicViewer} from "../module/viewer";
 
 $(document).ready(() => {
   setBasicViewer('viewer' );
-
 });
