@@ -31,7 +31,10 @@ module.exports = {
         adminAuthMenu: '/js/admin/menu/adminAuthMenu.js',
         adminHead: '/js/admin/main/adminHead.js',
         adminBoard: '/js/admin/board/adminBoard.js',
+        adminPostWrite: '/js/admin/board/adminPostWrite.js',
         adminGis: '/js/admin/pilot/adminGis.js',
+        adminEditor: '/js/admin/pilot/adminEditor.js',
+        adminViewer: '/js/admin/pilot/adminViewer.js',
     },
     output: {
         path: path.resolve(`${__dirname  }/dist`),

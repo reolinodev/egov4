@@ -15,4 +15,24 @@ public class PilotAdminController {
         mav.setViewName("/admin/pilot/gisView");
         return mav;
     }
+
+    /**
+     * editor 화면
+     */
+    @GetMapping(value = "/admin/pilot/editor")
+    public ModelAndView editorView() {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("/admin/pilot/editorView");
+        return mav;
+    }
+
+    /**
+     * editor 화면
+     */
+    @GetMapping(value = "/admin/pilot/viewer")
+    public ModelAndView viewerView() {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("/admin/pilot/viewerView");
+        return mav;
+    }
 }
