@@ -16,14 +16,16 @@ let tree;
 const search = () => {
 
     $.ajax({
-        url : '/api/admin/menu/'+$("#authRole").val(),
+        url : `/api/admin/menu/${$("#authRole").val()}`,
         type: 'GET',
         headers: {'Content-Type': 'application/json'},
-        success : function (result){
+        success (result){
+            // eslint-disable-next-line no-use-before-define
            setMenuList(result.data);
         },
-        error : function (request, status, error){
-            console.log('code:'+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+        error (request, status, error){
+            // eslint-disable-next-line no-useless-concat
+            console.log(`code:${request.status}\n`+`message:${request.responseText}\n`+`error:${error}`);
         }
     });
 }
@@ -35,17 +37,19 @@ const setMenuList = (list) => {
 
     const menu = [];
 
+    // eslint-disable-next-line no-restricted-syntax
     for (const data of list) {
 
         if(data.menu_lv === 1){
-            let obj1 ={};
-            let children = [];
+            const obj1 ={};
+            const children = [];
 
             obj1.text = data.menu_nm;
             obj1.target = data.menu_id;
+            // eslint-disable-next-line no-restricted-syntax
             for (const data2 of list) {
                 if(data.menu_id === data2.parent_id){
-                    let obj2 ={};
+                    const obj2 ={};
                     obj2.text = data2.menu_nm;
                     obj2.target = data2.menu_id;
                     children.push(obj2);
@@ -56,6 +60,7 @@ const setMenuList = (list) => {
         }
     }
 
+    // eslint-disable-next-line no-use-before-define
     tree = setBasicTree(menu,searchMenuInfo);
 }
 
@@ -191,12 +196,12 @@ $(document).ready(() => {
     setCodeSelBox('useYn','USE_YN','','Y' );
 
     // 권한 구분 변경시 검색
-    $("#authRole").change(function(){
+    $("#authRole").change(()=> {
         search();
         initMenuAdd();
     });
 
-    //메뉴 레벨 변경시 상위 메뉴 검색
+    // 메뉴 레벨 변경시 상위 메뉴 검색
     $("#menuLv").change(() => {
         if($("#menuLv").val() === "2"){
             const authRole = $("#authRole").val();
@@ -214,7 +219,7 @@ $(document).ready(() => {
         }
     });
 
-    //저장 버튼 클릭 이벤트
+    // 저장 버튼 클릭 이벤트
     $("#saveBtn").click(() => {
         let msg = '';
 
@@ -293,12 +298,12 @@ $(document).ready(() => {
         });
     });
 
-    //추가 버튼 클릭 이벤트
+    // 추가 버튼 클릭 이벤트
     $("#addBtn").click(() => {
         initMenuAdd();
     });
 
-    //삭제 버튼 클릭 이벤트
+    // 삭제 버튼 클릭 이벤트
     $("#delBtn").click(() => {
         if($("#menuId").val() ===''){
             Alert("No menu selected");

@@ -15,17 +15,20 @@ const pwChangeProc = () => {
         $("#msg").html(msg);
         $("#loginId").focus();
         return;
-    }else if($userPw.val() === ''){
+    }
+    if($userPw.val() === ''){
         msg = "Please enter a password.";
         $("#msg").html(msg);
         $("#userPw").focus();
         return;
-    }else if($userPwRe.val() === ''){
+    }
+    if($userPwRe.val() === ''){
         msg = "Please re-enter your password.";
         $("#msg").html(msg);
         $("#userPwRe").focus();
         return;
-    }else if($userPw.val() !== $userPwRe.val()){
+    }
+    if($userPw.val() !== $userPwRe.val()){
         msg = "Passwords do not match.";
         $("#msg").html(msg);
         $("#userPwRe").focus();

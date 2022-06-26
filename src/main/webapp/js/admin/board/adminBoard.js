@@ -2,7 +2,6 @@ import {setCodeSelBox} from "../module/component";
 import Page, {setPagination} from "../module/pagination";
 import {setBasicGrid, setGridClickEvent} from "../module/grid";
 import {serializeFormJson} from "../module/json";
-import {checkKr} from "../module/validation";
 import {Alert} from "../module/alert";
 
 let page = new Page(1, false, 10, 0);
@@ -187,7 +186,7 @@ const editProc = () => {
     };
 
     $.ajax({
-        url: '/api/admin/board/'+$("#editBoardId").val(),
+        url: `/api/admin/board/${$("#editBoardId").val()}`,
         type: 'PUT',
         data: JSON.stringify(param),
         headers: {'Content-Type': 'application/json'},
