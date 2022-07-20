@@ -34,7 +34,7 @@ public class SwaggerConfig {
             .required(false)
             .build();
 
-        List<springfox.documentation.service.Parameter> globalParamters = new ArrayList<>();
+        List<Parameter> globalParamters = new ArrayList<>();
         globalParamters.add(parameterBuilder);
 
         return new Docket(DocumentationType.SWAGGER_2)

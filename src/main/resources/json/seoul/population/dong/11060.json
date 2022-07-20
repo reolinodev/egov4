@@ -1,0 +1,134 @@
+{
+  "id": "API_0306",
+  "result": [
+    {
+      "adm_cd": "1106071",
+      "adm_nm": "회기동",
+      "population_cnt":13104,
+      "man":5977,
+      "woman":7127,
+      "man_per":46,
+      "woman_per":54
+    },
+    {
+      "adm_cd": "1106072",
+      "adm_nm": "휘경1동",
+      "population_cnt":16293,
+      "man":7379,
+      "woman":8914,
+      "man_per":45,
+      "woman_per":55
+    },
+    {
+      "adm_cd": "1106073",
+      "adm_nm": "휘경2동",
+      "population_cnt":24816,
+      "man":12301,
+      "woman":12515,
+      "man_per":50,
+      "woman_per":50
+    },
+    {
+      "adm_cd": "1106080",
+      "adm_nm": "청량리동",
+      "population_cnt":19151,
+      "man":9521,
+      "woman":9630,
+      "man_per":50,
+      "woman_per":50
+    },
+    {
+      "adm_cd": "1106081",
+      "adm_nm": "용신동",
+      "population_cnt":34108,
+      "man":16864,
+      "woman":17244,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1106082",
+      "adm_nm": "제기동",
+      "population_cnt":26606,
+      "man":13331,
+      "woman":13275,
+      "man_per":50,
+      "woman_per":50
+    },
+    {
+      "adm_cd": "1106083",
+      "adm_nm": "전농1동",
+      "population_cnt":29479,
+      "man":14708,
+      "woman":14771,
+      "man_per":50,
+      "woman_per":50
+    },
+    {
+      "adm_cd": "1106084",
+      "adm_nm": "전농2동",
+      "population_cnt":18780,
+      "man":8969,
+      "woman":9811,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1106086",
+      "adm_nm": "답십리2동",
+      "population_cnt":28263,
+      "man":13706,
+      "woman":14557,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1106087",
+      "adm_nm": "장안1동",
+      "population_cnt":38724,
+      "man":19095,
+      "woman":19629,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1106088",
+      "adm_nm": "장안2동",
+      "population_cnt":32711,
+      "man":16244,
+      "woman":16467,
+      "man_per":50,
+      "woman_per":50
+    },
+    {
+      "adm_cd": "1106089",
+      "adm_nm": "이문1동",
+      "population_cnt":21147,
+      "man":10143,
+      "woman":11004,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1106090",
+      "adm_nm": "이문2동",
+      "population_cnt":20273,
+      "man":9775,
+      "woman":10498,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1106091",
+      "adm_nm": "답십리1동",
+      "population_cnt":29301,
+      "man":14088,
+      "woman":15213,
+      "man_per":48,
+      "woman_per":52
+    }
+  ],
+  "errMsg": "Success",
+  "errCd": 0,
+  "trId": "5ba6_API_0306_1655685278672"
+}

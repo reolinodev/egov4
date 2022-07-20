@@ -28,7 +28,7 @@ public class BoardAdminControllerAPI {
 
     private final BoardAdminService boardAdminService;
 
-    @ApiOperation(value = "사용자를 입력한다.")
+    @ApiOperation(value = "게시판을 입력한다.")
     @PutMapping("/")
     public ResponseEntity<Map<String,Object>> inputBoard(
         @ApiParam(
@@ -124,5 +124,56 @@ public class BoardAdminControllerAPI {
         responseMap.put("header", header);
 
         return new ResponseEntity<>(responseMap, status);
+    }
+
+    @ApiOperation(value = "사용가능한 게시판 목록을 조회한다. FAQ, QNA 제외")
+    @PostMapping("/select/list")
+    public ResponseEntity<Map<String,Object>> getAvailableBoardList(@RequestBody BoardEntity boardEntity, HttpServletRequest httpServletRequest) {
+        Map <String,Object> responseMap = new HashMap<>();
+
+        List<BoardEntity> list = boardAdminService.getAvailableBoardList(boardEntity);
+
+        String message = list.size()+" item has been viewed.";
+        String code = "ok";
+        Header header = ResponseUtils.setHeader(message, code, httpServletRequest);
+
+        responseMap.put("header", header);
+        responseMap.put("data", list);
+
+        return new ResponseEntity<> (responseMap,  HttpStatus.OK);
+    }
+
+    @ApiOperation(value = "사용가능한 FAQ 목록을 조회한다")
+    @PostMapping("/select/faq")
+    public ResponseEntity<Map<String,Object>> getAvailableFaqList(@RequestBody BoardEntity boardEntity, HttpServletRequest httpServletRequest) {
+        Map <String,Object> responseMap = new HashMap<>();
+
+        List<BoardEntity> list = boardAdminService.getAvailableFaqList(boardEntity);
+
+        String message = list.size()+" item has been viewed.";
+        String code = "ok";
+        Header header = ResponseUtils.setHeader(message, code, httpServletRequest);
+
+        responseMap.put("header", header);
+        responseMap.put("data", list);
+
+        return new ResponseEntity<> (responseMap,  HttpStatus.OK);
+    }
+
+    @ApiOperation(value = "사용가능한 QNA 목록을 조회한다.")
+    @PostMapping("/select/qna")
+    public ResponseEntity<Map<String,Object>> getAvailableQnaList(@RequestBody BoardEntity boardEntity, HttpServletRequest httpServletRequest) {
+        Map <String,Object> responseMap = new HashMap<>();
+
+        List<BoardEntity> list = boardAdminService.getAvailableQnaList(boardEntity);
+
+        String message = list.size()+" item has been viewed.";
+        String code = "ok";
+        Header header = ResponseUtils.setHeader(message, code, httpServletRequest);
+
+        responseMap.put("header", header);
+        responseMap.put("data", list);
+
+        return new ResponseEntity<> (responseMap,  HttpStatus.OK);
     }
 }

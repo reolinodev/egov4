@@ -34,7 +34,7 @@ class MenuAdminServiceTest {
     }
 
     @Test
-    void getMenuList() throws Exception {
+    void getMenuList() {
         //given
         String auth_role ="ADMIN";
 
@@ -45,7 +45,7 @@ class MenuAdminServiceTest {
     }
 
     @Test
-    void getMenuInfo() throws Exception {
+    void getMenuInfo() {
         //given
         int menuId = 2;
 
@@ -53,6 +53,71 @@ class MenuAdminServiceTest {
         MenuEntity result = menuAdminDAO.findByMenuId(menuId);
         //then
         Assertions.assertEquals("사용자 설정", result.menu_nm);
+    }
+
+    @Test
+    void getParentMenu() {
+        //given
+        MenuEntity menuEntity = new MenuEntity();
+        menuEntity.auth_role ="ADMIN";
+
+        //when
+        List<MenuEntity> result = menuAdminDAO.findByAuthRoleAndMenuLv1(menuEntity);
+        //then
+        Assertions.assertEquals(4, result.size());
+    }
+
+    @Test
+    void deleteMenu() throws Exception {
+        //given
+        MenuEntity menuEntity = new MenuEntity();
+        menuEntity.menu_lv =2;
+
+        int menuId = 16;
+        int result = 0;
+
+        //when
+        if(menuEntity.menu_lv == 1){
+            int count = menuAdminDAO.countByChild(menuId);
+            if(count > 0) {
+                result = -1;
+            }else{
+                result = menuAdminDAO.deleteByMenuId(menuId);
+            }
+        }else {
+            result = menuAdminDAO.deleteByMenuId(menuId);
+        }
+
+        //then
+        Assertions.assertEquals(1, result);
+    }
+
+
+    @Test
+    void findByMenuLvAndAuthId() {
+        //given
+        MenuEntity menuEntity = new MenuEntity();
+        menuEntity.auth_id =2;
+        menuEntity.menu_lv =2;
+
+        //when
+        List<MenuEntity> result = menuAdminDAO.findByMenuLvAndAuthId(menuEntity);
+        System.out.println("<<"+result);
+        //then
+//        Assertions.assertEquals(4, result.size());
+    }
+
+    @Test
+    void findByMainUrl() {
+        //given
+        MenuEntity menuEntity = new MenuEntity();
+        menuEntity.auth_id =2;
+
+        //when
+        MenuEntity result = menuAdminDAO.findByMainUrl(menuEntity);
+        System.out.println("<<"+result);
+        //then
+//        Assertions.assertEquals(4, result.size());
     }
 
 }

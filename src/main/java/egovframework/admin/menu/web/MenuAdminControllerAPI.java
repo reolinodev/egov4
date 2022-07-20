@@ -1,5 +1,6 @@
 package egovframework.admin.menu.web;
 
+import egovframework.admin.menu.service.AuthMenuAdminService;
 import egovframework.admin.menu.service.MenuAdminService;
 import egovframework.admin.menu.service.domain.MenuEntity;
 import egovframework.common.domain.Header;
@@ -28,6 +29,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class MenuAdminControllerAPI {
 
     private final MenuAdminService menuAdminService;
+    private final AuthMenuAdminService authMenuAdminService;
 
     @ApiOperation(value = "트리 구조로 메뉴리스트를 가져온다.")
     @GetMapping("/{auth_role}")
@@ -162,6 +164,7 @@ public class MenuAdminControllerAPI {
         @RequestBody MenuEntity menuEntity, HttpServletRequest httpServletRequest) throws Exception {
 
         Map <String,Object> responseMap = new HashMap<>();
+        authMenuAdminService.deleteAuthMenu(menuEntity.menu_id);
         int result = menuAdminService.deleteMenu(menuEntity);
 
         String message = "Menu has been deleted.";

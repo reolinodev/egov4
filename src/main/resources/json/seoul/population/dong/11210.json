@@ -1,0 +1,197 @@
+{
+  "id": "API_0306",
+  "result": [
+    {
+      "adm_cd": "1121052",
+      "adm_nm": "보라매동",
+      "population_cnt":24884,
+      "man":12221,
+      "woman":12663,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1121054",
+      "adm_nm": "청림동",
+      "population_cnt":15098,
+      "man":7310,
+      "woman":7788,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1121057",
+      "adm_nm": "행운동",
+      "population_cnt":29687,
+      "man":14332,
+      "woman":15355,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1121058",
+      "adm_nm": "낙성대동",
+      "population_cnt":17651,
+      "man":8823,
+      "woman":8828,
+      "man_per":50,
+      "woman_per":50
+    },
+    {
+      "adm_cd": "1121061",
+      "adm_nm": "중앙동",
+      "population_cnt":15672,
+      "man":7491,
+      "woman":8181,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1121062",
+      "adm_nm": "인헌동",
+      "population_cnt":26304,
+      "man":12753,
+      "woman":13551,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1121063",
+      "adm_nm": "남현동",
+      "population_cnt":18259,
+      "man":8800,
+      "woman":9459,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1121064",
+      "adm_nm": "서원동",
+      "population_cnt":23575,
+      "man":12221,
+      "woman":11354,
+      "man_per":52,
+      "woman_per":48
+    },
+    {
+      "adm_cd": "1121065",
+      "adm_nm": "신원동",
+      "population_cnt":18776,
+      "man":9449,
+      "woman":9327,
+      "man_per":50,
+      "woman_per":50
+    },
+    {
+      "adm_cd": "1121066",
+      "adm_nm": "서림동",
+      "population_cnt":23988,
+      "man":13145,
+      "woman":10843,
+      "man_per":55,
+      "woman_per":45
+    },
+    {
+      "adm_cd": "1121068",
+      "adm_nm": "신사동",
+      "population_cnt":24955,
+      "man":12457,
+      "woman":12498,
+      "man_per":50,
+      "woman_per":50
+    },
+    {
+      "adm_cd": "1121069",
+      "adm_nm": "신림동",
+      "population_cnt":23696,
+      "man":12430,
+      "woman":11266,
+      "man_per":52,
+      "woman_per":48
+    },
+    {
+      "adm_cd": "1121071",
+      "adm_nm": "난향동",
+      "population_cnt":15292,
+      "man":7466,
+      "woman":7826,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1121072",
+      "adm_nm": "조원동",
+      "population_cnt":18897,
+      "man":9511,
+      "woman":9386,
+      "man_per":50,
+      "woman_per":50
+    },
+    {
+      "adm_cd": "1121073",
+      "adm_nm": "대학동",
+      "population_cnt":25342,
+      "man":14953,
+      "woman":10389,
+      "man_per":59,
+      "woman_per":41
+    },
+    {
+      "adm_cd": "1121078",
+      "adm_nm": "은천동",
+      "population_cnt":33401,
+      "man":16270,
+      "woman":17131,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1121079",
+      "adm_nm": "성현동",
+      "population_cnt":29118,
+      "man":14041,
+      "woman":15077,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1121080",
+      "adm_nm": "청룡동",
+      "population_cnt":36773,
+      "man":17670,
+      "woman":19103,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1121081",
+      "adm_nm": "난곡동",
+      "population_cnt":27006,
+      "man":13513,
+      "woman":13493,
+      "man_per":50,
+      "woman_per":50
+    },
+    {
+      "adm_cd": "1121082",
+      "adm_nm": "삼성동",
+      "population_cnt":21210,
+      "man":10582,
+      "woman":10628,
+      "man_per":50,
+      "woman_per":50
+    },
+    {
+      "adm_cd": "1121083",
+      "adm_nm": "미성동",
+      "population_cnt":31085,
+      "man":15215,
+      "woman":15870,
+      "man_per":49,
+      "woman_per":51
+    }
+  ],
+  "errMsg": "Success",
+  "errCd": 0,
+  "trId": "lW7X_API_0306_1655685585259"
+}

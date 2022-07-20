@@ -1,0 +1,144 @@
+{
+  "id": "API_0306",
+  "result": [
+    {
+      "adm_cd": "1105053",
+      "adm_nm": "화양동",
+      "population_cnt":26848,
+      "man":12340,
+      "woman":14508,
+      "man_per":46,
+      "woman_per":54
+    },
+    {
+      "adm_cd": "1105054",
+      "adm_nm": "군자동",
+      "population_cnt":21457,
+      "man":10559,
+      "woman":10898,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1105055",
+      "adm_nm": "중곡1동",
+      "population_cnt":15704,
+      "man":7570,
+      "woman":8134,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1105056",
+      "adm_nm": "중곡2동",
+      "population_cnt":21578,
+      "man":10130,
+      "woman":11448,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1105057",
+      "adm_nm": "중곡3동",
+      "population_cnt":16283,
+      "man":8055,
+      "woman":8228,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1105058",
+      "adm_nm": "중곡4동",
+      "population_cnt":28668,
+      "man":13972,
+      "woman":14696,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1105059",
+      "adm_nm": "능동",
+      "population_cnt":11591,
+      "man":5344,
+      "woman":6247,
+      "man_per":46,
+      "woman_per":54
+    },
+    {
+      "adm_cd": "1105060",
+      "adm_nm": "구의1동",
+      "population_cnt":23727,
+      "man":11308,
+      "woman":12419,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "population_cnt": "7309",
+      "adm_cd": "1105061",
+      "adm_nm": "구의2동",
+      "population_cnt":26807,
+      "man":12869,
+      "woman":13938,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1105062",
+      "adm_nm": "구의3동",
+      "population_cnt":28717,
+      "man":13567,
+      "woman":15150,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1105063",
+      "adm_nm": "광장동",
+      "population_cnt":34582,
+      "man":16739,
+      "woman":17843,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1105064",
+      "adm_nm": "자양1동",
+      "population_cnt":22966,
+      "man":11117,
+      "woman":11849,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1105065",
+      "adm_nm": "자양2동",
+      "population_cnt":24614,
+      "man":11930,
+      "woman":12684,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1105066",
+      "adm_nm": "자양3동",
+      "population_cnt":28105,
+      "man":13426,
+      "woman":14679,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1105067",
+      "adm_nm": "자양4동",
+      "population_cnt":21256,
+      "man":10455,
+      "woman":10801,
+      "man_per":49,
+      "woman_per":51
+    }
+  ],
+  "errMsg": "Success",
+  "errCd": 0,
+  "trId": "hs4r_API_0306_1655685266153"
+}

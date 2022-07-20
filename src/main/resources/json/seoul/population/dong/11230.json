@@ -1,0 +1,206 @@
+{
+  "id": "API_0306",
+  "result": [
+    {
+      "adm_cd": "1123051",
+      "adm_nm": "신사동",
+      "population_cnt":15992,
+      "man":7415,
+      "woman":8577,
+      "man_per":46,
+      "woman_per":54
+    },
+    {
+      "adm_cd": "1123052",
+      "adm_nm": "논현1동",
+      "population_cnt":22637,
+      "man":10631,
+      "woman":12006,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1123053",
+      "adm_nm": "논현2동",
+      "population_cnt":21235,
+      "man":9909,
+      "woman":11326,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1123058",
+      "adm_nm": "삼성1동",
+      "population_cnt":13002,
+      "man":6417,
+      "woman":6585,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1123059",
+      "adm_nm": "삼성2동",
+      "population_cnt":31176,
+      "man":14958,
+      "woman":16218,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1123060",
+      "adm_nm": "대치1동",
+      "population_cnt":23953,
+      "man":12018,
+      "woman":11935,
+      "man_per":50,
+      "woman_per":50
+    },
+    {
+      "adm_cd": "1123063",
+      "adm_nm": "대치4동",
+      "population_cnt":19800,
+      "man":9362,
+      "woman":10438,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1123064",
+      "adm_nm": "역삼1동",
+      "population_cnt":36260,
+      "man":17555,
+      "woman":18705,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1123065",
+      "adm_nm": "역삼2동",
+      "population_cnt":36477,
+      "man":17073,
+      "woman":19404,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1123066",
+      "adm_nm": "도곡1동",
+      "population_cnt":21553,
+      "man":10228,
+      "woman":11325,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1123067",
+      "adm_nm": "도곡2동",
+      "population_cnt":33057,
+      "man":15378,
+      "woman":17679,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1123068",
+      "adm_nm": "개포1동",
+      "population_cnt":7020,
+      "man":3416,
+      "woman":3604,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1123071",
+      "adm_nm": "개포4동",
+      "population_cnt":23732,
+      "man":11458,
+      "woman":12274,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1123072",
+      "adm_nm": "일원본동",
+      "population_cnt":23117,
+      "man":11432,
+      "woman":11685,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1123073",
+      "adm_nm": "일원1동",
+      "population_cnt":15163,
+      "man":7370,
+      "woman":7793,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1123074",
+      "adm_nm": "일원2동",
+      "population_cnt":17550,
+      "man":8484,
+      "woman":9066,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1123075",
+      "adm_nm": "수서동",
+      "population_cnt":14636,
+      "man":6634,
+      "woman":8002,
+      "man_per":45,
+      "woman_per":55
+    },
+    {
+      "adm_cd": "1123076",
+      "adm_nm": "세곡동",
+      "population_cnt":43324,
+      "man":20410,
+      "woman":22914,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1123077",
+      "adm_nm": "압구정동",
+      "population_cnt":26245,
+      "man":12166,
+      "woman":14079,
+      "man_per":46,
+      "woman_per":54
+    },
+    {
+      "adm_cd": "1123078",
+      "adm_nm": "청담동",
+      "population_cnt":25702,
+      "man":12020,
+      "woman":13682,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1123079",
+      "adm_nm": "대치2동",
+      "population_cnt":36850,
+      "man":18631,
+      "woman":18219,
+      "man_per":51,
+      "woman_per":49
+    },
+    {
+      "adm_cd": "1123080",
+      "adm_nm": "개포2동",
+      "population_cnt":28175,
+      "man":13664,
+      "woman":14511,
+      "man_per":48,
+      "woman_per":52
+    }
+  ],
+  "errMsg": "Success",
+  "errCd": 0,
+  "trId": "bgqT_API_0306_1655685615677"
+}

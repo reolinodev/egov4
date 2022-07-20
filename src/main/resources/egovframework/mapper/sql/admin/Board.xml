@@ -100,4 +100,37 @@
         WHERE   BOARD_ID = #{board_id}
     </update>
 
+    <select id="findByUseYnYAndBoardTypeNotIn"  parameterType="boardEntity" resultType="boardEntity">
+        /* sql : BoardAdminDAO.findByUseYnYAndBoardTypeNotIn */
+        SELECT  BOARD_ID,
+                TITLE,
+                BOARD_TYPE
+        FROM    BOARD_TB BT
+        WHERE   USE_YN ='Y'
+        AND     BOARD_TYPE NOT IN ('QNA', 'FAQ')
+        ORDER BY BOARD_ID DESC
+    </select>
+
+    <select id="findByUseYnYAndBoardTypeEqulsFAQ"  parameterType="boardEntity" resultType="boardEntity">
+        /* sql : BoardAdminDAO.findByUseYnYAndBoardTypeEqulsFAQ */
+        SELECT  BOARD_ID,
+                TITLE,
+                BOARD_TYPE
+        FROM    BOARD_TB BT
+        WHERE   USE_YN ='Y'
+          AND   BOARD_TYPE = 'FAQ'
+        ORDER BY BOARD_ID DESC
+    </select>
+
+    <select id="findByUseYnYAndBoardTypeEqulsQNA"  parameterType="boardEntity" resultType="boardEntity">
+        /* sql : BoardAdminDAO.findByUseYnYAndBoardTypeEqulsQNA */
+        SELECT  BOARD_ID,
+                TITLE,
+                BOARD_TYPE
+        FROM    BOARD_TB BT
+        WHERE   USE_YN ='Y'
+          AND   BOARD_TYPE = 'QNA'
+        ORDER BY BOARD_ID DESC
+    </select>
+
 </mapper>

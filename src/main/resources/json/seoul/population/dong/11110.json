@@ -1,0 +1,179 @@
+{
+  "id": "API_0306",
+  "result": [
+    {
+      "adm_cd": "1111051",
+      "adm_nm": "월계1동",
+      "population_cnt":22029,
+      "man":11355,
+      "woman":10674,
+      "man_per":52,
+      "woman_per":48
+    },
+    {
+      "adm_cd": "1111052",
+      "adm_nm": "월계2동",
+      "population_cnt":26409,
+      "man":12678,
+      "woman":13731,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1111053",
+      "adm_nm": "월계3동",
+      "population_cnt":29783,
+      "man":14206,
+      "woman":15577,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1111056",
+      "adm_nm": "공릉2동",
+      "population_cnt":42468,
+      "man":20632,
+      "woman":21836,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1111058",
+      "adm_nm": "하계1동",
+      "population_cnt":27587,
+      "man":13222,
+      "woman":14365,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1111059",
+      "adm_nm": "하계2동",
+      "population_cnt":21778,
+      "man":10357,
+      "woman":11421,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1111060",
+      "adm_nm": "중계본동",
+      "population_cnt":23761,
+      "man":11559,
+      "woman":12202,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1111061",
+      "adm_nm": "중계1동",
+      "population_cnt":26609,
+      "man":12948,
+      "woman":13661,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1111064",
+      "adm_nm": "중계4동",
+      "population_cnt":19767,
+      "man":9511,
+      "woman":10256,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1111065",
+      "adm_nm": "상계1동",
+      "population_cnt":37986,
+      "man":18347,
+      "woman":19639,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1111066",
+      "adm_nm": "상계2동",
+      "population_cnt":19976,
+      "man":9842,
+      "woman":10134,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1111069",
+      "adm_nm": "상계5동",
+      "population_cnt":23867,
+      "man":11531,
+      "woman":12336,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1111072",
+      "adm_nm": "상계8동",
+      "population_cnt":22468,
+      "man":10724,
+      "woman":11744,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1111073",
+      "adm_nm": "상계9동",
+      "population_cnt":20324,
+      "man":9572,
+      "woman":10752,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1111074",
+      "adm_nm": "상계10동",
+      "population_cnt":18536,
+      "man":8573,
+      "woman":9963,
+      "man_per":46,
+      "woman_per":54
+    },
+    {
+      "adm_cd": "1111076",
+      "adm_nm": "상계3·4동",
+      "population_cnt":25909,
+      "man":12877,
+      "woman":13032,
+      "man_per":50,
+      "woman_per":50
+    },
+    {
+      "adm_cd": "1111077",
+      "adm_nm": "상계6·7동",
+      "population_cnt":32425,
+      "man":14962,
+      "woman":17463,
+      "man_per":46,
+      "woman_per":54
+    },
+    {
+      "adm_cd": "1111078",
+      "adm_nm": "중계2·3동",
+      "population_cnt":33962,
+      "man":15578,
+      "woman":18384,
+      "man_per":46,
+      "woman_per":54
+    },
+    {
+      "adm_cd": "1111079",
+      "adm_nm": "공릉1동",
+      "population_cnt":37327,
+      "man":18128,
+      "woman":19199,
+      "man_per":49,
+      "woman_per":51
+    }
+  ],
+  "errMsg": "Success",
+  "errCd": 0,
+  "trId": "YPv*_API_0306_1655685408203"
+}

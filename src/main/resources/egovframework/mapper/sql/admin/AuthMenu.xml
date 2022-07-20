@@ -44,5 +44,10 @@
         WHERE NOT EXISTS(SELECT * FROM UPSERT)
     </insert>
 
+    <delete id="deleteByMenuId" parameterType="int">
+        /* sql : AuthMenuAdminDAO.deleteByMenuId */
+        DELETE  FROM AUTH_MENU_TB
+        WHERE   MENU_ID = #{menu_id}
+    </delete>
 
 </mapper>

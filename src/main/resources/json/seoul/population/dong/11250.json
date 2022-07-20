@@ -1,0 +1,170 @@
+{
+  "id": "API_0306",
+  "result": [
+    {
+      "adm_cd": "1125051",
+      "adm_nm": "강일동",
+      "population_cnt":33151,
+      "man":15872,
+      "woman":17279,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1125052",
+      "adm_nm": "상일동",
+      "population_cnt":39023,
+      "man":19223,
+      "woman":19800,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1125053",
+      "adm_nm": "명일1동",
+      "population_cnt":25797,
+      "man":12534,
+      "woman":13263,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1125054",
+      "adm_nm": "명일2동",
+      "population_cnt":17441,
+      "man":8508,
+      "woman":8933,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1125055",
+      "adm_nm": "고덕1동",
+      "population_cnt":23919,
+      "man":12178,
+      "woman":11741,
+      "man_per":51,
+      "woman_per":49
+    },
+    {
+      "adm_cd": "1125056",
+      "adm_nm": "고덕2동",
+      "population_cnt":22587,
+      "man":11400,
+      "woman":11187,
+      "man_per":50,
+      "woman_per":50
+    },
+    {
+      "adm_cd": "1125058",
+      "adm_nm": "암사2동",
+      "population_cnt":15180,
+      "man":7336,
+      "woman":7844,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1125059",
+      "adm_nm": "암사3동",
+      "population_cnt":17685,
+      "man":8657,
+      "woman":9028,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1125061",
+      "adm_nm": "천호1동",
+      "population_cnt":26808,
+      "man":13124,
+      "woman":13684,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1125063",
+      "adm_nm": "천호3동",
+      "population_cnt":26748,
+      "man":12990,
+      "woman":13758,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1125065",
+      "adm_nm": "성내1동",
+      "population_cnt":20024,
+      "man":9611,
+      "woman":10413,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1125066",
+      "adm_nm": "성내2동",
+      "population_cnt":23806,
+      "man":11721,
+      "woman":12085,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1125067",
+      "adm_nm": "성내3동",
+      "population_cnt":23203,
+      "man":11325,
+      "woman":11878,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1125070",
+      "adm_nm": "둔촌1동",
+      "population_cnt":143,
+      "man":79,
+      "woman":64,
+      "man_per":55,
+      "woman_per":45
+    },
+    {
+      "adm_cd": "1125071",
+      "adm_nm": "둔촌2동",
+      "population_cnt":24567,
+      "man":12079,
+      "woman":12488,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1125072",
+      "adm_nm": "암사1동",
+      "population_cnt":34550,
+      "man":17091,
+      "woman":17459,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1125073",
+      "adm_nm": "천호2동",
+      "population_cnt":33607,
+      "man":16443,
+      "woman":17164,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1125074",
+      "adm_nm": "길동",
+      "population_cnt":45674,
+      "man":22276,
+      "woman":23398,
+      "man_per":49,
+      "woman_per":51
+    }
+  ],
+  "errMsg": "Success",
+  "errCd": 0,
+  "trId": "e6yM_API_0306_1655685644173"
+}

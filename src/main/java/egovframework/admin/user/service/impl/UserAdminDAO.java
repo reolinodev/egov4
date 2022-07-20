@@ -1,8 +1,6 @@
 package egovframework.admin.user.service.impl;
 
-import egovframework.admin.user.service.domain.User;
 import egovframework.admin.user.service.domain.UserEntity;
-import egovframework.let.cop.com.service.BoardUseInfVO;
 import java.util.List;
 import org.egovframe.rte.psl.dataaccess.EgovAbstractMapper;
 import org.springframework.stereotype.Repository;

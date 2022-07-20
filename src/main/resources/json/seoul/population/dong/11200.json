@@ -1,0 +1,143 @@
+{
+  "id": "API_0306",
+  "result": [
+    {
+      "adm_cd": "1120052",
+      "adm_nm": "노량진2동",
+      "population_cnt":11328,
+      "man":5836,
+      "woman":5492,
+      "man_per":52,
+      "woman_per":48
+    },
+    {
+      "adm_cd": "1120053",
+      "adm_nm": "상도1동",
+      "population_cnt":45941,
+      "man":22103,
+      "woman":23838,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1120054",
+      "adm_nm": "상도2동",
+      "population_cnt":28163,
+      "man":13477,
+      "woman":14686,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1120055",
+      "adm_nm": "상도3동",
+      "population_cnt":24708,
+      "man":11754,
+      "woman":12954,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1120056",
+      "adm_nm": "상도4동",
+      "population_cnt":28835,
+      "man":13944,
+      "woman":14891,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1120063",
+      "adm_nm": "사당1동",
+      "population_cnt":23217,
+      "man":11088,
+      "woman":12129,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1120065",
+      "adm_nm": "사당3동",
+      "population_cnt":24442,
+      "man":11849,
+      "woman":12593,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1120066",
+      "adm_nm": "사당4동",
+      "population_cnt":14306,
+      "man":6824,
+      "woman":7482,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1120067",
+      "adm_nm": "사당5동",
+      "population_cnt":14467,
+      "man":6927,
+      "woman":7540,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1120068",
+      "adm_nm": "대방동",
+      "population_cnt":38077,
+      "man":18058,
+      "woman":20019,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1120069",
+      "adm_nm": "신대방1동",
+      "population_cnt":24737,
+      "man":11933,
+      "woman":12804,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1120070",
+      "adm_nm": "신대방2동",
+      "population_cnt":22340,
+      "man":10666,
+      "woman":11674,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1120071",
+      "adm_nm": "흑석동",
+      "population_cnt":33290,
+      "man":15872,
+      "woman":17418,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1120072",
+      "adm_nm": "노량진1동",
+      "population_cnt":32289,
+      "man":16202,
+      "woman":16087,
+      "man_per":50,
+      "woman_per":50
+    },
+    {
+      "adm_cd": "1120073",
+      "adm_nm": "사당2동",
+      "population_cnt":28801,
+      "man":13783,
+      "woman":15018,
+      "man_per":48,
+      "woman_per":52
+    }
+  ],
+  "errMsg": "Success",
+  "errCd": 0,
+  "trId": "gl5W_API_0306_1655685572423"
+}

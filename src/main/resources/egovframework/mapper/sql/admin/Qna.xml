@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="QnaAdminDAO">
+
+    <select id="findAll" parameterType="qnaEntity" resultType="qnaEntity">
+        /* sql : QnaAdminDAO.findAll */
+        SELECT *
+        FROM    (
+                    SELECT  ROW_NUMBER() OVER (ORDER BY A.QNA_ID DESC) RNUM,
+                            A.QNA_ID,
+                            A.BOARD_ID,
+                            A.TITLE,
+                            TO_CHAR(A.CREATED_AT, 'YYYY-MM-DD HH24:MI') AS CREATED_AT,
+                            TO_CHAR(A.UPDATED_AT, 'YYYY-MM-DD HH24:MI') AS UPDATED_AT,
+                            A.CREATED_ID,
+                            A.UPDATED_ID,
+                            GETUSERNM(A.CREATED_ID) AS CREATED_NM,
+                            GETUSERNM(A.UPDATED_ID) AS UPDATED_NM,
+                            A.USE_YN,
+                            GETCODENM('USE_YN', A.USE_YN) AS USE_YN_NM,
+                            B.TITLE AS BOARD_TITLE,
+                            QNA_TYPE,
+                            GETCODENM('QNA_TYPE', A.QNA_TYPE) AS QNA_TYPE_NM,
+                            A.RESPONSE_YN,
+                            GETCODENM('RESPONSE_YN', A.RESPONSE_YN) AS RESPONSE_YN_NM
+                    FROM    QNA_TB A,
+                            BOARD_TB B
+                    WHERE   A.BOARD_ID = B.BOARD_ID
+                    AND     B.USE_YN = 'Y'
+                    <if test="start_date != null and start_date != ''">
+                    AND     TO_CHAR(A.CREATED_AT, 'YYYY-MM-DD') BETWEEN #{start_date} AND #{end_date}
+                    </if>
+        ) A
+        WHERE  1=1
+        <if test="response_yn != null and response_yn != ''">
+        AND     A.RESPONSE_YN = #{response_yn}
+        </if>
+        <if test="qna_type != null and qna_type != ''">
+        AND     A.QNA_TYPE = #{qna_type}
+        </if>
+        <if test="use_yn != null and use_yn != ''">
+        AND     A.USE_YN = #{use_yn}
+        </if>
+        <if test="board_id != null and board_id != ''">
+        AND     A.BOARD_ID = #{board_id}
+        </if>
+        <if test="search_str != null and search_str != ''">
+        AND     (UPPER(A.TITLE) LIKE  '%'||UPPER(#{search_str})||'%'
+                 OR UPPER(A.CREATED_NM) LIKE  '%'||UPPER(#{search_str})||'%')
+        </if>
+
+    </select>
+
+    <select id="countAll" parameterType="qnaEntity" resultType="int">
+        /* sql : QnaAdminDAO.countAll */
+        SELECT COUNT(*)
+        FROM    (
+                    SELECT  A.QNA_ID,
+                            A.BOARD_ID,
+                            A.TITLE,
+                            TO_CHAR(A.CREATED_AT, 'YYYY-MM-DD HH24:MI') AS CREATED_AT,
+                            TO_CHAR(A.UPDATED_AT, 'YYYY-MM-DD HH24:MI') AS UPDATED_AT,
+                            A.CREATED_ID,
+                            A.UPDATED_ID,
+                            GETUSERNM(A.CREATED_ID) AS CREATED_NM,
+                            GETUSERNM(A.UPDATED_ID) AS UPDATED_NM,
+                            A.USE_YN,
+                            GETCODENM('USE_YN', A.USE_YN) AS USE_YN_NM,
+                            B.TITLE AS BOARD_TITLE,
+                            QNA_TYPE,
+                            GETCODENM('QNA_TYPE', A.QNA_TYPE) AS QNA_TYPE_NM,
+                            A.RESPONSE_YN,
+                            GETCODENM('RESPONSE_YN', A.RESPONSE_YN) AS RESPONSE_YN_NM
+                    FROM    QNA_TB A,
+                            BOARD_TB B
+                    WHERE   A.BOARD_ID = B.BOARD_ID
+                    AND     B.USE_YN = 'Y'
+                    <if test="start_date != null and start_date != ''">
+                    AND     TO_CHAR(A.CREATED_AT, 'YYYY-MM-DD') BETWEEN #{start_date} AND #{end_date}
+                    </if>
+        ) A
+        WHERE  1=1
+        <if test="response_yn != null and response_yn != ''">
+        AND     A.RESPONSE_YN = #{response_yn}
+        </if>
+        <if test="qna_type != null and qna_type != ''">
+        AND     A.QNA_TYPE = #{qna_type}
+        </if>
+        <if test="use_yn != null and use_yn != ''">
+        AND     A.USE_YN = #{use_yn}
+        </if>
+        <if test="board_id != null and board_id != ''">
+        AND     A.BOARD_ID = #{board_id}
+        </if>
+        <if test="search_str != null and search_str != ''">
+        AND     (UPPER(A.TITLE) LIKE  '%'||UPPER(#{search_str})||'%'
+                OR UPPER(A.CREATED_NM) LIKE  '%'||UPPER(#{search_str})||'%')
+        </if>
+
+    </select>
+
+    <insert id="save" parameterType="qnaEntity">
+        /* sql : QnaAdminDAO.save */
+        INSERT INTO QNA_TB
+        (
+            QNA_ID,
+            BOARD_ID,
+            TITLE,
+            QUESTIONS,
+            QNA_TYPE,
+            HIDDEN_YN,
+            <if test="qna_pw != null and qna_pw != ''">
+            QNA_PW,
+            </if>
+            CREATED_AT,
+            CREATED_ID
+        )
+        VALUES
+        (
+            nextval('qna_seq'),
+            #{board_id},
+            #{title},
+            #{questions},
+            #{qna_type},
+            #{hidden_yn},
+            <if test="qna_pw != null and qna_pw != ''">
+            #{qna_pw},
+            </if>
+            now(),
+            #{created_id}
+        )
+    </insert>
+
+    <select id="findByQnaId" parameterType="int" resultType="qnaEntity">
+        /* sql : QnaAdminDAO.findByQnaId */
+        SELECT  A.QNA_ID,
+                A.BOARD_ID,
+                A.QNA_TYPE,
+                A.TITLE,
+                A.MAIN_TEXT,
+                A.QUESTIONS,
+                A.CREATED_ID,
+                A.UPDATED_ID,
+                GETUSERNM(A.CREATED_ID) AS CREATED_NM,
+                GETUSERNM(A.UPDATED_ID) AS UPDATED_NM,
+                TO_CHAR(A.UPDATED_AT, 'YYYY-MM-DD HH24:MI') AS UPDATED_AT,
+                B.TITLE AS BOARD_TITLE,
+                A.USE_YN,
+                A.RESPONSE_YN,
+                GETCODENM('RESPONSE_YN', A.RESPONSE_YN) AS RESPONSE_YN_NM,
+                A.HIDDEN_YN,
+                A.QNA_PW
+        FROM    QNA_TB A,
+                BOARD_TB B
+        WHERE   A.BOARD_ID = B.BOARD_ID
+          AND   B.USE_YN = 'Y'
+          AND   A.QNA_ID = #{qna_id}
+    </select>
+
+    <update id="updateQna" parameterType="qnaEntity">
+        /* sql : QnaAdminDAO.updateQna */
+        UPDATE  QNA_TB
+        SET     UPDATED_AT = now()
+                <if test="updated_id != null and updated_id != ''">
+                , UPDATED_ID = #{updated_id}
+                </if>
+                <if test="title != null and title != ''">
+                , TITLE = #{title}
+                </if>
+                <if test="questions != null and questions != ''">
+                , QUESTIONS = #{questions}
+                </if>
+                <if test="main_text != null and main_text != ''">
+                , MAIN_TEXT = #{main_text}
+                </if>
+                <if test="response_yn != null and response_yn != ''">
+                , RESPONSE_YN = #{response_yn}
+                </if>
+                <if test="use_yn != null and use_yn != ''">
+                , USE_YN = #{use_yn}
+                </if>
+                <if test="hidden_yn != null and hidden_yn != ''">
+                , HIDDEN_YN = #{hidden_yn}
+                    <choose>
+                        <when test='hidden_yn == "N"'>
+                        , QNA_PW = NULL
+                        </when>
+                        <otherwise>
+                            <if test="qna_pw != null and qna_pw != ''">
+                            , QNA_PW = #{qna_pw}
+                            </if>
+                        </otherwise>
+                    </choose>
+                </if>
+        WHERE   QNA_ID = #{qna_id}
+    </update>
+
+
+</mapper>

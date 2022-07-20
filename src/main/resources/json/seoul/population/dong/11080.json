@@ -1,0 +1,188 @@
+{
+  "id": "API_0306",
+  "result": [
+    {
+      "adm_cd": "1108058",
+      "adm_nm": "돈암1동",
+      "population_cnt":14581,
+      "man":6800,
+      "woman":7781,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1108059",
+      "adm_nm": "돈암2동",
+      "population_cnt":23729,
+      "man":11220,
+      "woman":12509,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1108060",
+      "adm_nm": "안암동",
+      "population_cnt":17134,
+      "man":8292,
+      "woman":8842,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1108061",
+      "adm_nm": "보문동",
+      "population_cnt":16547,
+      "man":7936,
+      "woman":8611,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1108062",
+      "adm_nm": "정릉1동",
+      "population_cnt":18252,
+      "man":8744,
+      "woman":9508,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1108063",
+      "adm_nm": "정릉2동",
+      "population_cnt":23076,
+      "man":11127,
+      "woman":11949,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1108064",
+      "adm_nm": "정릉3동",
+      "population_cnt":16419,
+      "man":8073,
+      "woman":8346,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1108065",
+      "adm_nm": "정릉4동",
+      "population_cnt":25104,
+      "man":11979,
+      "woman":13125,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1108066",
+      "adm_nm": "길음1동",
+      "population_cnt":35091,
+      "man":16628,
+      "woman":18463,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1108068",
+      "adm_nm": "길음2동",
+      "population_cnt":21368,
+      "man":10297,
+      "woman":11071,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1108071",
+      "adm_nm": "월곡1동",
+      "population_cnt":26403,
+      "man":12691,
+      "woman":13712,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1108072",
+      "adm_nm": "월곡2동",
+      "population_cnt":19859,
+      "man":9542,
+      "woman":10317,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1108076",
+      "adm_nm": "장위1동",
+      "population_cnt":24304,
+      "man":11868,
+      "woman":12436,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1108077",
+      "adm_nm": "장위2동",
+      "population_cnt":13921,
+      "man":6840,
+      "woman":7081,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1108078",
+      "adm_nm": "장위3동",
+      "population_cnt":15842,
+      "man":7757,
+      "woman":8085,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1108081",
+      "adm_nm": "성북동",
+      "population_cnt":16962,
+      "man":7869,
+      "woman":9093,
+      "man_per":46,
+      "woman_per":54
+    },
+    {
+      "adm_cd": "1108082",
+      "adm_nm": "삼선동",
+      "population_cnt":23357,
+      "man":11027,
+      "woman":12330,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1108083",
+      "adm_nm": "동선동",
+      "population_cnt":16173,
+      "man":6686,
+      "woman":9487,
+      "man_per":41,
+      "woman_per":59
+    },
+    {
+      "adm_cd": "1108084",
+      "adm_nm": "종암동",
+      "population_cnt":40055,
+      "man":19626,
+      "woman":20429,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1108085",
+      "adm_nm": "석관동",
+      "population_cnt":35658,
+      "man":17600,
+      "woman":18058,
+      "man_per":49,
+      "woman_per":51
+    }
+  ],
+  "errMsg": "Success",
+  "errCd": 0,
+  "trId": "nZUj_API_0306_1655685367864"
+}

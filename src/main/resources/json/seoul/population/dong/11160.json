@@ -1,0 +1,188 @@
+{
+  "id": "API_0306",
+  "result": [
+    {
+      "adm_cd": "1116051",
+      "adm_nm": "염창동",
+      "population_cnt":41738,
+      "man":20169,
+      "woman":21569,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1116052",
+      "adm_nm": "등촌1동",
+      "population_cnt":24939,
+      "man":11479,
+      "woman":13460,
+      "man_per":46,
+      "woman_per":54
+    },
+    {
+      "adm_cd": "1116053",
+      "adm_nm": "등촌2동",
+      "population_cnt":20126,
+      "man":9785,
+      "woman":10341,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1116054",
+      "adm_nm": "등촌3동",
+      "population_cnt":30553,
+      "man":14428,
+      "woman":16125,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1116055",
+      "adm_nm": "화곡본동",
+      "population_cnt":34601,
+      "man":16693,
+      "woman":17908,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1116057",
+      "adm_nm": "화곡2동",
+      "population_cnt":17981,
+      "man":8652,
+      "woman":9329,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1116058",
+      "adm_nm": "화곡3동",
+      "population_cnt":21668,
+      "man":10311,
+      "woman":11357,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1116059",
+      "adm_nm": "화곡4동",
+      "population_cnt":20741,
+      "man":10160,
+      "woman":10581,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1116061",
+      "adm_nm": "화곡6동",
+      "population_cnt":25226,
+      "man":12099,
+      "woman":13127,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1116063",
+      "adm_nm": "화곡8동",
+      "population_cnt":24805,
+      "man":11936,
+      "woman":12869,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1116064",
+      "adm_nm": "가양1동",
+      "population_cnt":34441,
+      "man":15705,
+      "woman":18736,
+      "man_per":46,
+      "woman_per":54
+    },
+    {
+      "adm_cd": "1116065",
+      "adm_nm": "가양2동",
+      "population_cnt":14021,
+      "man":6598,
+      "woman":7423,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1116066",
+      "adm_nm": "가양3동",
+      "population_cnt":14947,
+      "man":6951,
+      "woman":7996,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1116067",
+      "adm_nm": "발산1동",
+      "population_cnt":36453,
+      "man":17187,
+      "woman":19266,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1116069",
+      "adm_nm": "공항동",
+      "population_cnt":31346,
+      "man":15853,
+      "woman":15493,
+      "man_per":51,
+      "woman_per":49
+    },
+    {
+      "adm_cd": "1116070",
+      "adm_nm": "방화1동",
+      "population_cnt":42906,
+      "man":20900,
+      "woman":22006,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1116071",
+      "adm_nm": "방화2동",
+      "population_cnt":23522,
+      "man":11605,
+      "woman":11917,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1116072",
+      "adm_nm": "방화3동",
+      "population_cnt":22736,
+      "man":11006,
+      "woman":11730,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1116073",
+      "adm_nm": "화곡1동",
+      "population_cnt":52816,
+      "man":25586,
+      "woman":27230,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1116074",
+      "adm_nm": "우장산동",
+      "population_cnt":42819,
+      "man":20472,
+      "woman":22347,
+      "man_per":48,
+      "woman_per":52
+    }
+  ],
+  "errMsg": "Success",
+  "errCd": 0,
+  "trId": "a94=_API_0306_1655685511881"
+}

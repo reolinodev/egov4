@@ -27,4 +27,16 @@ public class BoardAdminDAO extends EgovAbstractMapper {
     public int updateBoard(BoardEntity boardEntity) {
         return update("BoardAdminDAO.updateBoard", boardEntity);
     }
+
+    public List<BoardEntity> findByUseYnYAndBoardTypeNotIn(BoardEntity boardEntity) {
+        return (List<BoardEntity>) list("BoardAdminDAO.findByUseYnYAndBoardTypeNotIn", boardEntity);
+    }
+
+    public List<BoardEntity> findByUseYnYAndBoardTypeEqulsFAQ(BoardEntity boardEntity) {
+        return (List<BoardEntity>) list("BoardAdminDAO.findByUseYnYAndBoardTypeEqulsFAQ", boardEntity);
+    }
+
+    public List<BoardEntity> findByUseYnYAndBoardTypeEqulsQNA(BoardEntity boardEntity) {
+        return (List<BoardEntity>) list("BoardAdminDAO.findByUseYnYAndBoardTypeEqulsQNA", boardEntity);
+    }
 }

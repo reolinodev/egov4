@@ -1,0 +1,134 @@
+{
+  "id": "API_0306",
+  "result": [
+    {
+      "adm_cd": "1110051",
+      "adm_nm": "쌍문1동",
+      "population_cnt":21540,
+      "man":10282,
+      "woman":11258,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1110052",
+      "adm_nm": "쌍문2동",
+      "population_cnt":18799,
+      "man":8941,
+      "woman":9858,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1110053",
+      "adm_nm": "쌍문3동",
+      "population_cnt":17007,
+      "man":8162,
+      "woman":8845,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1110054",
+      "adm_nm": "쌍문4동",
+      "population_cnt":18483,
+      "man":8702,
+      "woman":9781,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1110055",
+      "adm_nm": "방학1동",
+      "population_cnt":28763,
+      "man":14261,
+      "woman":14502,
+      "man_per":50,
+      "woman_per":50
+    },
+    {
+      "adm_cd": "1110056",
+      "adm_nm": "방학2동",
+      "population_cnt":19659,
+      "man":9931,
+      "woman":9728,
+      "man_per":51,
+      "woman_per":49
+    },
+    {
+      "adm_cd": "1110057",
+      "adm_nm": "방학3동",
+      "population_cnt":26866,
+      "man":13021,
+      "woman":13845,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1110059",
+      "adm_nm": "창1동",
+      "population_cnt":24631,
+      "man":11715,
+      "woman":12916,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1110060",
+      "adm_nm": "창2동",
+      "population_cnt":29138,
+      "man":14147,
+      "woman":14991,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1110061",
+      "adm_nm": "창3동",
+      "population_cnt":13838,
+      "man":6906,
+      "woman":6932,
+      "man_per":50,
+      "woman_per":50
+    },
+    {
+      "adm_cd": "1110062",
+      "adm_nm": "창4동",
+      "population_cnt":26377,
+      "man":12679,
+      "woman":13698,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1110063",
+      "adm_nm": "창5동",
+      "population_cnt":24492,
+      "man":11697,
+      "woman":12795,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1110064",
+      "adm_nm": "도봉1동",
+      "population_cnt":20985,
+      "man":10536,
+      "woman":10449,
+      "man_per":50,
+      "woman_per":50
+    },
+    {
+      "adm_cd": "1110065",
+      "adm_nm": "도봉2동",
+      "population_cnt":26667,
+      "man":13023,
+      "woman":13644,
+      "man_per":49,
+      "woman_per":51
+    }
+  ],
+  "errMsg": "Success",
+  "errCd": 0,
+  "trId": "b3Qa_API_0306_1655685394864"
+}

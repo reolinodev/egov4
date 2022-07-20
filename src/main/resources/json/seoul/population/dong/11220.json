@@ -1,0 +1,170 @@
+{
+  "id": "API_0306",
+  "result": [
+    {
+      "adm_cd": "1122051",
+      "adm_nm": "서초1동",
+      "population_cnt":20775,
+      "man":10019,
+      "woman":10756,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1122052",
+      "adm_nm": "서초2동",
+      "population_cnt":26878,
+      "man":12853,
+      "woman":14025,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1122053",
+      "adm_nm": "서초3동",
+      "population_cnt":32582,
+      "man":15542,
+      "woman":17040,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1122054",
+      "adm_nm": "서초4동",
+      "population_cnt":30822,
+      "man":15041,
+      "woman":15781,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1122055",
+      "adm_nm": "잠원동",
+      "population_cnt":26813,
+      "man":12901,
+      "woman":13912,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1122056",
+      "adm_nm": "반포본동",
+      "population_cnt":443,
+      "man":206,
+      "woman":237,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1122057",
+      "adm_nm": "반포1동",
+      "population_cnt":34765,
+      "man":16859,
+      "woman":17906,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1122058",
+      "adm_nm": "반포2동",
+      "population_cnt":15844,
+      "man":7541,
+      "woman":8303,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1122059",
+      "adm_nm": "반포3동",
+      "population_cnt":21998,
+      "man":10470,
+      "woman":11528,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1122060",
+      "adm_nm": "반포4동",
+      "population_cnt":19779,
+      "man":9351,
+      "woman":10428,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1122061",
+      "adm_nm": "방배본동",
+      "population_cnt":20845,
+      "man":9625,
+      "woman":11220,
+      "man_per":46,
+      "woman_per":54
+    },
+    {
+      "adm_cd": "1122062",
+      "adm_nm": "방배1동",
+      "population_cnt":16959,
+      "man":7952,
+      "woman":9007,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1122063",
+      "adm_nm": "방배2동",
+      "population_cnt":18808,
+      "man":8814,
+      "woman":9994,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1122064",
+      "adm_nm": "방배3동",
+      "population_cnt":18597,
+      "man":8983,
+      "woman":9614,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1122065",
+      "adm_nm": "방배4동",
+      "population_cnt":23560,
+      "man":10755,
+      "woman":12805,
+      "man_per":46,
+      "woman_per":54
+    },
+    {
+      "adm_cd": "1122066",
+      "adm_nm": "양재1동",
+      "population_cnt":43078,
+      "man":20572,
+      "woman":22506,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1122067",
+      "adm_nm": "양재2동",
+      "population_cnt":21959,
+      "man":10973,
+      "woman":10986,
+      "man_per":50,
+      "woman_per":50
+    },
+    {
+      "adm_cd": "1122068",
+      "adm_nm": "내곡동",
+      "population_cnt":17531,
+      "man":8474,
+      "woman":9057,
+      "man_per":48,
+      "woman_per":52
+    }
+  ],
+  "errMsg": "Success",
+  "errCd": 0,
+  "trId": "LG*r_API_0306_1655685599149"
+}

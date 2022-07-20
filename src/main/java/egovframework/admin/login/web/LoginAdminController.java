@@ -2,7 +2,7 @@ package egovframework.admin.login.web;
 
 import egovframework.admin.login.service.LoginAdminService;
 import egovframework.admin.login.service.domain.LoginEntity;
-import egovframework.admin.login.service.domain.SessionInfo;
+import egovframework.admin.login.service.domain.SessionAdminInfo;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -17,7 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class LoginAdminController {
 
 	@Resource
-	private SessionInfo sessionInfo;
+	private SessionAdminInfo sessionAdminInfo;
 
 	private final LoginAdminService loginAdminService;
 
@@ -29,9 +29,6 @@ public class LoginAdminController {
 	@PostMapping(value = "/admin/login")
 	public ModelAndView login(LoginEntity loginEntity, HttpServletRequest request) throws Exception {
 		ModelAndView mav = new ModelAndView();
-
-		HttpSession session = request.getSession();
-		session.invalidate();
 
 		String msg = "";
 
@@ -93,11 +90,11 @@ public class LoginAdminController {
 	 */
 	private void setSessionInfo(LoginEntity loginEntity) {
 
-		sessionInfo.setLogin_id(loginEntity.getLogin_id());
-		sessionInfo.setAuth_id(loginEntity.getAuth_id());
-		sessionInfo.setAuth_nm(loginEntity.getAuth_nm());
-		sessionInfo.setUser_id(loginEntity.getUser_id());
-		sessionInfo.setUser_nm(loginEntity.getUser_nm());
+		sessionAdminInfo.setLogin_id(loginEntity.getLogin_id());
+		sessionAdminInfo.setAuth_id(loginEntity.getAuth_id());
+		sessionAdminInfo.setAuth_nm(loginEntity.getAuth_nm());
+		sessionAdminInfo.setUser_id(loginEntity.getUser_id());
+		sessionAdminInfo.setUser_nm(loginEntity.getUser_nm());
 	}
 
 }

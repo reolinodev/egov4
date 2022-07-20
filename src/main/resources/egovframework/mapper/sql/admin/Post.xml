@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="PostAdminDAO">
+
+    <select id="findAll" parameterType="postEntity" resultType="postEntity">
+        /* sql : PostAdminDAO.findAll */
+        SELECT  ROW_NUMBER() OVER (ORDER BY A.POST_ID DESC) RNUM,
+                A.POST_ID,
+                A.BOARD_ID,
+                A.TITLE,
+                A.UPDATED_ID,
+                A.USE_YN,
+                GETCODENM('USE_YN', A.USE_YN) AS USE_YN_NM,
+                B.TITLE AS BOARD_TITLE,
+                TO_CHAR(A.UPDATED_AT, 'YYYY-MM-DD HH24:MI') AS UPDATED_AT,
+                GETUSERNM(A.UPDATED_ID) AS UPDATED_NM,
+                GETCODENM('BOARD_TYPE', B.BOARD_TYPE) AS BOARD_TYPE_NM
+        FROM    POST_TB A,
+                BOARD_TB B
+        WHERE   A.BOARD_ID  = B.BOARD_ID
+        AND     B.USE_YN = 'Y'
+        <if test="use_yn != null and use_yn != ''">
+        AND     A.USE_YN = #{use_yn}
+        </if>
+        <if test="board_id != null and board_id != ''">
+        AND     B.BOARD_ID = #{board_id}
+        </if>
+        <if test="search_str != null and search_str != ''">
+        AND     UPPER(A.TITLE) LIKE  '%'||UPPER(#{search_str})||'%'
+        </if>
+        <if test="start_date != null and start_date != ''">
+        AND     TO_CHAR(A.UPDATED_AT, 'YYYY-MM-DD') BETWEEN #{start_date} AND #{end_date}
+        </if>
+        OFFSET  #{start_idx} limit #{page_per}
+    </select>
+
+    <select id="countAll" parameterType="postEntity" resultType="int">
+        /* sql : PostAdminDAO.countAll */
+        SELECT  COUNT(*)
+        FROM    POST_TB A,
+                BOARD_TB B
+        WHERE   A.BOARD_ID  = B.BOARD_ID
+        AND     B.USE_YN = 'Y'
+        <if test="use_yn != null and use_yn != ''">
+        AND     A.USE_YN = #{use_yn}
+        </if>
+        <if test="board_id != null and board_id != ''">
+        AND     B.BOARD_ID = #{board_id}
+        </if>
+        <if test="search_str != null and search_str != ''">
+        AND     UPPER(A.TITLE) LIKE  '%'||UPPER(#{search_str})||'%'
+        </if>
+        <if test="start_date != null and start_date != ''">
+        AND     TO_CHAR(A.UPDATED_AT, 'YYYY-MM-DD') BETWEEN #{start_date} AND #{end_date}
+        </if>
+    </select>
+
+    <insert id="save" parameterType="postEntity">
+        /* sql : PostAdminDAO.save */
+        INSERT INTO POST_TB
+        (
+            POST_ID,
+            BOARD_ID,
+            TITLE,
+            MAIN_TEXT,
+            CREATED_AT,
+            UPDATED_AT,
+            UPDATED_ID
+        )
+        VALUES
+        (
+            nextval('post_seq'),
+            #{board_id},
+            #{title},
+            #{main_text},
+            now(),
+            now(),
+            #{updated_id}
+        )
+    </insert>
+
+    <select id="findByPostId" parameterType="int" resultType="postEntity">
+        /* sql : PostAdminDAO.findByPostId */
+        SELECT  A.POST_ID,
+                A.BOARD_ID,
+                A.TITLE,
+                A.UPDATED_ID,
+                A.USE_YN,
+                GETCODENM('USE_YN', A.USE_YN) AS USE_YN_NM,
+                B.TITLE AS BOARD_TITLE,
+                TO_CHAR(A.UPDATED_AT, 'YYYY-MM-DD HH24:MI') AS UPDATED_AT,
+                GETUSERNM(A.UPDATED_ID) AS UPDATED_NM,
+                GETCODENM('BOARD_TYPE', B.BOARD_TYPE) AS BOARD_TYPE_NM,
+                A.MAIN_TEXT,
+                A.ATTACH_GRP_ID
+        FROM    POST_TB A,
+                BOARD_TB B
+        WHERE   A.BOARD_ID  = B.BOARD_ID
+          AND   B.USE_YN = 'Y'
+          and   A.POST_ID = #{post_id}
+    </select>
+
+    <update id="updatePost" parameterType="postEntity">
+        /* sql : PostAdminDAO.updatePost */
+        UPDATE  POST_TB
+        SET     UPDATED_AT = now()
+                <if test="title != null and title != ''">
+                , TITLE = #{title}
+                </if>
+                <if test="updated_id != null and updated_id != ''">
+                , UPDATED_ID = #{updated_id}
+                </if>
+                <if test="main_text != null and main_text != ''">
+                , MAIN_TEXT = #{main_text}
+                </if>
+                <if test="use_yn != null and use_yn != ''">
+                , USE_YN = #{use_yn}
+                </if>
+        WHERE   POST_ID = #{post_id}
+    </update>
+
+    <update id="updatePostCnt" parameterType="int">
+        /* sql : PostAdminDAO.updatePostCnt */
+        UPDATE  POST_TB
+        SET POST_CNT = COALESCE(POST_CNT, 0) + 1
+        WHERE   POST_ID = #{post_id}
+    </update>
+
+</mapper>

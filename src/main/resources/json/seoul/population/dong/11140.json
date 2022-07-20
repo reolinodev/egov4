@@ -1,0 +1,152 @@
+{
+  "id": "API_0306",
+  "result": [
+    {
+      "adm_cd": "1114059",
+      "adm_nm": "용강동",
+      "population_cnt":21814,
+      "man":10336,
+      "woman":11478,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1114060",
+      "adm_nm": "대흥동",
+      "population_cnt":16025,
+      "man":7477,
+      "woman":8548,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1114061",
+      "adm_nm": "염리동",
+      "population_cnt":17777,
+      "man":8360,
+      "woman":9417,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1114063",
+      "adm_nm": "신수동",
+      "population_cnt":22774,
+      "man":11061,
+      "woman":11713,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1114066",
+      "adm_nm": "서교동",
+      "population_cnt":27197,
+      "man":12075,
+      "woman":15122,
+      "man_per":44,
+      "woman_per":56
+    },
+    {
+      "adm_cd": "1114068",
+      "adm_nm": "합정동",
+      "population_cnt":17544,
+      "man":8093,
+      "woman":9451,
+      "man_per":46,
+      "woman_per":54
+    },
+    {
+      "adm_cd": "1114069",
+      "adm_nm": "망원1동",
+      "population_cnt":20083,
+      "man":9386,
+      "woman":10697,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1114070",
+      "adm_nm": "망원2동",
+      "population_cnt":18706,
+      "man":8727,
+      "woman":9979,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1114071",
+      "adm_nm": "연남동",
+      "population_cnt":15951,
+      "man":7441,
+      "woman":8510,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1114072",
+      "adm_nm": "성산1동",
+      "population_cnt":19235,
+      "man":9028,
+      "woman":10207,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1114073",
+      "adm_nm": "성산2동",
+      "population_cnt":39813,
+      "man":17834,
+      "woman":21979,
+      "man_per":45,
+      "woman_per":55
+    },
+    {
+      "adm_cd": "1114074",
+      "adm_nm": "상암동",
+      "population_cnt":31178,
+      "man":14788,
+      "woman":16390,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1114075",
+      "adm_nm": "도화동",
+      "population_cnt":21230,
+      "man":10114,
+      "woman":11116,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1114076",
+      "adm_nm": "서강동",
+      "population_cnt":25669,
+      "man":12127,
+      "woman":13542,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1114077",
+      "adm_nm": "공덕동",
+      "population_cnt":37676,
+      "man":17672,
+      "woman":20004,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1114078",
+      "adm_nm": "아현동",
+      "population_cnt":25639,
+      "man":11996,
+      "woman":13643,
+      "man_per":47,
+      "woman_per":53
+    }
+  ],
+  "errMsg": "Success",
+  "errCd": 0,
+  "trId": "H0Kg_API_0306_1655685459506"
+}

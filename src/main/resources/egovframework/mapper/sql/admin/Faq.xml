@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="FaqAdminDAO">
+
+    <select id="findAll" parameterType="faqEntity" resultType="faqEntity">
+        /* sql : FaqAdminDAO.findAll */
+        SELECT  ROW_NUMBER() OVER (ORDER BY A.FAQ_ID DESC) RNUM,
+                A.FAQ_ID,
+                A.BOARD_ID,
+                A.TITLE,
+                A.CREATED_AT,
+                TO_CHAR(A.UPDATED_AT, 'YYYY-MM-DD HH24:MI') AS UPDATED_AT,
+                A.UPDATED_ID,
+                GETUSERNM(A.UPDATED_ID) AS UPDATED_NM,
+                A.USE_YN,
+                GETCODENM('USE_YN', A.USE_YN) AS USE_YN_NM,
+                B.TITLE AS BOARD_TITLE
+        FROM    FAQ_TB A,
+                BOARD_TB B
+        WHERE   A.BOARD_ID  = B.BOARD_ID
+        AND     B.USE_YN = 'Y'
+        <if test="use_yn != null and use_yn != ''">
+        AND     A.USE_YN = #{use_yn}
+        </if>
+        <if test="board_id != null and board_id != ''">
+        AND     B.BOARD_ID = #{board_id}
+        </if>
+        <if test="search_str != null and search_str != ''">
+        AND     UPPER(A.TITLE) LIKE  '%'||UPPER(#{search_str})||'%'
+        </if>
+        OFFSET  #{start_idx} limit #{page_per}
+    </select>
+
+    <select id="countAll" parameterType="faqEntity" resultType="int">
+        /* sql : PostAdminDAO.countAll */
+        SELECT  COUNT(*)
+        FROM    FAQ_TB A,
+                BOARD_TB B
+        WHERE   A.BOARD_ID  = B.BOARD_ID
+        AND     B.USE_YN = 'Y'
+        <if test="use_yn != null and use_yn != ''">
+        AND     A.USE_YN = #{use_yn}
+        </if>
+        <if test="board_id != null and board_id != ''">
+        AND     B.BOARD_ID = #{board_id}
+        </if>
+        <if test="search_str != null and search_str != ''">
+        AND     UPPER(A.TITLE) LIKE  '%'||UPPER(#{search_str})||'%'
+        </if>
+    </select>
+
+    <insert id="save" parameterType="faqEntity">
+        /* sql : FaqAdminDAO.save */
+        INSERT INTO FAQ_TB
+        (
+            FAQ_ID,
+            BOARD_ID,
+            TITLE,
+            MAIN_TEXT,
+            CREATED_AT,
+            UPDATED_AT,
+            UPDATED_ID
+        )
+        VALUES
+        (
+            nextval('faq_seq'),
+            #{board_id},
+            #{title},
+            #{main_text},
+            now(),
+            now(),
+            #{updated_id}
+        )
+    </insert>
+
+    <select id="findByFaqId" parameterType="int" resultType="faqEntity">
+        /* sql : FaqAdminDAO.findByFaqId */
+        SELECT  A.FAQ_ID,
+                A.BOARD_ID,
+                A.TITLE,
+                TO_CHAR(A.UPDATED_AT, 'YYYY-MM-DD HH24:MI') AS UPDATED_AT,
+                A.UPDATED_ID,
+                GETUSERNM(A.UPDATED_ID) AS UPDATED_NM,
+                A.USE_YN,
+                GETCODENM('USE_YN', A.USE_YN) AS USE_YN_NM,
+                B.TITLE AS BOARD_TITLE,
+                A.MAIN_TEXT
+        FROM    FAQ_TB A,
+                BOARD_TB B
+        WHERE   A.BOARD_ID  = B.BOARD_ID
+          AND   B.USE_YN = 'Y'
+          and   A.FAQ_ID = #{faq_id}
+    </select>
+
+    <update id="updateFaq" parameterType="faqEntity">
+        /* sql : FaqAdminDAO.updateFaq */
+        UPDATE  FAQ_TB
+        SET     UPDATED_AT = now()
+                <if test="updated_id != null and updated_id != ''">
+                , UPDATED_ID = #{updated_id}
+                </if>
+                <if test="title != null and title != ''">
+                , TITLE = #{title}
+                </if>
+                <if test="main_text != null and main_text != ''">
+                , MAIN_TEXT = #{main_text}
+                </if>
+                <if test="use_yn != null and use_yn != ''">
+                , USE_YN = #{use_yn}
+                </if>
+        WHERE   FAQ_ID = #{faq_id}
+    </update>
+
+
+</mapper>

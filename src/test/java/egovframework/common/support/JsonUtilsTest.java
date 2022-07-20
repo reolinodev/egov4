@@ -1,7 +1,5 @@
 package egovframework.common.support;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import java.io.IOException;
 import org.json.simple.parser.ParseException;
 import org.junit.jupiter.api.Test;
@@ -18,4 +16,8 @@ class JsonUtilsTest {
         System.out.println("<<<"+mav);
     }
 
+    @Test
+    void getJsonSeoul() throws IOException, ParseException {
+        System.out.println("<<<"+JsonUtils.getJsonSeoulLv1());
+    }
 }

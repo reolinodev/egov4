@@ -1,0 +1,161 @@
+{
+  "id": "API_0306",
+  "result": [
+    {
+      "adm_cd": "1101053",
+      "adm_nm": "사직동",
+      "population_cnt":9584,
+      "man":4305,
+      "woman":5279,
+      "man_per":45,
+      "woman_per":55
+    },
+    {
+      "adm_cd": "1101054",
+      "adm_nm": "삼청동",
+      "population_cnt":2689,
+      "man":1277,
+      "woman":1412,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1101055",
+      "adm_nm": "부암동",
+      "population_cnt":9703,
+      "man":4642,
+      "woman":5061,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1101056",
+      "adm_nm": "평창동",
+      "population_cnt":18208,
+      "man":8477,
+      "woman":9731,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1101057",
+      "adm_nm": "무악동",
+      "population_cnt":8199,
+      "man":3805,
+      "woman":4394,
+      "man_per":46,
+      "woman_per":54
+    },
+    {
+      "adm_cd": "1101058",
+      "adm_nm": "교남동",
+      "population_cnt":10117,
+      "man":4662,
+      "woman":5455,
+      "man_per":46,
+      "woman_per":54
+    },
+    {
+      "adm_cd": "1101060",
+      "adm_nm": "가회동",
+      "population_cnt":4135,
+      "man":1897,
+      "woman":2238,
+      "man_per":46,
+      "woman_per":54
+    },
+    {
+      "adm_cd": "1101061",
+      "adm_nm": "종로1·2·3·4가동",
+      "population_cnt":8886,
+      "man":5078,
+      "woman":3808,
+      "man_per":57,
+      "woman_per":43
+    },
+    {
+      "adm_cd": "1101063",
+      "adm_nm": "종로5·6가동",
+      "population_cnt":5467,
+      "man":2899,
+      "woman":2568,
+      "man_per":53,
+      "woman_per":47
+    },
+    {
+      "adm_cd": "1101064",
+      "adm_nm": "이화동",
+      "population_cnt":7738,
+      "man":3635,
+      "woman":4103,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1101067",
+      "adm_nm": "창신1동",
+      "population_cnt":5587,
+      "man":2971,
+      "woman":2616,
+      "man_per":53,
+      "woman_per":47
+    },
+    {
+      "adm_cd": "1101068",
+      "adm_nm": "창신2동",
+      "population_cnt":8946,
+      "man":4566,
+      "woman":4380,
+      "man_per":51,
+      "woman_per":49
+    },
+    {
+      "adm_cd": "1101069",
+      "adm_nm": "창신3동",
+      "population_cnt":6664,
+      "man":3300,
+      "woman":3364,
+      "man_per":50,
+      "woman_per":50
+    },
+    {
+      "adm_cd": "1101070",
+      "adm_nm": "숭인1동",
+      "population_cnt":6125,
+      "man":2933,
+      "woman":3192,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1101071",
+      "adm_nm": "숭인2동",
+      "population_cnt":10339,
+      "man":5058,
+      "woman":5281,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1101072",
+      "adm_nm": "청운효자동",
+      "population_cnt":12032,
+      "man":5554,
+      "woman":6478,
+      "man_per":46,
+      "woman_per":54
+    },
+    {
+      "adm_cd": "1101073",
+      "adm_nm": "혜화동",
+      "population_cnt":19094,
+      "man":8743,
+      "woman":10351,
+      "man_per":46,
+      "woman_per":54
+    }
+  ],
+  "errMsg": "Success",
+  "errCd": 0,
+  "trId": "sUrv_API_0306_1655684503034"
+}

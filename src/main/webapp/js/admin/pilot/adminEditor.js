@@ -6,7 +6,7 @@ let content ='| 11 | 22 |\n'
     + '|  a| b |';
 
 $(document).ready(() => {
-  editor = setBasicEditor('editor', content);
+  editor = setBasicEditor('editor', content, 300);
   setBasicViewer('viewer', content);
 
   $("#editorBtn").click(()=> {

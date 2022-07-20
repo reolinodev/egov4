@@ -39,8 +39,9 @@
   },
   "dependencies": {
     "@toast-ui/editor": "^3.1.7",
-    "highcharts": "^10.1.0",
+    "highcharts": "^10.2.0",
     "sweetalert2": "^11.4.8",
+    "tui-date-picker": "^4.3.1",
     "tui-grid": "^4.21.1",
     "tui-pagination": "^3.4.1",
     "tui-tree": "^4.0.9"

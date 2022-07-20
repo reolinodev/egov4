@@ -1,0 +1,152 @@
+{
+  "id": "API_0306",
+  "result": [
+    {
+      "adm_cd": "1117051",
+      "adm_nm": "신도림동",
+      "population_cnt":36319,
+      "man":17630,
+      "woman":18689,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1117052",
+      "adm_nm": "구로1동",
+      "population_cnt":21114,
+      "man":10335,
+      "woman":10779,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1117054",
+      "adm_nm": "구로3동",
+      "population_cnt":25210,
+      "man":12996,
+      "woman":12214,
+      "man_per":52,
+      "woman_per":48
+    },
+    {
+      "adm_cd": "1117055",
+      "adm_nm": "구로4동",
+      "population_cnt":23448,
+      "man":11618,
+      "woman":11830,
+      "man_per":50,
+      "woman_per":50
+    },
+    {
+      "adm_cd": "1117056",
+      "adm_nm": "구로5동",
+      "population_cnt":32037,
+      "man":15610,
+      "woman":16427,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1117061",
+      "adm_nm": "고척1동",
+      "population_cnt":22226,
+      "man":11058,
+      "woman":11168,
+      "man_per":50,
+      "woman_per":50
+    },
+    {
+      "adm_cd": "1117062",
+      "adm_nm": "고척2동",
+      "population_cnt":26920,
+      "man":13323,
+      "woman":13597,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1117064",
+      "adm_nm": "개봉2동",
+      "population_cnt":31039,
+      "man":15127,
+      "woman":15912,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1117065",
+      "adm_nm": "개봉3동",
+      "population_cnt":20581,
+      "man":10002,
+      "woman":10579,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1117067",
+      "adm_nm": "오류1동",
+      "population_cnt":22980,
+      "man":11124,
+      "woman":11856,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1117069",
+      "adm_nm": "수궁동",
+      "population_cnt":23555,
+      "man":11603,
+      "woman":11952,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1117070",
+      "adm_nm": "가리봉동",
+      "population_cnt":13067,
+      "man":7405,
+      "woman":5662,
+      "man_per":57,
+      "woman_per":43
+    },
+    {
+      "adm_cd": "1117071",
+      "adm_nm": "구로2동",
+      "population_cnt":30777,
+      "man":15832,
+      "woman":14945,
+      "man_per":51,
+      "woman_per":49
+    },
+    {
+      "adm_cd": "1117072",
+      "adm_nm": "개봉1동",
+      "population_cnt":34382,
+      "man":17134,
+      "woman":17248,
+      "man_per":50,
+      "woman_per":50
+    },
+    {
+      "adm_cd": "1117073",
+      "adm_nm": "오류2동",
+      "population_cnt":38805,
+      "man":18655,
+      "woman":20150,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1117074",
+      "adm_nm": "항동",
+      "population_cnt":16625,
+      "man":8104,
+      "woman":8521,
+      "man_per":49,
+      "woman_per":51
+    }
+  ],
+  "errMsg": "Success",
+  "errCd": 0,
+  "trId": "1zDk_API_0306_1655685523259"
+}

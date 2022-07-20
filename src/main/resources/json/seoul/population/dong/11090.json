@@ -1,0 +1,125 @@
+{
+  "id": "API_0306",
+  "result": [
+    {
+      "adm_cd": "1109060",
+      "adm_nm": "번1동",
+      "population_cnt":18771,
+      "man":9380,
+      "woman":9391,
+      "man_per":50,
+      "woman_per":50
+    },
+    {
+      "adm_cd": "1109061",
+      "adm_nm": "번2동",
+      "population_cnt":15656,
+      "man":7553,
+      "woman":8103,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1109062",
+      "adm_nm": "번3동",
+      "population_cnt":16683,
+      "man":7786,
+      "woman":8897,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1109063",
+      "adm_nm": "수유1동",
+      "population_cnt":20650,
+      "man":10121,
+      "woman":10529,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1109064",
+      "adm_nm": "수유2동",
+      "population_cnt":21268,
+      "man":10095,
+      "woman":11173,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1109065",
+      "adm_nm": "수유3동",
+      "population_cnt":23595,
+      "man":11634,
+      "woman":11961,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1109069",
+      "adm_nm": "삼양동",
+      "population_cnt":23601,
+      "man":11762,
+      "woman":11839,
+      "man_per":50,
+      "woman_per":50
+    },
+    {
+      "adm_cd": "1109070",
+      "adm_nm": "미아동",
+      "population_cnt":21886,
+      "man":10459,
+      "woman":11427,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1109071",
+      "adm_nm": "송중동",
+      "population_cnt":29889,
+      "man":14342,
+      "woman":15547,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1109072",
+      "adm_nm": "송천동",
+      "population_cnt":26371,
+      "man":13012,
+      "woman":13359,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1109073",
+      "adm_nm": "삼각산동",
+      "population_cnt":31074,
+      "man":14918,
+      "woman":16156,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1109074",
+      "adm_nm": "우이동",
+      "population_cnt":20544,
+      "man":9889,
+      "woman":10655,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1109075",
+      "adm_nm": "인수동",
+      "population_cnt":30275,
+      "man":14588,
+      "woman":15687,
+      "man_per":48,
+      "woman_per":52
+    }
+  ],
+  "errMsg": "Success",
+  "errCd": 0,
+  "trId": "OPr9_API_0306_1655685379242"
+}

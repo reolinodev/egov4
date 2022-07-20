@@ -1,11 +1,10 @@
 package egovframework.admin.main.web;
 
-import egovframework.admin.login.service.domain.SessionInfo;
+import egovframework.admin.login.service.domain.SessionAdminInfo;
 import egovframework.admin.menu.service.MenuAdminService;
 import egovframework.admin.menu.service.domain.MenuEntity;
 import egovframework.common.support.JsonUtils;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -22,7 +21,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class MainAdminController {
 
     @Resource
-    private SessionInfo sessionInfo;
+    private SessionAdminInfo sessionAdminInfo;
 
     @Value("${menu.type}")
     private String menuType;
@@ -36,8 +35,8 @@ public class MainAdminController {
     public ModelAndView mainView(HttpServletRequest request) throws IOException, ParseException {
         ModelAndView mav = new ModelAndView();
 
-        int userId = sessionInfo.getUser_id();
-        int authId = sessionInfo.getAuth_id();
+        int userId = sessionAdminInfo.getUser_id();
+        int authId = sessionAdminInfo.getAuth_id();
 
         if(userId == 0){
             mav.setViewName("redirect:/admin/logout");
@@ -61,8 +60,8 @@ public class MainAdminController {
             }
 
             mav.addObject("menuType",menuType);
-            mav.addObject("userNm",sessionInfo.getUser_nm());
-            mav.addObject("loginId",sessionInfo.getLogin_id());
+            mav.addObject("userNm",sessionAdminInfo.getUser_nm());
+            mav.addObject("loginId",sessionAdminInfo.getLogin_id());
             mav.addObject("authId",authId);
             mav.addObject("userId",userId);
 
@@ -79,7 +78,7 @@ public class MainAdminController {
     public ModelAndView mainView(@PathVariable Integer auth_id) throws IOException, ParseException {
         ModelAndView mav = new ModelAndView();
 
-        int userId = sessionInfo.getUser_id();
+        int userId = sessionAdminInfo.getUser_id();
 
         if(userId == 0){
             mav.setViewName("redirect:/admin/logout");
@@ -103,8 +102,8 @@ public class MainAdminController {
             }
 
             mav.addObject("menuType",menuType);
-            mav.addObject("userNm",sessionInfo.getUser_nm());
-            mav.addObject("loginId",sessionInfo.getLogin_id());
+            mav.addObject("userNm",sessionAdminInfo.getUser_nm());
+            mav.addObject("loginId",sessionAdminInfo.getLogin_id());
             mav.addObject("authId",auth_id);
             mav.addObject("userId",userId);
 

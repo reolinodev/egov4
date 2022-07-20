@@ -17,4 +17,8 @@ public class AuthMenuAdminDAO extends EgovAbstractMapper {
         return update("AuthMenuAdminDAO.save", authMenu);
     }
 
+    public int deleteByMenuId(int menuId) throws Exception {
+        return delete("AuthMenuAdminDAO.deleteByMenuId", menuId);
+    }
+
 }

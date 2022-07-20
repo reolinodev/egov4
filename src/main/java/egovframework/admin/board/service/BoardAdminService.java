@@ -13,4 +13,10 @@ public interface BoardAdminService {
     BoardEntity getBoardInfo(int boardId);
 
     int updateBoard(BoardEntity boardEntity) throws Exception;
+
+    List<BoardEntity> getAvailableBoardList(BoardEntity boardEntity);
+
+    List<BoardEntity> getAvailableFaqList(BoardEntity boardEntity);
+
+    List<BoardEntity> getAvailableQnaList(BoardEntity boardEntity);
 }

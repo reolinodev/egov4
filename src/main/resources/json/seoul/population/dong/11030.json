@@ -1,0 +1,152 @@
+{
+  "id": "API_0306",
+  "result": [
+    {
+      "adm_cd": "1103051",
+      "adm_nm": "후암동",
+      "population_cnt":17144,
+      "man":8362,
+      "woman":8782,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1103052",
+      "adm_nm": "용산2가동",
+      "population_cnt":10676,
+      "man":5200,
+      "woman":5476,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1103053",
+      "adm_nm": "남영동",
+      "population_cnt":7759,
+      "man":4646,
+      "woman":3113,
+      "man_per":60,
+      "woman_per":40
+    },
+    {
+      "adm_cd": "1103057",
+      "adm_nm": "원효로2동",
+      "population_cnt":13830,
+      "man":6504,
+      "woman":7326,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1103058",
+      "adm_nm": "효창동",
+      "population_cnt":10777,
+      "man":5119,
+      "woman":5658,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1103059",
+      "adm_nm": "용문동",
+      "population_cnt":11870,
+      "man":5682,
+      "woman":6188,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1103063",
+      "adm_nm": "이촌1동",
+      "population_cnt":26414,
+      "man":12438,
+      "woman":13976,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1103064",
+      "adm_nm": "이촌2동",
+      "population_cnt":8246,
+      "man":3850,
+      "woman":4396,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1103065",
+      "adm_nm": "이태원1동",
+      "population_cnt":8019,
+      "man":4164,
+      "woman":3855,
+      "man_per":52,
+      "woman_per":48
+    },
+    {
+      "adm_cd": "1103066",
+      "adm_nm": "이태원2동",
+      "population_cnt":10526,
+      "man":4950,
+      "woman":5576,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1103069",
+      "adm_nm": "서빙고동",
+      "population_cnt":13871,
+      "man":6655,
+      "woman":7216,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1103070",
+      "adm_nm": "보광동",
+      "population_cnt":14518,
+      "man":7408,
+      "woman":7110,
+      "man_per":51,
+      "woman_per":49
+    },
+    {
+      "adm_cd": "1103071",
+      "adm_nm": "청파동",
+      "population_cnt":20069,
+      "man":9212,
+      "woman":10857,
+      "man_per":46,
+      "woman_per":54
+    },
+    {
+      "adm_cd": "1103072",
+      "adm_nm": "원효로1동",
+      "population_cnt":16761,
+      "man":7936,
+      "woman":8825,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1103073",
+      "adm_nm": "한강로동",
+      "population_cnt":23247,
+      "man":11148,
+      "woman":12099,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1103074",
+      "adm_nm": "한남동",
+      "population_cnt":22839,
+      "man":11207,
+      "woman":11632,
+      "man_per":49,
+      "woman_per":51
+    }
+  ],
+  "errMsg": "Success",
+  "errCd": 0,
+  "trId": "krai_API_0306_1655684538613"
+}

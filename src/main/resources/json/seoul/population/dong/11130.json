@@ -1,0 +1,134 @@
+{
+  "id": "API_0306",
+  "result": [
+    {
+      "adm_cd": "1113052",
+      "adm_nm": "천연동",
+      "population_cnt":17176,
+      "man":8156,
+      "woman":9020,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1113062",
+      "adm_nm": "홍제1동",
+      "population_cnt":23648,
+      "man":11044,
+      "woman":12604,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1113064",
+      "adm_nm": "홍제3동",
+      "population_cnt":17778,
+      "man":8537,
+      "woman":9241,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1113065",
+      "adm_nm": "홍제2동",
+      "population_cnt":13636,
+      "man":6389,
+      "woman":7247,
+      "man_per":47,
+      "woman_per":53
+    },
+    {
+      "adm_cd": "1113066",
+      "adm_nm": "홍은1동",
+      "population_cnt":22935,
+      "man":11059,
+      "woman":11876,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1113068",
+      "adm_nm": "홍은2동",
+      "population_cnt":27057,
+      "man":12960,
+      "woman":14097,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1113069",
+      "adm_nm": "남가좌1동",
+      "population_cnt":15552,
+      "man":7432,
+      "woman":8120,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1113070",
+      "adm_nm": "남가좌2동",
+      "population_cnt":30759,
+      "man":14613,
+      "woman":16146,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1113071",
+      "adm_nm": "북가좌1동",
+      "population_cnt":17962,
+      "man":8610,
+      "woman":9352,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1113072",
+      "adm_nm": "북가좌2동",
+      "population_cnt":31552,
+      "man":15361,
+      "woman":16191,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1113073",
+      "adm_nm": "충현동",
+      "population_cnt":20606,
+      "man":9907,
+      "woman":10699,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1113074",
+      "adm_nm": "북아현동",
+      "population_cnt":16111,
+      "man":7712,
+      "woman":8399,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1113075",
+      "adm_nm": "신촌동",
+      "population_cnt":25383,
+      "man":10146,
+      "woman":15237,
+      "man_per":40,
+      "woman_per":60
+    },
+    {
+      "adm_cd": "1113076",
+      "adm_nm": "연희동",
+      "population_cnt":37659,
+      "man":17814,
+      "woman":19845,
+      "man_per":47,
+      "woman_per":53
+    }
+  ],
+  "errMsg": "Success",
+  "errCd": 0,
+  "trId": "EK8O_API_0306_1655685483690"
+}

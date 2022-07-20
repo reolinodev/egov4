@@ -1,6 +1,7 @@
 import {setCodeSelBoxCall} from "../module/component";
 import {setBasicTree} from "../module/tree";
-import {Alert} from "../module/alert";
+import {checkKr} from "../module/validation";
+import {Alert, Confirm} from "../module/alert";
 import {setBasicGrid} from "../module/grid";
 
 // eslint-disable-next-line no-unused-vars
@@ -13,16 +14,14 @@ let grid;
 const search = () => {
 
     $.ajax({
-        url : `/api/admin/menu/${$("#authRole").val()}`,
+        url : '/api/admin/menu/'+$("#authRole").val(),
         type: 'GET',
         headers: {'Content-Type': 'application/json'},
-        success (result){
-            // eslint-disable-next-line no-use-before-define
+        success : function (result){
            setMenuList(result.data);
         },
-        error (request, status, error){
-            // eslint-disable-next-line no-useless-concat
-            console.log(`code:${request.status}\n`+`message:${request.responseText}\n`+`error:${error}`);
+        error : function (request, status, error){
+            console.log('code:'+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
         }
     });
 }
@@ -34,19 +33,17 @@ const setMenuList = (list) => {
 
     const menu = [];
 
-    // eslint-disable-next-line no-restricted-syntax
     for (const data of list) {
 
         if(data.menu_lv === 1){
-            const obj1 ={};
-            const children = [];
+            let obj1 ={};
+            let children = [];
 
             obj1.text = data.menu_nm;
             obj1.target = data.menu_id;
-            // eslint-disable-next-line no-restricted-syntax
             for (const data2 of list) {
                 if(data.menu_id === data2.parent_id){
-                    const obj2 ={};
+                    let obj2 ={};
                     obj2.text = data2.menu_nm;
                     obj2.target = data2.menu_id;
                     children.push(obj2);
@@ -57,7 +54,6 @@ const setMenuList = (list) => {
         }
     }
 
-    // eslint-disable-next-line no-use-before-define
     tree = setBasicTree(menu,setMenuId);
 }
 
@@ -88,7 +84,6 @@ const setGridLayout = () => {
 const setMenuId = (menuId) => {
     $("#menuId").val(menuId);
 
-    // eslint-disable-next-line no-use-before-define
     searchAuthMenu();
 }
 
@@ -136,7 +131,6 @@ const saveProc = (updatedRows) => {
         Alert(data.header.message);
     }, (request, status, error) => {
         console.log(
-            // eslint-disable-next-line no-useless-concat
             `code:${request.status}\n` + `message:${request.responseText}\n` + `error:${error}`
         );
 
@@ -154,14 +148,14 @@ $(document).ready(() => {
     setCodeSelBoxCall('authRole','AUTH_ROLE','','ADMIN', search);
 
     // 권한 구분 변경시 검색
-    $("#authRole").change(()=> {
+    $("#authRole").change(function(){
         initAuth();
         search();
     });
 
     grid = setGridLayout();
 
-    // 저장 버튼 클릭 이벤트
+    //저장 버튼 클릭 이벤트
     $("#saveBtn").click(() => {
         const rows = grid.getModifiedRows();
         const {updatedRows} = rows;

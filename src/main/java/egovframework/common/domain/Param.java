@@ -25,4 +25,10 @@ public class Param {
     public void setStart_idx(int page_per, int current_page) {
         this.start_idx = page_per * (current_page - 1);
     }
+
+    @ApiModelProperty(example = "시작일")
+    public String start_date;
+
+    @ApiModelProperty(example = "종료일")
+    public String end_date;
 }

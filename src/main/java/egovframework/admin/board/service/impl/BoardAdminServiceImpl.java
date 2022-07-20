@@ -2,7 +2,7 @@ package egovframework.admin.board.service.impl;
 
 import egovframework.admin.board.service.BoardAdminService;
 import egovframework.admin.board.service.domain.BoardEntity;
-import egovframework.admin.login.service.domain.SessionInfo;
+import egovframework.admin.login.service.domain.SessionAdminInfo;
 import java.util.List;
 import javax.annotation.Resource;
 import org.egovframe.rte.fdl.cmmn.EgovAbstractServiceImpl;
@@ -15,7 +15,7 @@ public class BoardAdminServiceImpl extends EgovAbstractServiceImpl implements Bo
     private BoardAdminDAO boardAdminDAO;
 
     @Resource
-    private SessionInfo sessionInfo;
+    private SessionAdminInfo sessionAdminInfo;
 
     public List<BoardEntity> getBoardList(BoardEntity boardEntity) {
         boardEntity.setStart_idx(boardEntity.getPage_per(), boardEntity.getCurrent_page());
@@ -27,7 +27,7 @@ public class BoardAdminServiceImpl extends EgovAbstractServiceImpl implements Bo
     }
 
     public int inputBoard(BoardEntity boardEntity) throws Exception {
-        boardEntity.updated_id = sessionInfo.getUser_id();
+        boardEntity.updated_id = sessionAdminInfo.getUser_id();
         return boardAdminDAO.save(boardEntity);
     }
 
@@ -36,7 +36,19 @@ public class BoardAdminServiceImpl extends EgovAbstractServiceImpl implements Bo
     }
 
     public int updateBoard(BoardEntity boardEntity) throws Exception {
-        boardEntity.updated_id = sessionInfo.getUser_id();
+        boardEntity.updated_id = sessionAdminInfo.getUser_id();
         return boardAdminDAO.updateBoard(boardEntity);
+    }
+
+    public List<BoardEntity> getAvailableBoardList(BoardEntity boardEntity) {
+        return boardAdminDAO.findByUseYnYAndBoardTypeNotIn(boardEntity);
+    }
+
+    public List<BoardEntity> getAvailableFaqList(BoardEntity boardEntity) {
+        return boardAdminDAO.findByUseYnYAndBoardTypeEqulsFAQ(boardEntity);
+    }
+
+    public List<BoardEntity> getAvailableQnaList(BoardEntity boardEntity) {
+        return boardAdminDAO.findByUseYnYAndBoardTypeEqulsQNA(boardEntity);
     }
 }

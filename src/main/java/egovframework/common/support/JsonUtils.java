@@ -80,6 +80,14 @@ public class JsonUtils {
         return convertJsonFile("json/seoul/seoul_house/dong/" +map_key+".json");
     }
 
+    public static JSONObject getJsonPopulationLv1() throws IOException, ParseException {
+        return convertJsonFile("json/seoul/population/population.json");
+    }
+
+    public static JSONObject getJsonPopulationLv2(int map_key) throws IOException, ParseException {
+        return convertJsonFile("json/seoul/population/dong/" +map_key+".json");
+    }
+
     private static JSONObject convertJsonFile(String url) throws IOException, ParseException {
         ClassPathResource resource = new ClassPathResource(url);
         JSONObject json = (JSONObject) new JSONParser().parse(new InputStreamReader(resource.getInputStream(), "UTF-8"));

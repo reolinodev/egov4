@@ -14,7 +14,7 @@ import org.springframework.web.context.WebApplicationContext;
 @Component
 @Scope(value = WebApplicationContext.SCOPE_SESSION, proxyMode = ScopedProxyMode.TARGET_CLASS)
 @ToString
-public class SessionInfo implements Serializable {
+public class SessionAdminInfo implements Serializable {
 
     public static final long serialVersionUID = 1L;
 

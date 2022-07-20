@@ -1,0 +1,98 @@
+{
+  "id": "API_0306",
+  "result": [
+    {
+      "adm_cd": "1118051",
+      "adm_nm": "가산동",
+      "population_cnt":26503,
+      "man":14400,
+      "woman":12103,
+      "man_per":54,
+      "woman_per":46
+    },
+    {
+      "adm_cd": "1118052",
+      "adm_nm": "독산1동",
+      "population_cnt":47436,
+      "man":24339,
+      "woman":23097,
+      "man_per":51,
+      "woman_per":49
+    },
+    {
+      "adm_cd": "1118053",
+      "adm_nm": "독산2동",
+      "population_cnt":20003,
+      "man":10172,
+      "woman":9831,
+      "man_per":51,
+      "woman_per":49
+    },
+    {
+      "adm_cd": "1118054",
+      "adm_nm": "독산3동",
+      "population_cnt":27624,
+      "man":14007,
+      "woman":13617,
+      "man_per":51,
+      "woman_per":49
+    },
+    {
+      "adm_cd": "1118055",
+      "adm_nm": "독산4동",
+      "population_cnt":16706,
+      "man":8421,
+      "woman":8285,
+      "man_per":50,
+      "woman_per":50
+    },
+    {
+      "adm_cd": "1118057",
+      "adm_nm": "시흥1동",
+      "population_cnt":34407,
+      "man":17109,
+      "woman":17298,
+      "man_per":50,
+      "woman_per":50
+    },
+    {
+      "adm_cd": "1118058",
+      "adm_nm": "시흥2동",
+      "population_cnt":21102,
+      "man":10124,
+      "woman":10978,
+      "man_per":48,
+      "woman_per":52
+    },
+    {
+      "adm_cd": "1118059",
+      "adm_nm": "시흥3동",
+      "population_cnt":10873,
+      "man":5383,
+      "woman":5490,
+      "man_per":50,
+      "woman_per":50
+    },
+    {
+      "adm_cd": "1118060",
+      "adm_nm": "시흥4동",
+      "population_cnt":20928,
+      "man":10351,
+      "woman":10577,
+      "man_per":49,
+      "woman_per":51
+    },
+    {
+      "adm_cd": "1118061",
+      "adm_nm": "시흥5동",
+      "population_cnt":19566,
+      "man":9798,
+      "woman":9768,
+      "man_per":50,
+      "woman_per":50
+    }
+  ],
+  "errMsg": "Success",
+  "errCd": 0,
+  "trId": "2htx_API_0306_1655685534990"
+}

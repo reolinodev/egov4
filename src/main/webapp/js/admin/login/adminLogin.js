@@ -89,4 +89,6 @@ $(document).ready(() => {
     }else{
         idSaveCheck.checked = false;
     }
+
+    sessionStorage.clear()
 });

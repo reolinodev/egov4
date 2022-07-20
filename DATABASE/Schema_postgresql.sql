@@ -89,7 +89,7 @@ CREATE TABLE CODE_GRP_TB
 (
     code_grp_id int NOT NULL,
     code_grp_nm varchar(50) not null,
-    code_grp_val varchar(10) not null,
+    code_grp_val varchar(50) not null,
     created_at timestamp,
     updated_at timestamp,
     updated_id int,
@@ -252,7 +252,7 @@ CREATE TABLE POST_TB
     created_at timestamp,
     updated_at timestamp,
     updated_id int,
-    post_cnt int,
+    post_cnt int DEFAULT 0,
     attach_grp_id int,
     use_yn varchar(1) DEFAULT 'Y'::character varying,
     primary key(post_id),
@@ -278,17 +278,20 @@ CREATE SEQUENCE attach_grp_seq START 1;
 CREATE TABLE FAQ_TB
 (
     faq_id int NOT NULL,
-    title varchar(100) not null,
+    board_id int NOT NULL,
+    title varchar(250) not null,
     main_text text,
     created_at timestamp,
     updated_at timestamp,
     updated_id int,
     use_yn varchar(1) DEFAULT 'Y'::character varying,
-    primary key(faq_id)
+    primary key(faq_id),
+    foreign key (board_id) REFERENCES BOARD_TB (board_id)
 );
 
 COMMENT ON TABLE public.FAQ_TB IS 'FAQ';
 COMMENT ON COLUMN public.FAQ_TB.faq_id IS 'FAQ 아이디';
+COMMENT ON COLUMN public.FAQ_TB.board_id IS '게시판 아이디';
 COMMENT ON COLUMN public.FAQ_TB.title IS '제목';
 COMMENT ON COLUMN public.FAQ_TB.main_text IS '본문';
 COMMENT ON COLUMN public.FAQ_TB.created_at IS '생성일';
@@ -301,30 +304,37 @@ CREATE SEQUENCE faq_seq START 1;
 CREATE TABLE QNA_TB
 (
     qna_id int NOT NULL,
+    board_id int NOT NULL,
     title varchar(100) not null,
     main_text text,
-    qna_lv int,
-    qna_parent_id int,
+    questions text NULL,
     created_at timestamp,
     updated_at timestamp,
+    created_id int,
     updated_id int,
     qna_type varchar(50),
+    qna_pw varchar(255),
     hidden_yn varchar(1) DEFAULT 'N'::character varying,
+    response_yn varchar(1) DEFAULT 'N'::character varying,
     use_yn varchar(1) DEFAULT 'Y'::character varying,
-    primary key(qna_id)
+    primary key(qna_id),
+    foreign key (board_id) REFERENCES BOARD_TB (board_id)
 );
 
 COMMENT ON TABLE public.QNA_TB IS 'QNA';
 COMMENT ON COLUMN public.QNA_TB.qna_id IS 'QNA 아이디';
+COMMENT ON COLUMN public.QNA_TB.board_id IS '게시판 아이디';
 COMMENT ON COLUMN public.QNA_TB.title IS '제목';
 COMMENT ON COLUMN public.QNA_TB.main_text IS '본문';
-COMMENT ON COLUMN public.QNA_TB.qna_lv IS '레벨';
-COMMENT ON COLUMN public.QNA_TB.qna_parent_id IS '부모 아이디';
+COMMENT ON COLUMN public.QNA_TB.questions IS '질의';
 COMMENT ON COLUMN public.QNA_TB.created_at IS '생성일';
 COMMENT ON COLUMN public.QNA_TB.updated_at IS '수정일';
+COMMENT ON COLUMN public.QNA_TB.created_id IS '생성자';
 COMMENT ON COLUMN public.QNA_TB.updated_id IS '수정자';
 COMMENT ON COLUMN public.QNA_TB.qna_type IS '문의유형';
+COMMENT ON COLUMN public.QNA_TB.qna_pw IS '문의 비밀번호';
 COMMENT ON COLUMN public.QNA_TB.hidden_yn IS '비밀글 여부';
+COMMENT ON COLUMN public.QNA_TB.response_yn IS '응답 여부';
 COMMENT ON COLUMN public.QNA_TB.use_yn IS '사용여부';
 
 CREATE SEQUENCE qna_seq START 1;

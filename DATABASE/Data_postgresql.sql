@@ -97,3 +97,16 @@ VALUES(nextval('menu_seq'), 'FAQ 관리', 2, (select menu_id from menu_tb where 
 INSERT INTO public.menu_tb
 (menu_id, menu_nm, menu_lv, parent_id, menu_url, ord, use_yn, menu_type, auth_role, main_yn, created_at)
 VALUES(nextval('menu_seq'), 'QNA 관리', 2, (select menu_id from menu_tb where menu_nm = '게시판 설정'), '/admin/board/qna', 2, 'Y', 'url', 'ADMIN', 'N', NOW());
+
+
+-- 코드
+INSERT INTO CODE_GRP_TB(CODE_GRP_ID,CODE_GRP_NM,CODE_GRP_VAL,CREATED_AT)
+VALUES(nextval('code_grp_seq'),'문의유형','QUESTION_TYPE',NOW());
+INSERT INTO CODE_TB ( CODE_ID, CODE_GRP_ID, CODE_NM, CODE_VAL, BIGO, ORD, CREATED_AT )
+VALUES ( NEXTVAL('CODE_SEQ'), (SELECT CODE_GRP_ID FROM CODE_GRP_TB WHERE CODE_GRP_VAL = 'QUESTION_TYPE'), '회원가입', 'MEMBER', NULL, '1', NOW() );
+INSERT INTO CODE_TB ( CODE_ID, CODE_GRP_ID, CODE_NM, CODE_VAL, BIGO, ORD, CREATED_AT )
+VALUES ( NEXTVAL('CODE_SEQ'), (SELECT CODE_GRP_ID FROM CODE_GRP_TB WHERE CODE_GRP_VAL = 'QUESTION_TYPE'), '데이터', 'DATA', NULL, '2', NOW() );
+INSERT INTO CODE_TB ( CODE_ID, CODE_GRP_ID, CODE_NM, CODE_VAL, BIGO, ORD, CREATED_AT )
+VALUES ( NEXTVAL('CODE_SEQ'), (SELECT CODE_GRP_ID FROM CODE_GRP_TB WHERE CODE_GRP_VAL = 'QUESTION_TYPE'), '사이트 이용문의', 'SITE', NULL, '3', NOW() );
+INSERT INTO CODE_TB ( CODE_ID, CODE_GRP_ID, CODE_NM, CODE_VAL, BIGO, ORD, CREATED_AT )
+VALUES ( NEXTVAL('CODE_SEQ'), (SELECT CODE_GRP_ID FROM CODE_GRP_TB WHERE CODE_GRP_VAL = 'QUESTION_TYPE'), '기타', 'ETC', NULL, '4', NOW() );

@@ -37,4 +37,16 @@ public class PilotAdminControllerAPI {
     public JSONObject getHouseLv2Json(@PathVariable Integer map_key) throws IOException, ParseException {
         return JsonUtils.getJsonHouseLv2(map_key);
     }
+
+    @ApiOperation(value = "서울 행정구역 구 형태로 인구통계 json 반환")
+    @GetMapping("/json/poulation")
+    public JSONObject getPopulationLv1Json() throws IOException, ParseException {
+        return JsonUtils.getJsonPopulationLv1();
+    }
+
+    @ApiOperation(value = "서울 행정구역 동 형태로 인구통계 json 반환")
+    @GetMapping("/json/poulation/{map_key}")
+    public JSONObject getPopulationLv2Json(@PathVariable Integer map_key) throws IOException, ParseException {
+        return JsonUtils.getJsonPopulationLv2(map_key);
+    }
 }

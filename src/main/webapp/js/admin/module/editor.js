@@ -7,13 +7,13 @@ import '@toast-ui/editor/dist/toastui-editor-viewer.css';
  * data : 아이디, 콘텐츠
  */
 // eslint-disable-next-line import/prefer-default-export
-export function setBasicEditor (id, content) {
+export function setBasicEditor (id, content, height) {
 
   // eslint-disable-next-line new-cap
   return new Editor({
     el: document.querySelector(`#${id}`),
     previewStyle: 'tab',
-    height: '500px',
+    height: height+'px',
     initialValue: content,
     initialEditType: 'wysiwyg',
   });

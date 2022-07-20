@@ -186,7 +186,7 @@ const editProc = () => {
     };
 
     $.ajax({
-        url: `/api/admin/board/${$("#editBoardId").val()}`,
+        url: '/api/admin/board/'+$("#editBoardId").val(),
         type: 'PUT',
         data: JSON.stringify(param),
         headers: {'Content-Type': 'application/json'},

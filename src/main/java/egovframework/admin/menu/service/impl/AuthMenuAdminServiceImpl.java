@@ -1,6 +1,6 @@
 package egovframework.admin.menu.service.impl;
 
-import egovframework.admin.login.service.domain.SessionInfo;
+import egovframework.admin.login.service.domain.SessionAdminInfo;
 import egovframework.admin.menu.service.AuthMenuAdminService;
 import egovframework.admin.menu.service.domain.AuthMenu;
 import egovframework.admin.menu.service.domain.AuthMenuEntity;
@@ -20,7 +20,7 @@ public class AuthMenuAdminServiceImpl extends EgovAbstractServiceImpl implements
     private MenuAdminDAO menuAdminDAO;
 
     @Resource
-    private SessionInfo sessionInfo;
+    private SessionAdminInfo sessionAdminInfo;
 
     public List<AuthMenuEntity> getAuthMenuList(AuthMenuEntity authMenuEntity) {
         return authMenuAdminDAO.findByAuthRoleAndMenuId(authMenuEntity);
@@ -35,7 +35,7 @@ public class AuthMenuAdminServiceImpl extends EgovAbstractServiceImpl implements
         if(menuInfo.menu_lv == 1){
 
             for (AuthMenu authMenu : updatedRows ) {
-                authMenu.updated_id = sessionInfo.getUser_id();
+                authMenu.updated_id = sessionAdminInfo.getUser_id();
                 authMenu.menu_id = menuId;
                 authMenuAdminDAO.save(authMenu);
             }
@@ -45,14 +45,14 @@ public class AuthMenuAdminServiceImpl extends EgovAbstractServiceImpl implements
             for (MenuEntity menuEntity : childMenu ) {
                 int childMenuId = menuEntity.menu_id;
                 for (AuthMenu authMenu : updatedRows ) {
-                    authMenu.updated_id = sessionInfo.getUser_id();
+                    authMenu.updated_id = sessionAdminInfo.getUser_id();
                     authMenu.menu_id = childMenuId;
                     authMenuAdminDAO.save(authMenu);
                 }
             }
         }else {
             for (AuthMenu authMenu : updatedRows ) {
-                authMenu.updated_id = sessionInfo.getUser_id();
+                authMenu.updated_id = sessionAdminInfo.getUser_id();
                 authMenu.menu_id = menuId;
                 authMenuAdminDAO.save(authMenu);
             }
@@ -60,5 +60,9 @@ public class AuthMenuAdminServiceImpl extends EgovAbstractServiceImpl implements
 
         //결과값이 0이 나와서 체크할수 없다.임의로 1을 줌
         return result;
+    }
+
+    public int deleteAuthMenu(int menuId) throws Exception {
+        return authMenuAdminDAO.deleteByMenuId(menuId);
     }
 }
