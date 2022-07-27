@@ -14,9 +14,6 @@ public class UserAdminServiceImpl extends EgovAbstractServiceImpl implements Use
     @Resource(name = "UserAdminDAO")
     private UserAdminDAO userAdminDAO;
 
-    @Resource(name = "UserAuthAdminDAO")
-    private UserAuthAdminDAO userAuthAdminDAO;
-
     /**
      * 아이디 중복 체크
      */
